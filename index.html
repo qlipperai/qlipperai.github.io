@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qlipper AI - Tool Clipping Video yang Jalan di Laptop Sendiri</title>
+    <meta name="description"
+        content="Stop sewa tool video. Mulai miliki selamanya. Qlipper AI - tool clipping video berbasis AI yang jalan 100% di laptop Anda. Bayar sekali, pakai seumur hidup.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold-50: #fffbeb;
+            --gold-100: #fef3c7;
+            --gold-200: #fde68a;
+            --gold-300: #fcd34d;
+            --gold-400: #fbbf24;
+            --gold-500: #f59e0b;
+            --gold-600: #d97706;
+            --gold-700: #b45309;
+            --royal-900: #0c0c14;
+            --royal-950: #050508;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--royal-950);
+            color: #f1f5f9;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Glow Effects */
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow-1 {
+            background: var(--gold-500);
+            top: -200px;
+            left: -200px;
+        }
+
+        .bg-glow-2 {
+            background: var(--gold-400);
+            bottom: -200px;
+            right: -200px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .logo-badge {
+            font-size: 10px;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--gold-400);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
+            color: black;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            color: var(--gold-400);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, var(--gold-300) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn-large {
+            padding: 16px 32px;
+            font-size: 16px;
+            border-radius: 16px;
+        }
+
+        .cta-btn-outline {
+            background: transparent;
+            border: 2px solid rgba(245, 158, 11, 0.5);
+            color: var(--gold-400);
+        }
+
+        .cta-btn-outline:hover {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--gold-400);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .proof-item svg {
+            color: var(--gold-500);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), transparent);
+            border: 1px solid rgba(245, 158, 11, 0.1);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(245, 158, 11, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(245, 158, 11, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Comparison */
+        .comparison {
+            padding: 80px 0;
+            background: linear-gradient(180deg, transparent, rgba(245, 158, 11, 0.03), transparent);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px 24px;
+            text-align: left;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(245, 158, 11, 0.1);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table td:last-child {
+            color: var(--gold-400);
+            font-weight: 700;
+        }
+
+        .price-cross {
+            text-decoration: line-through;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .pricing-card {
+            max-width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.02));
+            border: 2px solid var(--gold-500);
+            border-radius: 24px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 24px;
+            right: -40px;
+            background: var(--gold-500);
+            color: black;
+            padding: 8px 48px;
+            font-size: 12px;
+            font-weight: 800;
+            transform: rotate(45deg);
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .subtitle {
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .pricing-amount {
+            margin-bottom: 32px;
+        }
+
+        .pricing-amount .old-price {
+            font-size: 20px;
+            color: #64748b;
+            text-decoration: line-through;
+        }
+
+        .pricing-amount .price {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--gold-400);
+        }
+
+        .pricing-amount .period {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features .check {
+            color: var(--gold-500);
+            font-weight: bold;
+        }
+
+        .urgency {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #f87171;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            margin-top: 24px;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--gold-400);
+        }
+
+        .faq-item p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .guarantee-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .guarantee-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #4ade80;
+        }
+
+        .guarantee-card p {
+            color: #94a3b8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(245, 158, 11, 0.1);
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Qlipper AI Logo">
+                <div>
+                    <span class="logo-text">Qlipper</span>
+                    <span class="logo-badge">FOUNDER'S EDITION</span>
+                </div>
+            </div>
+            <a href="#pricing" class="cta-btn">Dapatkan Akses</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                ⚡ Batch 1 — Harga Founder
+            </div>
+            <h1>Stop Sewa Tool Video.<br>Mulai Miliki Selamanya.</h1>
+            <p>Capek bayar Rp 400rb+ per bulan untuk tool clipping? Qlipper AI jalan 100% di laptop Anda. Tanpa
+                langganan. Tanpa batas pemakaian.</p>
+            <div class="hero-cta-group">
+                <a href="#pricing" class="cta-btn cta-btn-large">🚀 Amankan Slot Founder — Rp 149.000</a>
+                <a href="#demo" class="cta-btn cta-btn-large cta-btn-outline">🎬 Lihat Demo</a>
+            </div>
+            <div class="social-proof">
+                <div class="proof-item">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Lifetime License
+                </div>
+                <div class="proof-item">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    100% Offline
+                </div>
+                <div class="proof-item">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    7 Hari Garansi
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kenapa Qlipper?</h2>
+                <p>Tool clipping video yang benar-benar Anda miliki</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔓</div>
+                    <h3>Unlimited Cuts</h3>
+                    <p>Potong 10 video? 100 video? 1000 video sehari? Bebas. Tidak ada tambahan biaya per video atau per
+                        menit.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privasi Total</h3>
+                    <p>Video Anda tidak pernah diupload ke cloud manapun. Semua proses di hard disk sendiri.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Mode Kentang</h3>
+                    <p>Laptop spek rendah? Pakai "Raw Mode" — potong video dalam hitungan DETIK tanpa memberatkan CPU.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Mode Efek</h3>
+                    <p>Otomatis tambahkan blur background, zoom, atau format 9:16 untuk TikTok/Reels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Analysis</h3>
+                    <p>Powered by Gemini. AI menganalisis transkrip dan menemukan momen-momen viral secara otomatis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Mac & Windows</h3>
+                    <p>Fully supported di macOS 10.15+ dan Windows 10/11. RAM 8GB minimum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perbandingan Tool</h2>
+                <p>Lihat berapa yang Anda hemat dalam setahun</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Fitur</th>
+                        <th>OpusClip</th>
+                        <th>Vizard</th>
+                        <th>Qlipper AI ✨</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Harga</td>
+                        <td>$19/bulan (~Rp 300rb)</td>
+                        <td>$16/bulan (~Rp 250rb)</td>
+                        <td>Rp 149rb <strong>SEKALI</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Batas Video</td>
+                        <td>100 menit/bulan</td>
+                        <td>120 menit/bulan</td>
+                        <td><strong>UNLIMITED</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Privasi</td>
+                        <td>☁️ Cloud</td>
+                        <td>☁️ Cloud</td>
+                        <td>🔒 <strong>100% Lokal</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Biaya Setahun</td>
+                        <td><span class="price-cross">Rp 3.600.000</span></td>
+                        <td><span class="price-cross">Rp 3.000.000</span></td>
+                        <td><strong>Rp 149.000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Harga Founder's Edition</h2>
+                <p>Bayar sekali, pakai seumur hidup</p>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-badge">BATCH 1</div>
+                <h3>Qlipper AI</h3>
+                <p class="subtitle">Founder's Edition</p>
+                <div class="pricing-amount">
+                    <span class="old-price">Rp 299.000</span>
+                    <div class="price">Rp 149.000</div>
+                    <span class="period">Sekali bayar, selamanya</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><span class="check">✓</span> Lifetime license (bayar 1x)</li>
+                    <li><span class="check">✓</span> Update gratis selamanya</li>
+                    <li><span class="check">✓</span> Akses grup support Telegram</li>
+                    <li><span class="check">✓</span> Video tutorial setup lengkap</li>
+                    <li><span class="check">✓</span> Request fitur priority</li>
+                    <li><span class="check">✓</span> Early access update baru</li>
+                </ul>
+                <a href="#" class="cta-btn cta-btn-large" style="width: 100%; display: block; text-align: center;">
+                    🚀 Amankan Slot Founder Sekarang
+                </a>
+                <div class="urgency">
+                    ⚠️ Sisa 47/100 slot Batch 1
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-card">
+                <h3>🛡️ Garansi 7 Hari Uang Kembali</h3>
+                <p>Sudah ikuti tutorial tapi tetap gagal install? Refund 100%, tanpa drama. Syarat: Kirim screenshot
+                    error + bukti sudah ikuti tutorial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Apakah butuh skill programming?</h4>
+                    <p>Tidak. Anda hanya perlu bisa download file dan ikuti video tutorial.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Laptop saya spek rendah, bisa?</h4>
+                    <p>Bisa! Pakai "Raw Mode" untuk potong video tanpa efek. Super ringan.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Bagaimana dengan AI-nya?</h4>
+                    <p>Qlipper menggunakan Gemini API dari Google. Free tier = 60 request/menit, cukup untuk kebanyakan
+                        user.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Apakah bisa offline?</h4>
+                    <p>Download video & potong video = bisa offline. AI analysis = butuh internet.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Setup butuh berapa lama?</h4>
+                    <p>10-15 menit pertama kali. Install Node.js + FFmpeg (gratis). Setelah itu tinggal double-click.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h4>Bagaimana kalau gagal install?</h4>
+                    <p>Ikuti tutorial kami. Kalau tetap gagal, refund 100% dalam 7 hari.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="pricing" style="padding-top: 40px;">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 24px;">Siap Mulai?</h2>
+            <a href="#pricing" class="cta-btn cta-btn-large">🚀 Dapatkan Qlipper AI — Rp 149.000</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Qlipper AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
