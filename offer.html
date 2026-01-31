@@ -67,6 +67,26 @@
                 position: static;
             }
         }
+
+        .purchase-toast {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            transition: transform 0.35s ease, opacity 0.35s ease;
+        }
+
+        .purchase-toast.hidden {
+            opacity: 0;
+            transform: translateY(16px);
+            pointer-events: none;
+        }
+
+        .slot-chip {
+            background: rgba(245, 158, 11, 0.12);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        .counter-digit {
+            min-width: 36px;
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -99,7 +119,13 @@
 
     <!-- Top Badge -->
     <div class="bg-gold-500 text-black text-center py-2 px-4 text-sm font-bold">
-        🔥 BATCH 1 DIBUKA — Hanya 100 Slot dengan Harga Founder — <a href="#pricing" class="underline">Klaim
+        🔥 BATCH 1 DIBUKA — Hanya 100 Slot Founder —
+        <span class="slot-chip inline-flex items-center gap-2 rounded-full px-3 py-1 mx-2">
+            <span class="text-xs font-semibold">Sisa</span>
+            <span id="slot-remaining-badge" class="text-sm font-black">62</span>
+            <span class="text-xs font-semibold">slot</span>
+        </span>
+        <a href="#pricing" class="underline">Klaim
             Sekarang</a>
     </div>
 
@@ -270,6 +296,21 @@
                     Founder</p>
                 <p class="text-sm text-gray-400 mt-1">Harga naik jadi <span class="line-through">Rp 299.000</span>
                     setelah Batch 1</p>
+                <div class="mt-4 flex flex-col items-center gap-3">
+                    <div class="flex items-center gap-2 text-sm text-gray-300">
+                        <span class="font-semibold text-white">Slot tersisa</span>
+                        <span class="text-xs text-gray-400">/ 100</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="counter-digit bg-black/40 border border-yellow-500/40 rounded-lg px-3 py-2 text-xl font-black text-white text-center"
+                            id="slot-remaining-counter">62</div>
+                        <span class="text-xs text-gray-400">tersisa</span>
+                    </div>
+                    <div class="w-full max-w-xs bg-white/10 rounded-full h-2 overflow-hidden">
+                        <div id="slot-progress" class="h-full bg-gold-500" style="width: 38%;"></div>
+                    </div>
+                    <p class="text-xs text-gray-400">Terjual <span id="slot-sold">38</span> / 100</p>
+                </div>
             </div>
 
             <!-- Pricing Card -->
@@ -337,6 +378,16 @@
         </div>
     </section>
 
+    <!-- Recent Purchases Pop-up -->
+    <div id="purchase-toast"
+        class="purchase-toast hidden fixed bottom-6 left-6 z-50 max-w-xs bg-royal-950 border border-white/10 rounded-2xl p-4 flex items-start gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400 text-lg">🛒</div>
+        <div>
+            <p class="text-sm text-white font-semibold" id="purchase-name">Nama pembeli</p>
+            <p class="text-xs text-gray-400" id="purchase-meta">Baru saja checkout</p>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="py-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -357,6 +408,96 @@
         </a>
     </div>
 
+    <script>
+        // Slot counter (based on real buyer list)
+        const buyerNames = [
+            "Abdul Rozak",
+            "Gus",
+            "Widayanto",
+            "Muhtadi",
+            "Arfand",
+            "Junio Calvin",
+            "Kurniawan",
+            "Maximus Sastrajendra Imanuel",
+            "Arya",
+            "Rizki Kurniawan",
+            "Nor R",
+            "Sunani",
+            "Deli Wafi",
+            "Haris Munandar",
+            "Oki",
+            "John Victor Tondi",
+            "Syahruddin Spdi",
+            "Muhammad Hakam Amnan",
+            "Ray",
+            "Akhmad Nur Prasetya Ginanjar",
+            "Aray",
+            "Driyanto",
+            "Sabryan Macca",
+            "Yudi Sudiyono",
+            "Dhani",
+            "Maula",
+            "Sujatmiko",
+            "Muhamad Ahnaf Lubab",
+            "Andy Siregar",
+            "Randy Lumbantoruan",
+            "Noer Iman Drestha Djoemena",
+            "Wenang",
+            "Ishan Alkafti",
+            "Pak Eko",
+            "Vinsensuryanto",
+            "Randi Adhityas Saputra",
+            "Basuki",
+            "Komang Surya"
+        ];
+
+        const totalSlots = 100;
+        const soldCount = buyerNames.length;
+        const remainingCount = Math.max(totalSlots - soldCount, 0);
+
+        const badgeEl = document.getElementById('slot-remaining-badge');
+        const counterEl = document.getElementById('slot-remaining-counter');
+        const soldEl = document.getElementById('slot-sold');
+        const progressEl = document.getElementById('slot-progress');
+
+        if (badgeEl) badgeEl.textContent = remainingCount;
+        if (counterEl) counterEl.textContent = remainingCount;
+        if (soldEl) soldEl.textContent = soldCount;
+        const soldPercent = Math.min((soldCount / totalSlots) * 100, 100);
+        if (progressEl) progressEl.style.width = `${soldPercent}%`;
+
+        // Recent purchase pop-up rotation
+        const toastEl = document.getElementById('purchase-toast');
+        const nameEl = document.getElementById('purchase-name');
+        const metaEl = document.getElementById('purchase-meta');
+
+        const timeLabels = [
+            "baru saja checkout",
+            "1 menit yang lalu",
+            "2 menit yang lalu",
+            "3 menit yang lalu",
+            "5 menit yang lalu",
+            "7 menit yang lalu",
+            "9 menit yang lalu"
+        ];
+
+        let toastIndex = 0;
+        function showNextToast() {
+            if (!toastEl || !nameEl || !metaEl) return;
+            const buyer = buyerNames[toastIndex % buyerNames.length];
+            const timeLabel = timeLabels[Math.floor(Math.random() * timeLabels.length)];
+            nameEl.textContent = buyer;
+            metaEl.textContent = `✅ ${timeLabel}`;
+            toastEl.classList.remove('hidden');
+            setTimeout(() => toastEl.classList.add('hidden'), 4200);
+            toastIndex += 1;
+        }
+
+        if (toastEl && buyerNames.length > 0) {
+            showNextToast();
+            setInterval(showNextToast, 9500);
+        }
+    </script>
 </body>
 
 </html>
