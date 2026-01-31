@@ -131,7 +131,8 @@
                     <span id="lang-text-alt">ID</span>
                 </button>
                 <a href="https://qlipper.myscalev.com/p/qlippers-ai-batch-1-early-access"
-                    class="gradient-gold text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:opacity-90 transition">
+                    class="gradient-gold text-black font-bold text-sm px-5 py-2.5 rounded-xl hover:opacity-90 transition"
+                    data-i18n="nav.download">
                     Download Early Access
                 </a>
             </div>
@@ -197,13 +198,13 @@
                 <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="gettingStarted.title">Getting Started</h2>
                 
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5 mb-6">
-                    <h3 class="text-xl font-semibold mb-4 text-gold-400">What is Qlipper AI?</h3>
-                    <p class="text-gray-300 mb-4">
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="gettingStarted.whatIs.title">What is Qlipper AI?</h3>
+                    <p class="text-gray-300 mb-4" data-i18n="gettingStarted.whatIs.desc">
                         Qlipper AI is a local, AI-powered video clipping tool that runs entirely on your computer. 
                         No cloud uploads, no monthly subscriptions. Download YouTube videos, analyze them with AI, 
                         and create viral clips automatically.
                     </p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300">
+                    <ul class="list-disc list-inside space-y-2 text-gray-300" data-i18n-html="gettingStarted.whatIs.list">
                         <li><strong>100% Local:</strong> All processing happens on your machine</li>
                         <li><strong>Unlimited:</strong> No per-video or per-minute charges</li>
                         <li><strong>Private:</strong> Your videos never leave your computer</li>
@@ -212,11 +213,11 @@
                 </div>
 
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                    <h3 class="text-xl font-semibold mb-4 text-gold-400">System Requirements</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="gettingStarted.requirements.title">System Requirements</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-semibold mb-2 text-white">Minimum</h4>
-                            <ul class="space-y-1 text-gray-300 text-sm">
+                            <h4 class="font-semibold mb-2 text-white" data-i18n="gettingStarted.requirements.minimum">Minimum</h4>
+                            <ul class="space-y-1 text-gray-300 text-sm" data-i18n-html="gettingStarted.requirements.minimumList">
                                 <li>• macOS 10.15+ or Windows 10+</li>
                                 <li>• 8GB RAM</li>
                                 <li>• 500MB free storage</li>
@@ -224,8 +225,8 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-2 text-white">Recommended</h4>
-                            <ul class="space-y-1 text-gray-300 text-sm">
+                            <h4 class="font-semibold mb-2 text-white" data-i18n="gettingStarted.requirements.recommended">Recommended</h4>
+                            <ul class="space-y-1 text-gray-300 text-sm" data-i18n-html="gettingStarted.requirements.recommendedList">
                                 <li>• 16GB+ RAM</li>
                                 <li>• Apple Silicon or modern CPU</li>
                                 <li>• SSD with 50GB+ free</li>
@@ -263,7 +264,7 @@
                             <div data-image-section="installation-method1-macos" class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                 <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                             </div>
-                            <p class="text-gray-300 mb-2" data-i18n="installation.method1.macosDesc">Double-click <code>Qlipper-AI.command</code> or run:</p>
+                            <p class="text-gray-300 mb-2" data-i18n-html="installation.method1.macosDesc">Double-click <code>Qlipper-AI.command</code> or run:</p>
                             <pre><code>cd /path/to/QLIPPER/app
 ./run-mac.sh</code></pre>
                         </div>
@@ -274,7 +275,7 @@
                             <div data-image-section="installation-method1-windows" class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                 <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                             </div>
-                            <p class="text-gray-300 mb-2" data-i18n="installation.method1.windowsDesc">Double-click <code>run-windows.bat</code></p>
+                            <p class="text-gray-300 mb-2" data-i18n-html="installation.method1.windowsDesc">Double-click <code>run-windows.bat</code></p>
                         </div>
                     </div>
 
@@ -289,8 +290,8 @@
                                 <div data-image-section="installation-step1-nodejs" class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                     <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                                 </div>
-                                <p class="text-gray-300 mb-2" data-i18n="installation.method2.step1Desc">Download and install from <a href="https://nodejs.org" class="text-gold-400 hover:underline" target="_blank">nodejs.org</a> (LTS version)</p>
-                                <p class="text-gray-400 text-sm" data-i18n="installation.method2.step1Mac">macOS users can also use: <code>brew install node</code></p>
+                                <p class="text-gray-300 mb-2" data-i18n-html="installation.method2.step1Desc">Download and install from <a href="https://nodejs.org" class="text-gold-400 hover:underline" target="_blank">nodejs.org</a> (LTS version)</p>
+                                <p class="text-gray-400 text-sm" data-i18n-html="installation.method2.step1Mac">macOS users can also use: <code>brew install node</code></p>
                             </div>
 
                             <div>
@@ -321,43 +322,43 @@ npm run build</code></pre>
                                 </div>
                                 <pre><code>cd ../backend
 npm start</code></pre>
-                                <p class="text-gray-300 mt-2" data-i18n="installation.method2.step3Desc">Then open <code>http://localhost:3001</code> in your browser</p>
+                                <p class="text-gray-300 mt-2" data-i18n-html="installation.method2.step3Desc">Then open <code>http://localhost:3001</code> in your browser</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- What Gets Installed -->
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">What Gets Installed Automatically</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.installed.title">What Gets Installed Automatically</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full text-sm">
                                 <thead>
                                     <tr class="border-b border-white/10">
-                                        <th class="text-left py-2 text-gray-400">Component</th>
-                                        <th class="text-left py-2 text-gray-400">Location</th>
-                                        <th class="text-left py-2 text-gray-400">Purpose</th>
+                                        <th class="text-left py-2 text-gray-400" data-i18n="installation.installed.component">Component</th>
+                                        <th class="text-left py-2 text-gray-400" data-i18n="installation.installed.location">Location</th>
+                                        <th class="text-left py-2 text-gray-400" data-i18n="installation.installed.purpose">Purpose</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-300">
                                     <tr class="border-b border-white/5">
                                         <td class="py-2"><code>yt-dlp</code></td>
                                         <td class="py-2"><code>backend/bin/</code></td>
-                                        <td class="py-2">YouTube downloader</td>
+                                        <td class="py-2" data-i18n="installation.installed.ytdlpPurpose">YouTube downloader</td>
                                     </tr>
                                     <tr class="border-b border-white/5">
                                         <td class="py-2"><code>ffmpeg</code></td>
                                         <td class="py-2"><code>backend/bin/</code></td>
-                                        <td class="py-2">Video processing</td>
+                                        <td class="py-2" data-i18n="installation.installed.ffmpegPurpose">Video processing</td>
                                     </tr>
                                     <tr class="border-b border-white/5">
-                                        <td class="py-2">Puppeteer Chrome</td>
-                                        <td class="py-2">Auto-downloaded</td>
-                                        <td class="py-2">Text overlay rendering</td>
+                                        <td class="py-2" data-i18n="installation.installed.puppeteer">Puppeteer Chrome</td>
+                                        <td class="py-2" data-i18n="installation.installed.autoDownloaded">Auto-downloaded</td>
+                                        <td class="py-2" data-i18n="installation.installed.puppeteerPurpose">Text overlay rendering</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-2">Node modules</td>
+                                        <td class="py-2" data-i18n="installation.installed.nodeModules">Node modules</td>
                                         <td class="py-2"><code>backend/node_modules/</code></td>
-                                        <td class="py-2">Backend dependencies</td>
+                                        <td class="py-2" data-i18n="installation.installed.nodeModulesPurpose">Backend dependencies</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -372,11 +373,11 @@ npm start</code></pre>
 
                 <div class="space-y-6">
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">1. Get an API Key</h3>
-                        <p class="text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step1">1. Get an API Key</h3>
+                        <p class="text-gray-300 mb-4" data-i18n-html="firstTime.step1Desc">
                             You need at least one AI API key. <strong>Gemini is recommended</strong> (free tier available):
                         </p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="firstTime.step1List">
                             <li>Go to <a href="https://ai.google.dev" class="text-gold-400 hover:underline" target="_blank">ai.google.dev</a></li>
                             <li>Click "Get API Key"</li>
                             <li>Create a new key</li>
@@ -385,8 +386,8 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">2. Configure Settings</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step2">2. Configure Settings</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="firstTime.step2List">
                             <li>Open Qlipper AI in your browser (<code>http://localhost:3001</code>)</li>
                             <li>Click the <strong>Settings icon</strong> (⚙️) in the top right</li>
                             <li>Paste your API key in the "Gemini API Key" field</li>
@@ -395,8 +396,8 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">3. Test the Pipeline</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step3">3. Test the Pipeline</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="firstTime.step3List">
                             <li>Copy a YouTube URL</li>
                             <li>Paste it in the search bar</li>
                             <li>Click the sparkles button (✨)</li>
@@ -413,11 +414,11 @@ npm start</code></pre>
 
                 <div class="space-y-6">
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">Quick Start: Unified Pipeline</h3>
-                        <p class="text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.quickStart">Quick Start: Unified Pipeline</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="userGuide.quickStartDesc">
                             The fastest way to create clips from a YouTube video:
                         </p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300">
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="userGuide.quickStartList">
                             <li>Paste a YouTube URL in the main search bar</li>
                             <li>Click the sparkles button (✨) or press Enter</li>
                             <li>Wait for download and transcription</li>
@@ -428,11 +429,11 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">Tool A: YouTube Download</h3>
-                        <p class="text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolA">Tool A: YouTube Download</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="userGuide.toolADesc">
                             Download YouTube videos to your Asset Library:
                         </p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <ul class="list-disc list-inside space-y-2 text-gray-300" data-i18n-html="userGuide.toolAList">
                             <li>Toggle "Save to Asset Library" ON</li>
                             <li>Paste YouTube URL</li>
                             <li>Click Download</li>
@@ -441,11 +442,11 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">Tool B: AI Analysis</h3>
-                        <p class="text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolB">Tool B: AI Analysis</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="userGuide.toolBDesc">
                             Analyze videos with AI to find viral moments:
                         </p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <ul class="list-disc list-inside space-y-2 text-gray-300" data-i18n-html="userGuide.toolBList">
                             <li>Select video source (YouTube URL or Asset Library)</li>
                             <li>Choose AI model (Gemini, GPT-4o, Claude, etc.)</li>
                             <li>Click "Analyze"</li>
@@ -454,11 +455,11 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">Tool C: Clipper</h3>
-                        <p class="text-gray-300 mb-4">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolC">Tool C: Clipper</h3>
+                        <p class="text-gray-300 mb-4" data-i18n="userGuide.toolCDesc">
                             Create clips from analysis results:
                         </p>
-                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                        <ul class="list-disc list-inside space-y-2 text-gray-300" data-i18n-html="userGuide.toolCList">
                             <li>Select video source (YouTube URL or Asset Library)</li>
                             <li>Optionally select a saved analysis</li>
                             <li>Paste or edit clip JSON</li>
@@ -480,20 +481,20 @@ npm start</code></pre>
                         <span class="text-2xl">▼</span>
                     </div>
                     <div class="faq-answer mt-4">
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.error403.symptomsLine">
                             <strong>Symptoms:</strong> YouTube downloads fail with "403 Forbidden" or "HTTP Error 403"
                         </p>
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.error403.causeLine">
                             <strong>Cause:</strong> YouTube is blocking the download request. This is usually temporary.
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold">Solutions:</p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4">
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.error403.solutions">Solutions:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4" data-i18n-html="troubleshooting.error403.solutionList">
                             <li><strong>Update yt-dlp:</strong> Go to Settings → YouTube Downloader → Click "Update yt-dlp"</li>
                             <li><strong>Wait 5-10 minutes</strong> and try again</li>
                             <li><strong>Try a different video</strong> to test if it's video-specific</li>
                             <li><strong>Restart the application</strong></li>
                         </ol>
-                        <p class="text-gray-400 text-sm mt-4">
+                        <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.error403.noteLine">
                             <strong>Note:</strong> Qlipper AI v1.5.1+ includes automatic retry with multiple strategies. 
                             If one method fails, it will automatically try another.
                         </p>
@@ -507,21 +508,21 @@ npm start</code></pre>
                         <span class="text-2xl">▼</span>
                     </div>
                     <div class="faq-answer mt-4">
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorDrm.symptomsLine">
                             <strong>Symptoms:</strong> Error message says "This video is DRM protected" or mentions "nsig" or "signature extraction"
                         </p>
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorDrm.causeLine">
                             <strong>Cause:</strong> This is usually NOT actual DRM. It means yt-dlp needs a JavaScript runtime 
                             (Node.js or Deno) to solve YouTube's protection challenges.
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold">Solutions:</p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4">
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorDrm.solutions">Solutions:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4" data-i18n-html="troubleshooting.errorDrm.solutionList">
                             <li><strong>Update yt-dlp:</strong> Settings → YouTube Downloader → "Update yt-dlp"</li>
                             <li><strong>Ensure Node.js is installed:</strong> Run <code>node --version</code> in terminal</li>
                             <li><strong>Restart the application</strong> after updating</li>
                             <li><strong>Try a different video</strong> to test if yt-dlp works</li>
                         </ol>
-                        <p class="text-gray-400 text-sm mt-4">
+                        <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.errorDrm.noteLine">
                             <strong>Note:</strong> Qlipper AI v1.5.1+ automatically configures yt-dlp to use Node.js, 
                             which should resolve this issue for most users.
                         </p>
@@ -535,13 +536,13 @@ npm start</code></pre>
                         <span class="text-2xl">▼</span>
                     </div>
                     <div class="faq-answer mt-4">
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorNodejs.symptomsLine">
                             <strong>Symptoms:</strong> Error message says "Node.js not found" or "node: command not found"
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold">Solutions:</p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorNodejs.solutions">Solutions:</p>
                         <div class="space-y-4">
                             <div>
-                                <p class="text-white font-semibold mb-2">macOS:</p>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorNodejs.macosTitle">macOS:</p>
                                 <pre><code># Install via Homebrew
 brew install node
 
@@ -549,8 +550,8 @@ brew install node
 # Then restart terminal</code></pre>
                             </div>
                             <div>
-                                <p class="text-white font-semibold mb-2">Windows:</p>
-                                <ol class="list-decimal list-inside space-y-1 text-gray-300">
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorNodejs.windowsTitle">Windows:</p>
+                                <ol class="list-decimal list-inside space-y-1 text-gray-300" data-i18n-html="troubleshooting.errorNodejs.windowsList">
                                     <li>Download from <a href="https://nodejs.org" class="text-gold-400 hover:underline" target="_blank">nodejs.org</a></li>
                                     <li>Run the installer</li>
                                     <li>Restart Command Prompt</li>
@@ -567,14 +568,14 @@ brew install node
                         <span class="text-2xl">▼</span>
                     </div>
                     <div class="faq-answer mt-4">
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorFrontend.symptomsLine">
                             <strong>Symptoms:</strong> Error says "Frontend not built. Run: cd frontend && npm run build"
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold">Solutions:</p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorFrontend.solutions">Solutions:</p>
                         <pre><code>cd /path/to/QLIPPER/app/frontend
 npm install
 npm run build</code></pre>
-                        <p class="text-gray-400 text-sm mt-4">
+                        <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.errorFrontend.noteLine">
                             <strong>Note:</strong> This should happen automatically on first launch. 
                             If it doesn't, run the commands above manually.
                         </p>
@@ -588,14 +589,14 @@ npm run build</code></pre>
                         <span class="text-2xl">▼</span>
                     </div>
                     <div class="faq-answer mt-4">
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorGemini.symptomsLine">
                             <strong>Symptoms:</strong> AI analysis fails with "Must provide a model name" error
                         </p>
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorGemini.causeLine">
                             <strong>Cause:</strong> The Gemini model variant setting is empty or invalid.
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold">Solutions:</p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4">
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorGemini.solutions">Solutions:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4" data-i18n-html="troubleshooting.errorGemini.solutionList">
                             <li>Go to Settings</li>
                             <li>Check "Gemini Model Variant" field</li>
                             <li>If empty, set it to: <code>gemini-1.5-flash-latest</code></li>
@@ -603,7 +604,7 @@ npm run build</code></pre>
                             <li>Click outside to save</li>
                             <li>Try analysis again</li>
                         </ol>
-                        <p class="text-gray-400 text-sm mt-4">
+                        <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.errorGemini.noteLine">
                             <strong>Note:</strong> Qlipper AI v1.5.1+ automatically handles empty model names.
                         </p>
                     </div>
@@ -616,13 +617,13 @@ npm run build</code></pre>
                         <span class="text-2xl">▼</span>
                     </div>
                     <div class="faq-answer mt-4">
-                        <p class="text-gray-300 mb-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorPort.symptomsLine">
                             <strong>Symptoms:</strong> Server fails to start with "EADDRINUSE" or "port already in use"
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold">Solutions:</p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorPort.solutions">Solutions:</p>
                         <div class="space-y-4">
                             <div>
-                                <p class="text-white font-semibold mb-2">macOS/Linux:</p>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorPort.macosTitle">macOS/Linux:</p>
                                 <pre><code># Find process using port 3001
 lsof -i :3001
 
@@ -630,14 +631,14 @@ lsof -i :3001
 kill -9 &lt;PID&gt;</code></pre>
                             </div>
                             <div>
-                                <p class="text-white font-semibold mb-2">Windows:</p>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorPort.windowsTitle">Windows:</p>
                                 <pre><code># Find process using port 3001
 netstat -ano | findstr :3001
 
 # Kill the process (replace PID with actual process ID)
 taskkill /PID &lt;PID&gt; /F</code></pre>
                             </div>
-                            <p class="text-gray-300 mt-4">
+                            <p class="text-gray-300 mt-4" data-i18n="troubleshooting.errorPort.orText">
                                 Or simply close any other Qlipper AI instances that might be running.
                             </p>
                         </div>
@@ -646,17 +647,17 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
 
                 <!-- Other Common Issues -->
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                    <h3 class="text-xl font-semibold mb-4 text-gold-400">Other Common Issues</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="troubleshooting.other.title">Other Common Issues</h3>
                     
                     <div class="space-y-4">
                         <div>
-                            <h4 class="font-semibold text-white mb-2">Permission Denied (macOS)</h4>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.permissionTitle">Permission Denied (macOS)</h4>
                             <pre><code>chmod +x run-mac.sh
 chmod +x Qlipper-AI.command</code></pre>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold text-white mb-2">npm install Fails</h4>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.npmTitle">npm install Fails</h4>
                             <pre><code># Clear npm cache
 npm cache clean --force
 
@@ -666,16 +667,16 @@ npm install</code></pre>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold text-white mb-2">yt-dlp Not Working</h4>
-                            <p class="text-gray-300 mb-2">The preflight check should auto-download yt-dlp. If it fails:</p>
-                            <p class="text-gray-300 mb-2">macOS: <code>brew install yt-dlp</code></p>
-                            <p class="text-gray-300">Windows: Download from <a href="https://github.com/yt-dlp/yt-dlp/releases" class="text-gold-400 hover:underline" target="_blank">GitHub releases</a></p>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.ytdlpTitle">yt-dlp Not Working</h4>
+                            <p class="text-gray-300 mb-2" data-i18n="troubleshooting.other.ytdlpDesc">The preflight check should auto-download yt-dlp. If it fails:</p>
+                            <p class="text-gray-300 mb-2" data-i18n-html="troubleshooting.other.ytdlpMac">macOS: <code>brew install yt-dlp</code></p>
+                            <p class="text-gray-300" data-i18n-html="troubleshooting.other.ytdlpWindows">Windows: Download from <a href="https://github.com/yt-dlp/yt-dlp/releases" class="text-gold-400 hover:underline" target="_blank">GitHub releases</a></p>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold text-white mb-2">FFmpeg Not Found</h4>
-                            <p class="text-gray-300 mb-2">macOS: <code>brew install ffmpeg</code></p>
-                            <p class="text-gray-300">Windows: Download from <a href="https://ffmpeg.org/download.html" class="text-gold-400 hover:underline" target="_blank">ffmpeg.org</a> and add to PATH</p>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.ffmpegTitle">FFmpeg Not Found</h4>
+                            <p class="text-gray-300 mb-2" data-i18n-html="troubleshooting.other.ffmpegMac">macOS: <code>brew install ffmpeg</code></p>
+                            <p class="text-gray-300" data-i18n-html="troubleshooting.other.ffmpegWindows">Windows: Download from <a href="https://ffmpeg.org/download.html" class="text-gold-400 hover:underline" target="_blank">ffmpeg.org</a> and add to PATH</p>
                         </div>
                     </div>
                 </div>
@@ -697,7 +698,8 @@ npm install</code></pre>
             en: {
                 nav: {
                     home: "Home",
-                    pricing: "Pricing"
+                    pricing: "Pricing",
+                    download: "Download Early Access"
                 },
                 header: {
                     title: "Tutorial & FAQ",
@@ -723,6 +725,7 @@ npm install</code></pre>
                     whatIs: {
                         title: "What is Qlipper AI?",
                         desc: "Qlipper AI is a local, AI-powered video clipping tool that runs entirely on your computer. No cloud uploads, no monthly subscriptions. Download YouTube videos, analyze them with AI, and create viral clips automatically.",
+                        list: "<li><strong>100% Local:</strong> All processing happens on your machine</li><li><strong>Unlimited:</strong> No per-video or per-minute charges</li><li><strong>Private:</strong> Your videos never leave your computer</li><li><strong>AI-Powered:</strong> Automatically finds viral moments using Gemini AI</li>",
                         local: "100% Local: All processing happens on your machine",
                         unlimited: "Unlimited: No per-video or per-minute charges",
                         private: "Private: Your videos never leave your computer",
@@ -731,7 +734,9 @@ npm install</code></pre>
                     requirements: {
                         title: "System Requirements",
                         minimum: "Minimum",
-                        recommended: "Recommended"
+                        recommended: "Recommended",
+                        minimumList: "<li>• macOS 10.15+ or Windows 10+</li><li>• 8GB RAM</li><li>• 500MB free storage</li><li>• Internet (for AI analysis)</li>",
+                        recommendedList: "<li>• 16GB+ RAM</li><li>• Apple Silicon or modern CPU</li><li>• SSD with 50GB+ free</li><li>• Stable internet connection</li>"
                     }
                 },
                 installation: {
@@ -740,100 +745,100 @@ npm install</code></pre>
                         title: "Method 1: One-Click Launch (Recommended)",
                         macos: "macOS",
                         windows: "Windows",
-                        macosDesc: "Double-click Qlipper-AI.command or run:",
-                        windowsDesc: "Double-click run-windows.bat"
+                        macosDesc: "Double-click <code>Qlipper-AI.command</code> or run:",
+                        windowsDesc: "Double-click <code>run-windows.bat</code>"
                     },
                     method2: {
                         title: "Method 2: Manual Installation",
                         step1: "Step 1: Install Node.js",
                         step2: "Step 2: Install Dependencies",
                         step3: "Step 3: Start Server",
-                        step1Desc: "Download and install from nodejs.org (LTS version)",
-                        step1Mac: "macOS users can also use: brew install node",
-                        step3Desc: "Then open http://localhost:3001 in your browser"
+                        step1Desc: "Download and install from <a href=\"https://nodejs.org\" class=\"text-gold-400 hover:underline\" target=\"_blank\">nodejs.org</a> (LTS version)",
+                        step1Mac: "macOS users can also use: <code>brew install node</code>",
+                        step3Desc: "Then open <code>http://localhost:3001</code> in your browser"
                     },
                     installed: {
-                        title: "What Gets Installed Automatically"
+                        title: "What Gets Installed Automatically",
+                        component: "Component",
+                        location: "Location",
+                        purpose: "Purpose",
+                        ytdlpPurpose: "YouTube downloader",
+                        ffmpegPurpose: "Video processing",
+                        puppeteer: "Puppeteer Chrome",
+                        autoDownloaded: "Auto-downloaded",
+                        puppeteerPurpose: "Text overlay rendering",
+                        nodeModules: "Node modules",
+                        nodeModulesPurpose: "Backend dependencies"
                     }
                 },
                 firstTime: {
                     title: "First-Time Setup",
                     step1: "1. Get an API Key",
                     step2: "2. Configure Settings",
-                    step3: "3. Test the Pipeline"
+                    step3: "3. Test the Pipeline",
+                    step1Desc: "You need at least one AI API key. <strong>Gemini is recommended</strong> (free tier available):",
+                    step1List: "<li>Go to <a href=\"https://ai.google.dev\" class=\"text-gold-400 hover:underline\" target=\"_blank\">ai.google.dev</a></li><li>Click \"Get API Key\"</li><li>Create a new key</li><li>Copy the key</li>",
+                    step2List: "<li>Open Qlipper AI in your browser (<code>http://localhost:3001</code>)</li><li>Click the <strong>Settings icon</strong> (⚙️) in the top right</li><li>Paste your API key in the \"Gemini API Key\" field</li><li>Click outside the modal to save</li>",
+                    step3List: "<li>Copy a YouTube URL</li><li>Paste it in the search bar</li><li>Click the sparkles button (✨)</li><li>Configure settings and click \"Get AI Clips\"</li><li>Wait for processing to complete</li>"
                 },
                 userGuide: {
                     title: "User Guide",
                     quickStart: "Quick Start: Unified Pipeline",
                     toolA: "Tool A: YouTube Download",
                     toolB: "Tool B: AI Analysis",
-                    toolC: "Tool C: Clipper"
+                    toolC: "Tool C: Clipper",
+                    quickStartDesc: "The fastest way to create clips from a YouTube video:",
+                    quickStartList: "<li>Paste a YouTube URL in the main search bar</li><li>Click the sparkles button (✨) or press Enter</li><li>Wait for download and transcription</li><li>Select AI model and configure clip settings</li><li>Click \"Get AI Clips\"</li><li>Review and download your clips</li>",
+                    toolADesc: "Download YouTube videos to your Asset Library:",
+                    toolAList: "<li>Toggle \"Save to Asset Library\" ON</li><li>Paste YouTube URL</li><li>Click Download</li><li>Video will be saved and auto-transcribed</li>",
+                    toolBDesc: "Analyze videos with AI to find viral moments:",
+                    toolBList: "<li>Select video source (YouTube URL or Asset Library)</li><li>Choose AI model (Gemini, GPT-4o, Claude, etc.)</li><li>Click \"Analyze\"</li><li>Analysis results are saved automatically</li>",
+                    toolCDesc: "Create clips from analysis results:",
+                    toolCList: "<li>Select video source (YouTube URL or Asset Library)</li><li>Optionally select a saved analysis</li><li>Paste or edit clip JSON</li><li>Configure style settings</li><li>Click \"Process Clips\"</li>"
                 },
                 troubleshooting: {
                     title: "Troubleshooting",
                     error403: {
                         title: "403 Forbidden Error",
-                        symptoms: "Symptoms:",
-                        symptomsText: "YouTube downloads fail with \"403 Forbidden\" or \"HTTP Error 403\"",
-                        cause: "Cause:",
-                        causeText: "YouTube is blocking the download request. This is usually temporary.",
+                        symptomsLine: "<strong>Symptoms:</strong> YouTube downloads fail with \"403 Forbidden\" or \"HTTP Error 403\"",
+                        causeLine: "<strong>Cause:</strong> YouTube is blocking the download request. This is usually temporary.",
                         solutions: "Solutions:",
-                        solution1: "Update yt-dlp: Go to Settings → YouTube Downloader → Click \"Update yt-dlp\"",
-                        solution2: "Wait 5-10 minutes and try again",
-                        solution3: "Try a different video to test if it's video-specific",
-                        solution4: "Restart the application",
-                        note: "Qlipper AI v1.5.1+ includes automatic retry with multiple strategies. If one method fails, it will automatically try another."
+                        solutionList: "<li><strong>Update yt-dlp:</strong> Go to Settings → YouTube Downloader → Click \"Update yt-dlp\"</li><li><strong>Wait 5-10 minutes</strong> and try again</li><li><strong>Try a different video</strong> to test if it's video-specific</li><li><strong>Restart the application</strong></li>",
+                        noteLine: "<strong>Note:</strong> Qlipper AI v1.5.1+ includes automatic retry with multiple strategies. If one method fails, it will automatically try another."
                     },
                     errorDrm: {
                         title: "DRM Protected / JavaScript Runtime Error",
-                        symptoms: "Symptoms:",
-                        symptomsText: "Error message says \"This video is DRM protected\" or mentions \"nsig\" or \"signature extraction\"",
-                        cause: "Cause:",
-                        causeText: "This is usually NOT actual DRM. It means yt-dlp needs a JavaScript runtime (Node.js or Deno) to solve YouTube's protection challenges.",
+                        symptomsLine: "<strong>Symptoms:</strong> Error message says \"This video is DRM protected\" or mentions \"nsig\" or \"signature extraction\"",
+                        causeLine: "<strong>Cause:</strong> This is usually NOT actual DRM. It means yt-dlp needs a JavaScript runtime (Node.js or Deno) to solve YouTube's protection challenges.",
                         solutions: "Solutions:",
-                        solution1: "Update yt-dlp: Settings → YouTube Downloader → \"Update yt-dlp\"",
-                        solution2: "Ensure Node.js is installed: Run node --version in terminal",
-                        solution3: "Restart the application after updating",
-                        solution4: "Try a different video to test if yt-dlp works",
-                        note: "Qlipper AI v1.5.1+ automatically configures yt-dlp to use Node.js, which should resolve this issue for most users."
+                        solutionList: "<li><strong>Update yt-dlp:</strong> Settings → YouTube Downloader → \"Update yt-dlp\"</li><li><strong>Ensure Node.js is installed:</strong> Run <code>node --version</code> in terminal</li><li><strong>Restart the application</strong> after updating</li><li><strong>Try a different video</strong> to test if yt-dlp works</li>",
+                        noteLine: "<strong>Note:</strong> Qlipper AI v1.5.1+ automatically configures yt-dlp to use Node.js, which should resolve this issue for most users."
                     },
                     errorNodejs: {
                         title: "Node.js Not Found",
-                        symptoms: "Symptoms:",
-                        symptomsText: "Error message says \"Node.js not found\" or \"node: command not found\"",
+                        symptomsLine: "<strong>Symptoms:</strong> Error message says \"Node.js not found\" or \"node: command not found\"",
                         solutions: "Solutions:",
                         macosTitle: "macOS:",
                         windowsTitle: "Windows:",
-                        windowsStep1: "Download from nodejs.org",
-                        windowsStep2: "Run the installer",
-                        windowsStep3: "Restart Command Prompt"
+                        windowsList: "<li>Download from <a href=\"https://nodejs.org\" class=\"text-gold-400 hover:underline\" target=\"_blank\">nodejs.org</a></li><li>Run the installer</li><li>Restart Command Prompt</li>"
                     },
                     errorFrontend: {
                         title: "Frontend Not Built",
-                        symptoms: "Symptoms:",
-                        symptomsText: "Error says \"Frontend not built. Run: cd frontend && npm run build\"",
+                        symptomsLine: "<strong>Symptoms:</strong> Error says \"Frontend not built. Run: cd frontend && npm run build\"",
                         solutions: "Solutions:",
-                        note: "This should happen automatically on first launch. If it doesn't, run the commands above manually."
+                        noteLine: "<strong>Note:</strong> This should happen automatically on first launch. If it doesn't, run the commands above manually."
                     },
                     errorGemini: {
                         title: "Gemini Model Error: \"Must provide a model name\"",
-                        symptoms: "Symptoms:",
-                        symptomsText: "AI analysis fails with \"Must provide a model name\" error",
-                        cause: "Cause:",
-                        causeText: "The Gemini model variant setting is empty or invalid.",
+                        symptomsLine: "<strong>Symptoms:</strong> AI analysis fails with \"Must provide a model name\" error",
+                        causeLine: "<strong>Cause:</strong> The Gemini model variant setting is empty or invalid.",
                         solutions: "Solutions:",
-                        solution1: "Go to Settings",
-                        solution2: "Check \"Gemini Model Variant\" field",
-                        solution3: "If empty, set it to: gemini-1.5-flash-latest",
-                        solution4: "Or clear the field to use default",
-                        solution5: "Click outside to save",
-                        solution6: "Try analysis again",
-                        note: "Qlipper AI v1.5.1+ automatically handles empty model names."
+                        solutionList: "<li>Go to Settings</li><li>Check \"Gemini Model Variant\" field</li><li>If empty, set it to: <code>gemini-1.5-flash-latest</code></li><li>Or clear the field to use default</li><li>Click outside to save</li><li>Try analysis again</li>",
+                        noteLine: "<strong>Note:</strong> Qlipper AI v1.5.1+ automatically handles empty model names."
                     },
                     errorPort: {
                         title: "Port 3001 Already in Use",
-                        symptoms: "Symptoms:",
-                        symptomsText: "Server fails to start with \"EADDRINUSE\" or \"port already in use\"",
+                        symptomsLine: "<strong>Symptoms:</strong> Server fails to start with \"EADDRINUSE\" or \"port already in use\"",
                         solutions: "Solutions:",
                         macosTitle: "macOS/Linux:",
                         windowsTitle: "Windows:",
@@ -844,7 +849,12 @@ npm install</code></pre>
                         permissionTitle: "Permission Denied (macOS)",
                         npmTitle: "npm install Fails",
                         ytdlpTitle: "yt-dlp Not Working",
-                        ffmpegTitle: "FFmpeg Not Found"
+                        ytdlpDesc: "The preflight check should auto-download yt-dlp. If it fails:",
+                        ytdlpMac: "macOS: <code>brew install yt-dlp</code>",
+                        ytdlpWindows: "Windows: Download from <a href=\"https://github.com/yt-dlp/yt-dlp/releases\" class=\"text-gold-400 hover:underline\" target=\"_blank\">GitHub releases</a>",
+                        ffmpegTitle: "FFmpeg Not Found",
+                        ffmpegMac: "macOS: <code>brew install ffmpeg</code>",
+                        ffmpegWindows: "Windows: Download from <a href=\"https://ffmpeg.org/download.html\" class=\"text-gold-400 hover:underline\" target=\"_blank\">ffmpeg.org</a> and add to PATH"
                     }
                 },
                 footer: {
@@ -855,7 +865,8 @@ npm install</code></pre>
             id: {
                 nav: {
                     home: "Beranda",
-                    pricing: "Harga"
+                    pricing: "Harga",
+                    download: "Unduh Early Access"
                 },
                 header: {
                     title: "Tutorial & FAQ",
@@ -881,6 +892,7 @@ npm install</code></pre>
                     whatIs: {
                         title: "Apa itu Qlipper AI?",
                         desc: "Qlipper AI adalah alat pemotongan video berbasis AI yang berjalan sepenuhnya di komputer Anda. Tanpa upload cloud, tanpa langganan bulanan. Unduh video YouTube, analisis dengan AI, dan buat klip viral secara otomatis.",
+                        list: "<li><strong>100% Lokal:</strong> Semua pemrosesan terjadi di mesin Anda</li><li><strong>Tanpa Batas:</strong> Tidak ada biaya per video atau per menit</li><li><strong>Privat:</strong> Video Anda tidak pernah meninggalkan komputer Anda</li><li><strong>Ditenagai AI:</strong> Secara otomatis menemukan momen viral menggunakan Gemini AI</li>",
                         local: "100% Lokal: Semua pemrosesan terjadi di mesin Anda",
                         unlimited: "Tanpa Batas: Tidak ada biaya per video atau per menit",
                         private: "Privat: Video Anda tidak pernah meninggalkan komputer Anda",
@@ -889,7 +901,9 @@ npm install</code></pre>
                     requirements: {
                         title: "Persyaratan Sistem",
                         minimum: "Minimum",
-                        recommended: "Direkomendasikan"
+                        recommended: "Direkomendasikan",
+                        minimumList: "<li>• macOS 10.15+ atau Windows 10+</li><li>• 8GB RAM</li><li>• 500MB penyimpanan kosong</li><li>• Internet (untuk analisis AI)</li>",
+                        recommendedList: "<li>• 16GB+ RAM</li><li>• Apple Silicon atau CPU modern</li><li>• SSD dengan 50GB+ ruang kosong</li><li>• Koneksi internet stabil</li>"
                     }
                 },
                 installation: {
@@ -898,100 +912,100 @@ npm install</code></pre>
                         title: "Metode 1: Peluncuran Satu Klik (Direkomendasikan)",
                         macos: "macOS",
                         windows: "Windows",
-                        macosDesc: "Double-click Qlipper-AI.command atau jalankan:",
-                        windowsDesc: "Double-click run-windows.bat"
+                        macosDesc: "Double-click <code>Qlipper-AI.command</code> atau jalankan:",
+                        windowsDesc: "Double-click <code>run-windows.bat</code>"
                     },
                     method2: {
                         title: "Metode 2: Instalasi Manual",
                         step1: "Langkah 1: Instal Node.js",
                         step2: "Langkah 2: Instal Dependencies",
                         step3: "Langkah 3: Mulai Server",
-                        step1Desc: "Download dan instal dari nodejs.org (versi LTS)",
-                        step1Mac: "Pengguna macOS juga bisa menggunakan: brew install node",
-                        step3Desc: "Kemudian buka http://localhost:3001 di browser Anda"
+                        step1Desc: "Download dan instal dari <a href=\"https://nodejs.org\" class=\"text-gold-400 hover:underline\" target=\"_blank\">nodejs.org</a> (versi LTS)",
+                        step1Mac: "Pengguna macOS juga bisa menggunakan: <code>brew install node</code>",
+                        step3Desc: "Kemudian buka <code>http://localhost:3001</code> di browser Anda"
                     },
                     installed: {
-                        title: "Yang Terpasang Secara Otomatis"
+                        title: "Yang Terpasang Secara Otomatis",
+                        component: "Komponen",
+                        location: "Lokasi",
+                        purpose: "Kegunaan",
+                        ytdlpPurpose: "Pengunduh YouTube",
+                        ffmpegPurpose: "Pemrosesan video",
+                        puppeteer: "Puppeteer Chrome",
+                        autoDownloaded: "Diunduh otomatis",
+                        puppeteerPurpose: "Rendering overlay teks",
+                        nodeModules: "Node modules",
+                        nodeModulesPurpose: "Dependensi backend"
                     }
                 },
                 firstTime: {
                     title: "Setup Pertama Kali",
                     step1: "1. Dapatkan API Key",
                     step2: "2. Konfigurasi Pengaturan",
-                    step3: "3. Uji Pipeline"
+                    step3: "3. Uji Pipeline",
+                    step1Desc: "Anda membutuhkan setidaknya satu API key AI. <strong>Gemini direkomendasikan</strong> (tersedia tier gratis):",
+                    step1List: "<li>Buka <a href=\"https://ai.google.dev\" class=\"text-gold-400 hover:underline\" target=\"_blank\">ai.google.dev</a></li><li>Klik \"Get API Key\"</li><li>Buat key baru</li><li>Salin key</li>",
+                    step2List: "<li>Buka Qlipper AI di browser Anda (<code>http://localhost:3001</code>)</li><li>Klik <strong>ikon Settings</strong> (⚙️) di kanan atas</li><li>Tempel API key Anda di field \"Gemini API Key\"</li><li>Klik di luar modal untuk menyimpan</li>",
+                    step3List: "<li>Salin URL YouTube</li><li>Tempel di kolom pencarian</li><li>Klik tombol sparkles (✨)</li><li>Konfigurasi pengaturan dan klik \"Get AI Clips\"</li><li>Tunggu proses selesai</li>"
                 },
                 userGuide: {
                     title: "Panduan Pengguna",
                     quickStart: "Mulai Cepat: Pipeline Terpadu",
                     toolA: "Tool A: Unduh YouTube",
                     toolB: "Tool B: Analisis AI",
-                    toolC: "Tool C: Clipper"
+                    toolC: "Tool C: Clipper",
+                    quickStartDesc: "Cara tercepat membuat klip dari video YouTube:",
+                    quickStartList: "<li>Tempel URL YouTube di kolom pencarian utama</li><li>Klik tombol sparkles (✨) atau tekan Enter</li><li>Tunggu unduh dan transkripsi</li><li>Pilih model AI dan atur pengaturan klip</li><li>Klik \"Get AI Clips\"</li><li>Tinjau dan unduh klip Anda</li>",
+                    toolADesc: "Unduh video YouTube ke Asset Library Anda:",
+                    toolAList: "<li>Aktifkan \"Save to Asset Library\"</li><li>Tempel URL YouTube</li><li>Klik Download</li><li>Video akan disimpan dan ditranskripsi otomatis</li>",
+                    toolBDesc: "Analisis video dengan AI untuk menemukan momen viral:",
+                    toolBList: "<li>Pilih sumber video (URL YouTube atau Asset Library)</li><li>Pilih model AI (Gemini, GPT-4o, Claude, dll.)</li><li>Klik \"Analyze\"</li><li>Hasil analisis tersimpan otomatis</li>",
+                    toolCDesc: "Buat klip dari hasil analisis:",
+                    toolCList: "<li>Pilih sumber video (URL YouTube atau Asset Library)</li><li>Opsional pilih analisis yang tersimpan</li><li>Tempel atau edit JSON klip</li><li>Konfigurasi pengaturan gaya</li><li>Klik \"Process Clips\"</li>"
                 },
                 troubleshooting: {
                     title: "Pemecahan Masalah",
                     error403: {
                         title: "Error 403 Forbidden",
-                        symptoms: "Gejala:",
-                        symptomsText: "Unduhan YouTube gagal dengan \"403 Forbidden\" atau \"HTTP Error 403\"",
-                        cause: "Penyebab:",
-                        causeText: "YouTube memblokir permintaan unduhan. Ini biasanya bersifat sementara.",
+                        symptomsLine: "<strong>Gejala:</strong> Unduhan YouTube gagal dengan \"403 Forbidden\" atau \"HTTP Error 403\"",
+                        causeLine: "<strong>Penyebab:</strong> YouTube memblokir permintaan unduhan. Ini biasanya bersifat sementara.",
                         solutions: "Solusi:",
-                        solution1: "Update yt-dlp: Pergi ke Settings → YouTube Downloader → Klik \"Update yt-dlp\"",
-                        solution2: "Tunggu 5-10 menit dan coba lagi",
-                        solution3: "Coba video lain untuk menguji apakah spesifik video",
-                        solution4: "Restart aplikasi",
-                        note: "Qlipper AI v1.5.1+ menyertakan retry otomatis dengan beberapa strategi. Jika satu metode gagal, akan otomatis mencoba yang lain."
+                        solutionList: "<li><strong>Update yt-dlp:</strong> Pergi ke Settings → YouTube Downloader → Klik \"Update yt-dlp\"</li><li><strong>Tunggu 5-10 menit</strong> dan coba lagi</li><li><strong>Coba video lain</strong> untuk menguji apakah spesifik video</li><li><strong>Restart aplikasi</strong></li>",
+                        noteLine: "<strong>Catatan:</strong> Qlipper AI v1.5.1+ menyertakan retry otomatis dengan beberapa strategi. Jika satu metode gagal, akan otomatis mencoba yang lain."
                     },
                     errorDrm: {
                         title: "Error DRM Protected / JavaScript Runtime",
-                        symptoms: "Gejala:",
-                        symptomsText: "Pesan error mengatakan \"This video is DRM protected\" atau menyebutkan \"nsig\" atau \"signature extraction\"",
-                        cause: "Penyebab:",
-                        causeText: "Ini biasanya BUKAN DRM yang sebenarnya. Ini berarti yt-dlp membutuhkan JavaScript runtime (Node.js atau Deno) untuk menyelesaikan tantangan perlindungan YouTube.",
+                        symptomsLine: "<strong>Gejala:</strong> Pesan error mengatakan \"This video is DRM protected\" atau menyebutkan \"nsig\" atau \"signature extraction\"",
+                        causeLine: "<strong>Penyebab:</strong> Ini biasanya BUKAN DRM yang sebenarnya. Ini berarti yt-dlp membutuhkan JavaScript runtime (Node.js atau Deno) untuk menyelesaikan tantangan perlindungan YouTube.",
                         solutions: "Solusi:",
-                        solution1: "Update yt-dlp: Settings → YouTube Downloader → \"Update yt-dlp\"",
-                        solution2: "Pastikan Node.js terinstal: Jalankan node --version di terminal",
-                        solution3: "Restart aplikasi setelah update",
-                        solution4: "Coba video lain untuk menguji apakah yt-dlp bekerja",
-                        note: "Qlipper AI v1.5.1+ secara otomatis mengonfigurasi yt-dlp untuk menggunakan Node.js, yang seharusnya menyelesaikan masalah ini untuk sebagian besar pengguna."
+                        solutionList: "<li><strong>Update yt-dlp:</strong> Settings → YouTube Downloader → \"Update yt-dlp\"</li><li><strong>Pastikan Node.js terinstal:</strong> Jalankan <code>node --version</code> di terminal</li><li><strong>Restart aplikasi</strong> setelah update</li><li><strong>Coba video lain</strong> untuk menguji apakah yt-dlp bekerja</li>",
+                        noteLine: "<strong>Catatan:</strong> Qlipper AI v1.5.1+ secara otomatis mengonfigurasi yt-dlp untuk menggunakan Node.js, yang seharusnya menyelesaikan masalah ini untuk sebagian besar pengguna."
                     },
                     errorNodejs: {
                         title: "Node.js Tidak Ditemukan",
-                        symptoms: "Gejala:",
-                        symptomsText: "Pesan error mengatakan \"Node.js not found\" atau \"node: command not found\"",
+                        symptomsLine: "<strong>Gejala:</strong> Pesan error mengatakan \"Node.js not found\" atau \"node: command not found\"",
                         solutions: "Solusi:",
                         macosTitle: "macOS:",
                         windowsTitle: "Windows:",
-                        windowsStep1: "Download dari nodejs.org",
-                        windowsStep2: "Jalankan installer",
-                        windowsStep3: "Restart Command Prompt"
+                        windowsList: "<li>Download dari <a href=\"https://nodejs.org\" class=\"text-gold-400 hover:underline\" target=\"_blank\">nodejs.org</a></li><li>Jalankan installer</li><li>Restart Command Prompt</li>"
                     },
                     errorFrontend: {
                         title: "Frontend Tidak Dibangun",
-                        symptoms: "Gejala:",
-                        symptomsText: "Error mengatakan \"Frontend not built. Run: cd frontend && npm run build\"",
+                        symptomsLine: "<strong>Gejala:</strong> Error mengatakan \"Frontend not built. Run: cd frontend && npm run build\"",
                         solutions: "Solusi:",
-                        note: "Ini seharusnya terjadi secara otomatis pada peluncuran pertama. Jika tidak, jalankan perintah di atas secara manual."
+                        noteLine: "<strong>Catatan:</strong> Ini seharusnya terjadi secara otomatis pada peluncuran pertama. Jika tidak, jalankan perintah di atas secara manual."
                     },
                     errorGemini: {
                         title: "Error Model Gemini: \"Harus menyediakan nama model\"",
-                        symptoms: "Gejala:",
-                        symptomsText: "Analisis AI gagal dengan error \"Must provide a model name\"",
-                        cause: "Penyebab:",
-                        causeText: "Pengaturan varian model Gemini kosong atau tidak valid.",
+                        symptomsLine: "<strong>Gejala:</strong> Analisis AI gagal dengan error \"Must provide a model name\"",
+                        causeLine: "<strong>Penyebab:</strong> Pengaturan varian model Gemini kosong atau tidak valid.",
                         solutions: "Solusi:",
-                        solution1: "Pergi ke Settings",
-                        solution2: "Periksa field \"Gemini Model Variant\"",
-                        solution3: "Jika kosong, setel ke: gemini-1.5-flash-latest",
-                        solution4: "Atau kosongkan field untuk menggunakan default",
-                        solution5: "Klik di luar untuk menyimpan",
-                        solution6: "Coba analisis lagi",
-                        note: "Qlipper AI v1.5.1+ secara otomatis menangani nama model kosong."
+                        solutionList: "<li>Pergi ke Settings</li><li>Periksa field \"Gemini Model Variant\"</li><li>Jika kosong, setel ke: <code>gemini-1.5-flash-latest</code></li><li>Atau kosongkan field untuk menggunakan default</li><li>Klik di luar untuk menyimpan</li><li>Coba analisis lagi</li>",
+                        noteLine: "<strong>Catatan:</strong> Qlipper AI v1.5.1+ secara otomatis menangani nama model kosong."
                     },
                     errorPort: {
                         title: "Port 3001 Sudah Digunakan",
-                        symptoms: "Gejala:",
-                        symptomsText: "Server gagal dimulai dengan \"EADDRINUSE\" atau \"port already in use\"",
+                        symptomsLine: "<strong>Gejala:</strong> Server gagal dimulai dengan \"EADDRINUSE\" atau \"port already in use\"",
                         solutions: "Solusi:",
                         macosTitle: "macOS/Linux:",
                         windowsTitle: "Windows:",
@@ -1002,25 +1016,12 @@ npm install</code></pre>
                         permissionTitle: "Permission Denied (macOS)",
                         npmTitle: "npm install Gagal",
                         ytdlpTitle: "yt-dlp Tidak Berfungsi",
-                        ffmpegTitle: "FFmpeg Tidak Ditemukan"
-                    }
-                    errorDrm: {
-                        title: "Error DRM Protected / JavaScript Runtime"
-                    },
-                    errorNodejs: {
-                        title: "Node.js Tidak Ditemukan"
-                    },
-                    errorFrontend: {
-                        title: "Frontend Tidak Dibangun"
-                    },
-                    errorGemini: {
-                        title: "Error Model Gemini: \"Harus menyediakan nama model\""
-                    },
-                    errorPort: {
-                        title: "Port 3001 Sudah Digunakan"
-                    },
-                    other: {
-                        title: "Masalah Umum Lainnya"
+                        ytdlpDesc: "Preflight check seharusnya mengunduh yt-dlp otomatis. Jika gagal:",
+                        ytdlpMac: "macOS: <code>brew install yt-dlp</code>",
+                        ytdlpWindows: "Windows: Download dari <a href=\"https://github.com/yt-dlp/yt-dlp/releases\" class=\"text-gold-400 hover:underline\" target=\"_blank\">GitHub releases</a>",
+                        ffmpegTitle: "FFmpeg Tidak Ditemukan",
+                        ffmpegMac: "macOS: <code>brew install ffmpeg</code>",
+                        ffmpegWindows: "Windows: Download dari <a href=\"https://ffmpeg.org/download.html\" class=\"text-gold-400 hover:underline\" target=\"_blank\">ffmpeg.org</a> dan tambahkan ke PATH"
                     }
                 },
                 footer: {
@@ -1148,6 +1149,24 @@ npm install</code></pre>
                 langTextAlt.textContent = 'EN';
             }
             
+            // Update all elements with data-i18n-html attributes
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                const keys = key.split('.');
+                let value = translations[lang];
+                for (const k of keys) {
+                    if (value && value[k] !== undefined) {
+                        value = value[k];
+                    } else {
+                        value = undefined;
+                        break;
+                    }
+                }
+                if (value !== undefined) {
+                    el.innerHTML = value;
+                }
+            });
+
             // Update all elements with data-i18n attributes
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
