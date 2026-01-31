@@ -237,40 +237,68 @@
             </section>
 
             <!-- Installation -->
+            <!-- 
+                IMAGE PLACEMENT GUIDE:
+                To add images, place them in assets/ folder with these naming patterns:
+                - installation-method1-macos.png (for macOS one-click method)
+                - installation-method1-windows.png (for Windows one-click method)
+                - installation-step1-nodejs.png (for Step 1: Install Node.js)
+                - installation-step2-dependencies.png (for Step 2: Install Dependencies)
+                - installation-step3-server.png (for Step 3: Start Server)
+                
+                Images will be automatically detected and placed in the correct sections.
+                Or manually call: placeImage('section-id', 'assets/image.png')
+            -->
             <section id="installation" class="mb-16">
                 <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="installation.title">Installation</h2>
 
                 <div class="space-y-6">
                     <!-- Method 1: One-Click -->
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">Method 1: One-Click Launch (Recommended)</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.method1.title">Method 1: One-Click Launch (Recommended)</h3>
                         
                         <div class="mb-4">
-                            <h4 class="font-semibold mb-2 text-white">macOS</h4>
-                            <p class="text-gray-300 mb-2">Double-click <code>Qlipper-AI.command</code> or run:</p>
+                            <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method1.macos">macOS</h4>
+                            <!-- Image container for installation-method1-macos.png -->
+                            <div data-image-section="installation-method1-macos" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
+                            </div>
+                            <p class="text-gray-300 mb-2" data-i18n="installation.method1.macosDesc">Double-click <code>Qlipper-AI.command</code> or run:</p>
                             <pre><code>cd /path/to/QLIPPER/app
 ./run-mac.sh</code></pre>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold mb-2 text-white">Windows</h4>
-                            <p class="text-gray-300 mb-2">Double-click <code>run-windows.bat</code></p>
+                            <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method1.windows">Windows</h4>
+                            <!-- Image container for installation-method1-windows.png -->
+                            <div data-image-section="installation-method1-windows" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
+                            </div>
+                            <p class="text-gray-300 mb-2" data-i18n="installation.method1.windowsDesc">Double-click <code>run-windows.bat</code></p>
                         </div>
                     </div>
 
                     <!-- Method 2: Manual -->
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400">Method 2: Manual Installation</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.method2.title">Method 2: Manual Installation</h3>
                         
                         <div class="space-y-4">
                             <div>
-                                <h4 class="font-semibold mb-2 text-white">Step 1: Install Node.js</h4>
-                                <p class="text-gray-300 mb-2">Download and install from <a href="https://nodejs.org" class="text-gold-400 hover:underline" target="_blank">nodejs.org</a> (LTS version)</p>
-                                <p class="text-gray-400 text-sm">macOS users can also use: <code>brew install node</code></p>
+                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step1">Step 1: Install Node.js</h4>
+                                <!-- Image container for installation-step1-nodejs.png -->
+                                <div data-image-section="installation-step1-nodejs" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                    <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
+                                </div>
+                                <p class="text-gray-300 mb-2" data-i18n="installation.method2.step1Desc">Download and install from <a href="https://nodejs.org" class="text-gold-400 hover:underline" target="_blank">nodejs.org</a> (LTS version)</p>
+                                <p class="text-gray-400 text-sm" data-i18n="installation.method2.step1Mac">macOS users can also use: <code>brew install node</code></p>
                             </div>
 
                             <div>
-                                <h4 class="font-semibold mb-2 text-white">Step 2: Install Dependencies</h4>
+                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step2">Step 2: Install Dependencies</h4>
+                                <!-- Image container for installation-step2-dependencies.png -->
+                                <div data-image-section="installation-step2-dependencies" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                    <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
+                                </div>
                                 <pre><code>cd /path/to/QLIPPER/app
 
 # Install backend dependencies
@@ -286,10 +314,14 @@ npm run build</code></pre>
                             </div>
 
                             <div>
-                                <h4 class="font-semibold mb-2 text-white">Step 3: Start Server</h4>
+                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step3">Step 3: Start Server</h4>
+                                <!-- Image container for installation-step3-server.png -->
+                                <div data-image-section="installation-step3-server" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                    <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
+                                </div>
                                 <pre><code>cd ../backend
 npm start</code></pre>
-                                <p class="text-gray-300 mt-2">Then open <code>http://localhost:3001</code> in your browser</p>
+                                <p class="text-gray-300 mt-2" data-i18n="installation.method2.step3Desc">Then open <code>http://localhost:3001</code> in your browser</p>
                             </div>
                         </div>
                     </div>
@@ -707,13 +739,18 @@ npm install</code></pre>
                     method1: {
                         title: "Method 1: One-Click Launch (Recommended)",
                         macos: "macOS",
-                        windows: "Windows"
+                        windows: "Windows",
+                        macosDesc: "Double-click Qlipper-AI.command or run:",
+                        windowsDesc: "Double-click run-windows.bat"
                     },
                     method2: {
                         title: "Method 2: Manual Installation",
                         step1: "Step 1: Install Node.js",
                         step2: "Step 2: Install Dependencies",
-                        step3: "Step 3: Start Server"
+                        step3: "Step 3: Start Server",
+                        step1Desc: "Download and install from nodejs.org (LTS version)",
+                        step1Mac: "macOS users can also use: brew install node",
+                        step3Desc: "Then open http://localhost:3001 in your browser"
                     },
                     installed: {
                         title: "What Gets Installed Automatically"
@@ -737,26 +774,77 @@ npm install</code></pre>
                     error403: {
                         title: "403 Forbidden Error",
                         symptoms: "Symptoms:",
+                        symptomsText: "YouTube downloads fail with \"403 Forbidden\" or \"HTTP Error 403\"",
                         cause: "Cause:",
-                        solutions: "Solutions:"
+                        causeText: "YouTube is blocking the download request. This is usually temporary.",
+                        solutions: "Solutions:",
+                        solution1: "Update yt-dlp: Go to Settings → YouTube Downloader → Click \"Update yt-dlp\"",
+                        solution2: "Wait 5-10 minutes and try again",
+                        solution3: "Try a different video to test if it's video-specific",
+                        solution4: "Restart the application",
+                        note: "Qlipper AI v1.5.1+ includes automatic retry with multiple strategies. If one method fails, it will automatically try another."
                     },
                     errorDrm: {
-                        title: "DRM Protected / JavaScript Runtime Error"
+                        title: "DRM Protected / JavaScript Runtime Error",
+                        symptoms: "Symptoms:",
+                        symptomsText: "Error message says \"This video is DRM protected\" or mentions \"nsig\" or \"signature extraction\"",
+                        cause: "Cause:",
+                        causeText: "This is usually NOT actual DRM. It means yt-dlp needs a JavaScript runtime (Node.js or Deno) to solve YouTube's protection challenges.",
+                        solutions: "Solutions:",
+                        solution1: "Update yt-dlp: Settings → YouTube Downloader → \"Update yt-dlp\"",
+                        solution2: "Ensure Node.js is installed: Run node --version in terminal",
+                        solution3: "Restart the application after updating",
+                        solution4: "Try a different video to test if yt-dlp works",
+                        note: "Qlipper AI v1.5.1+ automatically configures yt-dlp to use Node.js, which should resolve this issue for most users."
                     },
                     errorNodejs: {
-                        title: "Node.js Not Found"
+                        title: "Node.js Not Found",
+                        symptoms: "Symptoms:",
+                        symptomsText: "Error message says \"Node.js not found\" or \"node: command not found\"",
+                        solutions: "Solutions:",
+                        macosTitle: "macOS:",
+                        windowsTitle: "Windows:",
+                        windowsStep1: "Download from nodejs.org",
+                        windowsStep2: "Run the installer",
+                        windowsStep3: "Restart Command Prompt"
                     },
                     errorFrontend: {
-                        title: "Frontend Not Built"
+                        title: "Frontend Not Built",
+                        symptoms: "Symptoms:",
+                        symptomsText: "Error says \"Frontend not built. Run: cd frontend && npm run build\"",
+                        solutions: "Solutions:",
+                        note: "This should happen automatically on first launch. If it doesn't, run the commands above manually."
                     },
                     errorGemini: {
-                        title: "Gemini Model Error: \"Must provide a model name\""
+                        title: "Gemini Model Error: \"Must provide a model name\"",
+                        symptoms: "Symptoms:",
+                        symptomsText: "AI analysis fails with \"Must provide a model name\" error",
+                        cause: "Cause:",
+                        causeText: "The Gemini model variant setting is empty or invalid.",
+                        solutions: "Solutions:",
+                        solution1: "Go to Settings",
+                        solution2: "Check \"Gemini Model Variant\" field",
+                        solution3: "If empty, set it to: gemini-1.5-flash-latest",
+                        solution4: "Or clear the field to use default",
+                        solution5: "Click outside to save",
+                        solution6: "Try analysis again",
+                        note: "Qlipper AI v1.5.1+ automatically handles empty model names."
                     },
                     errorPort: {
-                        title: "Port 3001 Already in Use"
+                        title: "Port 3001 Already in Use",
+                        symptoms: "Symptoms:",
+                        symptomsText: "Server fails to start with \"EADDRINUSE\" or \"port already in use\"",
+                        solutions: "Solutions:",
+                        macosTitle: "macOS/Linux:",
+                        windowsTitle: "Windows:",
+                        orText: "Or simply close any other Qlipper AI instances that might be running."
                     },
                     other: {
-                        title: "Other Common Issues"
+                        title: "Other Common Issues",
+                        permissionTitle: "Permission Denied (macOS)",
+                        npmTitle: "npm install Fails",
+                        ytdlpTitle: "yt-dlp Not Working",
+                        ffmpegTitle: "FFmpeg Not Found"
                     }
                 },
                 footer: {
@@ -809,13 +897,18 @@ npm install</code></pre>
                     method1: {
                         title: "Metode 1: Peluncuran Satu Klik (Direkomendasikan)",
                         macos: "macOS",
-                        windows: "Windows"
+                        windows: "Windows",
+                        macosDesc: "Double-click Qlipper-AI.command atau jalankan:",
+                        windowsDesc: "Double-click run-windows.bat"
                     },
                     method2: {
                         title: "Metode 2: Instalasi Manual",
                         step1: "Langkah 1: Instal Node.js",
                         step2: "Langkah 2: Instal Dependencies",
-                        step3: "Langkah 3: Mulai Server"
+                        step3: "Langkah 3: Mulai Server",
+                        step1Desc: "Download dan instal dari nodejs.org (versi LTS)",
+                        step1Mac: "Pengguna macOS juga bisa menggunakan: brew install node",
+                        step3Desc: "Kemudian buka http://localhost:3001 di browser Anda"
                     },
                     installed: {
                         title: "Yang Terpasang Secara Otomatis"
@@ -839,9 +932,78 @@ npm install</code></pre>
                     error403: {
                         title: "Error 403 Forbidden",
                         symptoms: "Gejala:",
+                        symptomsText: "Unduhan YouTube gagal dengan \"403 Forbidden\" atau \"HTTP Error 403\"",
                         cause: "Penyebab:",
-                        solutions: "Solusi:"
+                        causeText: "YouTube memblokir permintaan unduhan. Ini biasanya bersifat sementara.",
+                        solutions: "Solusi:",
+                        solution1: "Update yt-dlp: Pergi ke Settings → YouTube Downloader → Klik \"Update yt-dlp\"",
+                        solution2: "Tunggu 5-10 menit dan coba lagi",
+                        solution3: "Coba video lain untuk menguji apakah spesifik video",
+                        solution4: "Restart aplikasi",
+                        note: "Qlipper AI v1.5.1+ menyertakan retry otomatis dengan beberapa strategi. Jika satu metode gagal, akan otomatis mencoba yang lain."
                     },
+                    errorDrm: {
+                        title: "Error DRM Protected / JavaScript Runtime",
+                        symptoms: "Gejala:",
+                        symptomsText: "Pesan error mengatakan \"This video is DRM protected\" atau menyebutkan \"nsig\" atau \"signature extraction\"",
+                        cause: "Penyebab:",
+                        causeText: "Ini biasanya BUKAN DRM yang sebenarnya. Ini berarti yt-dlp membutuhkan JavaScript runtime (Node.js atau Deno) untuk menyelesaikan tantangan perlindungan YouTube.",
+                        solutions: "Solusi:",
+                        solution1: "Update yt-dlp: Settings → YouTube Downloader → \"Update yt-dlp\"",
+                        solution2: "Pastikan Node.js terinstal: Jalankan node --version di terminal",
+                        solution3: "Restart aplikasi setelah update",
+                        solution4: "Coba video lain untuk menguji apakah yt-dlp bekerja",
+                        note: "Qlipper AI v1.5.1+ secara otomatis mengonfigurasi yt-dlp untuk menggunakan Node.js, yang seharusnya menyelesaikan masalah ini untuk sebagian besar pengguna."
+                    },
+                    errorNodejs: {
+                        title: "Node.js Tidak Ditemukan",
+                        symptoms: "Gejala:",
+                        symptomsText: "Pesan error mengatakan \"Node.js not found\" atau \"node: command not found\"",
+                        solutions: "Solusi:",
+                        macosTitle: "macOS:",
+                        windowsTitle: "Windows:",
+                        windowsStep1: "Download dari nodejs.org",
+                        windowsStep2: "Jalankan installer",
+                        windowsStep3: "Restart Command Prompt"
+                    },
+                    errorFrontend: {
+                        title: "Frontend Tidak Dibangun",
+                        symptoms: "Gejala:",
+                        symptomsText: "Error mengatakan \"Frontend not built. Run: cd frontend && npm run build\"",
+                        solutions: "Solusi:",
+                        note: "Ini seharusnya terjadi secara otomatis pada peluncuran pertama. Jika tidak, jalankan perintah di atas secara manual."
+                    },
+                    errorGemini: {
+                        title: "Error Model Gemini: \"Harus menyediakan nama model\"",
+                        symptoms: "Gejala:",
+                        symptomsText: "Analisis AI gagal dengan error \"Must provide a model name\"",
+                        cause: "Penyebab:",
+                        causeText: "Pengaturan varian model Gemini kosong atau tidak valid.",
+                        solutions: "Solusi:",
+                        solution1: "Pergi ke Settings",
+                        solution2: "Periksa field \"Gemini Model Variant\"",
+                        solution3: "Jika kosong, setel ke: gemini-1.5-flash-latest",
+                        solution4: "Atau kosongkan field untuk menggunakan default",
+                        solution5: "Klik di luar untuk menyimpan",
+                        solution6: "Coba analisis lagi",
+                        note: "Qlipper AI v1.5.1+ secara otomatis menangani nama model kosong."
+                    },
+                    errorPort: {
+                        title: "Port 3001 Sudah Digunakan",
+                        symptoms: "Gejala:",
+                        symptomsText: "Server gagal dimulai dengan \"EADDRINUSE\" atau \"port already in use\"",
+                        solutions: "Solusi:",
+                        macosTitle: "macOS/Linux:",
+                        windowsTitle: "Windows:",
+                        orText: "Atau cukup tutup instance Qlipper AI lain yang mungkin sedang berjalan."
+                    },
+                    other: {
+                        title: "Masalah Umum Lainnya",
+                        permissionTitle: "Permission Denied (macOS)",
+                        npmTitle: "npm install Gagal",
+                        ytdlpTitle: "yt-dlp Tidak Berfungsi",
+                        ffmpegTitle: "FFmpeg Tidak Ditemukan"
+                    }
                     errorDrm: {
                         title: "Error DRM Protected / JavaScript Runtime"
                     },
@@ -865,6 +1027,83 @@ npm install</code></pre>
                     help: "Perlu bantuan lebih lanjut? Lihat dokumentasi lengkap di folder",
                     back: "← Kembali ke Beranda"
                 }
+            }
+        };
+
+        // Image Auto-Detection System
+        // Automatically places images in sections based on filename patterns
+        // Naming convention: installation-method1-macos.png, installation-step1-nodejs.png, etc.
+        function initializeImages() {
+            // List of known image patterns and their target sections
+            const imagePatterns = [
+                { pattern: /installation-method1-macos/i, section: 'installation-method1-macos' },
+                { pattern: /installation-method1-windows/i, section: 'installation-method1-windows' },
+                { pattern: /installation-step1-nodejs/i, section: 'installation-step1-nodejs' },
+                { pattern: /installation-step1/i, section: 'installation-step1-nodejs' },
+                { pattern: /installation-step2-dependencies/i, section: 'installation-step2-dependencies' },
+                { pattern: /installation-step2/i, section: 'installation-step2-dependencies' },
+                { pattern: /installation-step3-server/i, section: 'installation-step3-server' },
+                { pattern: /installation-step3/i, section: 'installation-step3-server' },
+                { pattern: /firsttime-step1/i, section: 'firsttime-step1' },
+                { pattern: /firsttime-step2/i, section: 'firsttime-step2' },
+                { pattern: /firsttime-step3/i, section: 'firsttime-step3' },
+                { pattern: /userguide-quickstart/i, section: 'userguide-quickstart' },
+                { pattern: /userguide-toola/i, section: 'userguide-toola' },
+                { pattern: /userguide-toolb/i, section: 'userguide-toolb' },
+                { pattern: /userguide-toolc/i, section: 'userguide-toolc' }
+            ];
+
+            // Find all images in assets folder
+            const assetsPath = 'assets/';
+            const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
+            
+            // Check for images that match patterns
+            imagePatterns.forEach(({ pattern, section }) => {
+                imageExtensions.forEach(ext => {
+                    const possiblePaths = [
+                        `${assetsPath}${section}${ext}`,
+                        `${assetsPath}tutorial-${section}${ext}`,
+                        `${assetsPath}${section.replace(/-/g, '_')}${ext}`
+                    ];
+                    
+                    possiblePaths.forEach(imgPath => {
+                        const container = document.querySelector(`[data-image-section="${section}"]`);
+                        if (container) {
+                            const img = container.querySelector('img');
+                            if (img && !img.src) {
+                                // Test if image exists
+                                const testImg = new Image();
+                                testImg.onload = () => {
+                                    img.src = imgPath;
+                                    img.alt = section.replace(/-/g, ' ');
+                                    img.classList.remove('hidden');
+                                    container.classList.remove('hidden');
+                                };
+                                testImg.onerror = () => {
+                                    // Image doesn't exist, keep hidden
+                                };
+                                testImg.src = imgPath;
+                            }
+                        }
+                    });
+                });
+            });
+        }
+
+        // Manual image placement function
+        // Call this to manually add an image: placeImage('installation-method1-macos', 'assets/my-image.png')
+        window.placeImage = function(sectionId, imagePath) {
+            const container = document.querySelector(`[data-image-section="${sectionId}"]`);
+            if (container) {
+                const img = container.querySelector('img');
+                if (img) {
+                    img.src = imagePath;
+                    img.alt = sectionId.replace(/-/g, ' ');
+                    img.classList.remove('hidden');
+                    container.classList.remove('hidden');
+                }
+            } else {
+                console.warn(`Image section "${sectionId}" not found`);
             }
         };
 
@@ -960,6 +1199,9 @@ npm install</code></pre>
 
         // Initialize language on page load
         updateLanguage(currentLang);
+        
+        // Initialize images on page load
+        initializeImages();
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
