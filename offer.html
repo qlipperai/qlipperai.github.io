@@ -37,14 +37,18 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #050505;
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
         }
 
         .gradient-gold {
             background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-
-        .gradient-red {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
         }
 
         .text-gradient {
@@ -60,12 +64,6 @@
             left: 0;
             right: 0;
             z-index: 100;
-        }
-
-        @media (min-width: 768px) {
-            .sticky-cta {
-                position: static;
-            }
         }
 
         .purchase-toast {
@@ -84,8 +82,13 @@
             border: 1px solid rgba(245, 158, 11, 0.4);
         }
 
-        .counter-digit {
-            min-width: 36px;
+        .glow {
+            box-shadow: 0 0 80px rgba(245, 158, 11, 0.1);
+        }
+
+        .tag-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 
@@ -115,395 +118,312 @@
     <!-- End Meta Pixel Code -->
 </head>
 
-<body class="bg-royal-1000 text-gray-100 antialiased">
+<body class="bg-royal-1000 text-gray-100 antialiased grid-bg">
 
     <!-- Top Badge -->
-    <div class="bg-gold-500 text-black text-center py-2 px-4 text-sm font-bold">
-        🔥 BATCH 1 DIBUKA — Hanya 100 Slot Founder —
-        <span class="slot-chip inline-flex items-center gap-2 rounded-full px-3 py-1 mx-2">
-            <span class="text-xs font-semibold">Sisa</span>
-            <span id="slot-remaining-badge" class="text-sm font-black">62</span>
-            <span class="text-xs font-semibold">slot</span>
-        </span>
-        <a href="#pricing" class="underline">Klaim
-            Sekarang</a>
+    <div class="bg-gold-500 text-black text-center py-2 px-4 text-xs md:text-sm font-bold sticky top-0 z-[60]">
+        🔥 BATCH 1 DIBUKA — Sisa <span id="slot-remaining-badge" class="font-black">62</span>/100 Slot Founder —
+        <a href="#pricing" class="underline ml-1">Klaim Sekarang</a>
     </div>
 
-    <!-- The Hook Section -->
-    <section class="py-20 px-6 bg-gradient-to-b from-red-950/30 to-transparent">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-red-400 font-bold text-sm tracking-widest mb-6">⚠️ PERINGATAN KERAS</p>
-            <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
-                BERHENTI <span class="text-red-500">"SEWA"</span><br>ALAT KREATIF ANDA.
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-10">
-                Kenapa bayar <span class="text-red-400 font-bold">Rp 4.8 Juta/tahun</span> untuk OpusClip atau
-                Vizard<br>
-                ketika Anda bisa <span class="text-gold-400 font-bold">sekali bayar, akses selamanya (Rp 199k)</span>?
-            </p>
-            <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
-                class="gradient-gold text-black font-black px-10 py-5 rounded-2xl text-lg inline-block hover:opacity-90 transition">
-                🚀 Dapatkan Akses Awal (Rp 199k)
-            </a>
-            <div class="mt-6 flex flex-col items-center gap-2">
-                <p class="text-sm text-gray-400 flex items-center gap-2">
-                    <span class="text-lg">🇮🇩</span> Karya Anak Bangsa — Bangga Buatan Indonesia
-                </p>
-                <p class="text-xs text-gold-400/80 font-medium">
-                    ⚡ 38+ founder sudah bergabung dalam 7 hari terakhir
+    <!-- Main Hero Hook -->
+    <section class="pt-16 pb-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 text-red-500 font-black text-xs tracking-[0.3em] mb-4">
+                    <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                    PERINGATAN KERAS
+                </div>
+                <h1 class="text-4xl md:text-7xl font-black leading-tight mb-8">
+                    BERHENTI <span class="text-red-500">"SEWA"</span><br>ALAT KREATIF ANDA.
+                </h1>
+                <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                    Kenapa bayar <span class="text-red-400 font-bold">Rp 4.8 Juta/tahun</span> untuk OpusClip atau
+                    Vizard
+                    ketika Anda bisa <span
+                        class="text-gold-400 font-black underline decoration-2 underline-offset-4">sekali bayar, akses
+                        selamanya (Rp 199k)</span>?
                 </p>
             </div>
+
+            <!-- The Grid Hero Section -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-gold-500 font-bold text-xs tracking-widest uppercase block mb-3">Creator
+                            Income Stack</span>
+                        <h2 class="text-4xl md:text-5xl font-black text-white leading-tight">
+                            Bangun Mesin <span class="text-gold-400">Clipping</span> Milik Sendiri.
+                        </h2>
+                    </div>
+
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Qlipper bukan sekadar editor. Ini sistem kerja untuk mengubah video panjang jadi shorts siap
+                        publish, cepat, lokal, dan tanpa langganan cloud.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="tag-pill px-4 py-2 rounded-full text-sm font-medium text-gray-300 flex items-center gap-2">
+                            ✓ Sekali bayar
+                        </span>
+                        <span
+                            class="tag-pill px-4 py-2 rounded-full text-sm font-medium text-gray-300 flex items-center gap-2">
+                            ✓ Proses lokal
+                        </span>
+                        <span
+                            class="tag-pill px-4 py-2 rounded-full text-sm font-medium text-gray-300 flex items-center gap-2">
+                            ✓ Gak perlu bayar API
+                        </span>
+                        <span
+                            class="tag-pill px-4 py-2 rounded-full text-sm font-medium text-gray-300 flex items-center gap-2">
+                            🇮🇩 Untuk Creator Indonesia
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
+                            class="gradient-gold text-black font-black px-8 py-5 rounded-2xl text-lg hover:opacity-90 transition shadow-2xl shadow-gold-500/20 text-center">
+                            Klaim Founder's Access
+                        </a>
+                        <a href="#compare"
+                            class="border border-white/10 bg-white/5 text-white font-bold px-8 py-5 rounded-2xl text-lg hover:bg-white/10 transition text-center">
+                            Lihat Bukti vs Cloud
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div
+                        class="absolute inset-0 bg-gold-500/10 blur-3xl rounded-full group-hover:bg-gold-500/20 transition duration-700">
+                    </div>
+                    <div
+                        class="relative bg-white/5 border border-white/10 rounded-[2.5rem] p-4 md:p-6 backdrop-blur-sm glow">
+                        <img src="assets/dashboard-preview.png" alt="Qlipper Dashboard"
+                            class="rounded-[1.5rem] w-full border border-white/5">
+
+                        <!-- Mini Stats Grid -->
+                        <div class="grid grid-cols-3 gap-4 mt-6">
+                            <div class="bg-black/40 border border-white/5 rounded-2xl p-4 text-center">
+                                <div class="text-gold-400 font-black text-xl mb-1">15m</div>
+                                <div class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Setup Awal
+                                </div>
+                            </div>
+                            <div class="bg-black/40 border border-white/5 rounded-2xl p-4 text-center">
+                                <div class="text-gold-400 font-black text-xl mb-1">1x</div>
+                                <div class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Bayar</div>
+                            </div>
+                            <div class="bg-black/40 border border-white/5 rounded-2xl p-4 text-center">
+                                <div class="text-gold-400 font-black text-xl mb-1">100%</div>
+                                <div class="text-[10px] uppercase tracking-wider text-gray-500 font-bold">Kontrol Data
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-
-
-    <!-- Product Explanation -->
-    <section class="py-16 px-6 text-center">
+    <!-- The Comparison Table -->
+    <section id="compare" class="py-24 px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl md:text-4xl font-black text-center mb-12">Matematika Tidak Pernah Bohong 📊</h3>
+            <div class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="border-b border-white/10 bg-white/5">
+                                <th
+                                    class="text-left py-6 px-6 text-gray-400 font-bold text-sm uppercase tracking-wider">
+                                    Fitur</th>
+                                <th class="py-6 px-6 text-red-400 font-black">Cloud (Opus/Vizard)</th>
+                                <th class="py-6 px-6 text-gold-400 font-black">Qlipper AI</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr>
+                                <td class="py-6 px-6 font-bold">Model Harga</td>
+                                <td class="py-6 px-6 text-red-400 text-center font-medium">Subscription ($19/bln)</td>
+                                <td class="py-6 px-6 text-gold-400 text-center font-black">Rp 199k FOREVER</td>
+                            </tr>
+                            <tr>
+                                <td class="py-6 px-6 font-bold">Biaya Tahunan</td>
+                                <td
+                                    class="py-6 px-6 text-red-400 text-center font-medium line-through decoration-red-500/50">
+                                    ± Rp 3.6 Juta</td>
+                                <td class="py-6 px-6 text-gold-400 text-center font-black">Rp 199.000</td>
+                            </tr>
+                            <tr>
+                                <td class="py-6 px-6 font-bold">Kapasitas Video</td>
+                                <td class="py-6 px-6 text-red-400 text-center font-medium">Terbatas (100 min/bln)</td>
+                                <td class="py-6 px-6 text-gold-400 text-center font-black">UNLIMITED ♾️</td>
+                            </tr>
+                            <tr>
+                                <td class="py-6 px-6 font-bold">Privasi Data</td>
+                                <td class="py-6 px-6 text-red-400 text-center font-medium">Cloud (Rentan)</td>
+                                <td class="py-6 px-6 text-gold-400 text-center font-black">100% LOKAL 🔒</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Block (The Scarcity Section) -->
+    <section id="pricing" class="py-24 px-6">
+        <div class="max-w-xl mx-auto">
             <div
-                class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-500/30 px-4 py-2 rounded-full text-sm text-gold-400 font-medium mb-6">
-                <span class="w-2 h-2 bg-gold-500 rounded-full animate-pulse"></span>
-                Status: Early Access
-            </div>
-            <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6 text-gradient">
-                Tools Clipping AI<br>Pribadi Anda.
-            </h2>
-            <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-                Ubah podcast panjang jadi shorts viral secara lokal.<br>
-                <span class="text-white font-medium">Tanpa upload cloud. Tanpa biaya bulanan.</span><br>
-                Ditenagai GPU Anda.
-            </p>
-            <div class="relative mt-12">
-                <div class="absolute inset-0 bg-gradient-to-r from-gold-500/20 to-transparent blur-3xl"></div>
-                <img src="assets/dashboard-preview.png" alt="Qlipper Dashboard"
-                    class="relative rounded-2xl border border-white/10 glow shadow-2xl mx-auto">
-            </div>
-        </div>
-    </section>
+                class="bg-gold-500/10 border-2 border-gold-500 rounded-[2.5rem] p-8 md:p-12 text-center relative overflow-hidden backdrop-blur-md">
+                <div
+                    class="absolute top-6 right-6 bg-gold-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">
+                    Limited Batch 1
+                </div>
 
-    <!-- The Solution -->
-    <section class="py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <div
-                class="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-full text-sm text-green-400 font-medium mb-6">
-                ✅ SOLUSINYA
-            </div>
-            <h2 class="text-4xl md:text-5xl font-black mb-6 text-gradient">
-                Sekali bayar,<br>akses selamanya.
-            </h2>
-            <p class="text-xl text-gray-400">
-                Own the Machine. Save the Money.<br>
-                Tanpa langganan. Tanpa batas. Tanpa ketergantungan cloud.
-            </p>
-        </div>
-    </section>
+                <h3 class="text-2xl font-black text-white mb-2">Founder's Edition</h3>
+                <p class="text-gray-400 mb-8 font-medium">Miliki mesinnya selamanya.</p>
 
-    <!-- The Logic Table -->
-    <section id="compare" class="py-16 px-6 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-bold text-center mb-10">Matematika Tidak Pernah Bohong 📊</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse">
-                    <thead>
-                        <tr class="border-b border-white/10">
-                            <th class="text-left py-4 px-4 text-gray-400 font-medium"></th>
-                            <th class="py-4 px-4 text-red-400 font-bold">❌ OpusClip</th>
-                            <th class="py-4 px-4 text-red-400 font-bold">❌ Vizard</th>
-                            <th class="py-4 px-4 text-green-400 font-bold">✅ Qlipper AI</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-white/5">
-                            <td class="py-4 px-4 font-medium">Model Harga</td>
-                            <td class="py-4 px-4 text-red-400">$19/month</td>
-                            <td class="py-4 px-4 text-red-400">$16/month</td>
-                            <td class="py-4 px-4 text-green-400 font-bold">Rp 199k FOREVER</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="py-4 px-4 font-medium">Biaya Tahunan</td>
-                            <td class="py-4 px-4 text-red-400 line-through opacity-70">Rp 3.6 Juta</td>
-                            <td class="py-4 px-4 text-red-400 line-through opacity-70">Rp 3 Juta</td>
-                            <td class="py-4 px-4 text-green-400 font-bold">Rp 199.000</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="py-4 px-4 font-medium">Menit Video</td>
-                            <td class="py-4 px-4 text-red-400">100 min/month</td>
-                            <td class="py-4 px-4 text-red-400">120 min/month</td>
-                            <td class="py-4 px-4 text-green-400 font-bold">UNLIMITED ♾️</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="py-4 px-4 font-medium">Data Privacy</td>
-                            <td class="py-4 px-4 text-red-400">☁️ Cloud</td>
-                            <td class="py-4 px-4 text-red-400">☁️ Cloud</td>
-                            <td class="py-4 px-4 text-green-400 font-bold">🔒 100% Local</td>
-                        </tr>
-                        <tr>
-                            <td class="py-4 px-4 font-medium">Stop Bayar?</td>
-                            <td class="py-4 px-4 text-red-400">Hilang Akses</td>
-                            <td class="py-4 px-4 text-red-400">Hilang Akses</td>
-                            <td class="py-4 px-4 text-green-400 font-bold">Milik Anda Selamanya</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
+                <div class="mb-10">
+                    <span class="text-gray-500 line-through text-2xl font-bold decoration-2">Rp 299.000</span>
+                    <div class="text-6xl md:text-7xl font-black text-gold-400 mt-2">Rp 199.000</div>
+                    <p class="text-sm text-gray-500 font-bold mt-4 uppercase tracking-[0.2em]">One-Time Payment</p>
+                </div>
 
-    <!-- What You Get -->
-    <section class="py-16 px-6">
-        <div class="max-w-3xl mx-auto">
-            <h3 class="text-2xl font-bold text-center mb-10">Apa yang Founder Dapatkan 🎁</h3>
-            <div class="space-y-4">
-                <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-2xl p-5">
-                    <span class="text-2xl">💎</span>
-                    <div>
-                        <p class="font-bold">Lisensi Seumur Hidup</p>
-                        <p class="text-sm text-gray-400">Bayar sekali. Miliki selamanya. Tanpa perpanjangan.</p>
+                <div class="space-y-4 mb-10">
+                    <div class="flex items-center justify-between text-xs font-bold px-2">
+                        <span class="text-gray-400">STATUS: TERBATAS</span>
+                        <span class="text-gold-400"><span id="slot-remaining-counter">62</span> Slot Tersisa</span>
+                    </div>
+                    <div class="w-full h-3 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                        <div id="slot-progress"
+                            class="h-full gradient-gold w-[38%] transition-all duration-1000 shadow-[0_0_20px_rgba(245,158,11,0.5)]">
+                        </div>
                     </div>
                 </div>
-                <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-2xl p-5">
-                    <span class="text-2xl">🔄</span>
-                    <div>
-                        <p class="font-bold">Update Gratis Selamanya</p>
-                        <p class="text-sm text-gray-400">Setiap fitur baru. Setiap perbaikan. Milik Anda.</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-2xl p-5">
-                    <span class="text-2xl">💬</span>
-                    <div>
-                        <p class="font-bold">1-on-1 Priority Support</p>
-                        <p class="text-sm text-gray-400">Akses langsung ke developer. Prioritas penanganan.</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-2xl p-5">
-                    <span class="text-2xl">🎬</span>
-                    <div>
-                        <p class="font-bold">Video Tutorial Setup</p>
-                        <p class="text-sm text-gray-400">Panduan langkah demi langkah. Jalan dalam 15 menit.</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4 bg-white/[0.03] border border-white/5 rounded-2xl p-5">
-                    <span class="text-2xl">⭐</span>
-                    <div>
-                        <p class="font-bold">Prioritas Request Fitur</p>
-                        <p class="text-sm text-gray-400">Saran Anda akan dibuat lebih dulu.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- The Scarcity Block -->
-    <section id="pricing" class="py-20 px-6">
-        <div class="max-w-lg mx-auto">
-            <!-- Warning Banner -->
-            <div class="bg-yellow-500/10 border-2 border-yellow-500/50 rounded-2xl p-6 mb-8 text-center">
-                <p class="text-yellow-400 font-bold text-lg mb-2">⚠️ STATUS BATCH 1: DIBUKA</p>
-                <p class="text-sm text-gray-300">Hanya <span class="font-bold text-white">100 slot</span> dengan Harga
-                    Founder</p>
-                <p class="text-sm text-gray-400 mt-1">Harga naik jadi <span class="line-through">Rp 299.000</span>
-                    setelah Batch 1</p>
-                <div class="mt-4 flex flex-col items-center gap-3">
-                    <div class="flex items-center gap-2 text-sm text-gray-300">
-                        <span class="font-semibold text-white">Slot tersisa</span>
-                        <span class="text-xs text-gray-400">/ 100</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="counter-digit bg-black/40 border border-yellow-500/40 rounded-lg px-3 py-2 text-xl font-black text-white text-center"
-                            id="slot-remaining-counter">62</div>
-                        <span class="text-xs text-gray-400">tersisa</span>
-                    </div>
-                    <div class="w-full max-w-xs bg-white/10 rounded-full h-2 overflow-hidden">
-                        <div id="slot-progress" class="h-full bg-gold-500" style="width: 38%;"></div>
-                    </div>
-                    <p class="text-xs text-gray-400">Terjual <span id="slot-sold">38</span> / 100</p>
-                </div>
-            </div>
-
-            <!-- Pricing Card -->
-            <div
-                class="bg-gradient-to-b from-gold-500/10 to-transparent border-2 border-gold-500 rounded-3xl p-8 text-center relative overflow-hidden">
-                <div class="absolute top-4 right-4 bg-gold-500 text-black text-xs font-black px-3 py-1 rounded-full">
-                    BATCH 1
-                </div>
-                <h3 class="text-2xl font-bold mb-2">Qlipper AI</h3>
-                <p class="text-gray-400 mb-6">Founder's Edition</p>
-                <div class="mb-6">
-                    <span class="text-2xl text-gray-500 line-through">Rp 299.000</span>
-                    <div class="text-5xl font-black text-gold-400">Rp 199.000</div>
-                    <p class="text-sm text-gray-400 mt-2">Sekali bayar. Akses selamanya.</p>
-                </div>
                 <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
-                    class="gradient-gold text-black font-black px-8 py-4 rounded-2xl text-lg block w-full hover:opacity-90 transition">
-                    🚀 Dapatkan Akses Awal Sekarang
+                    class="gradient-gold text-black font-black px-10 py-6 rounded-2xl text-xl block w-full hover:opacity-90 transition shadow-2xl shadow-gold-500/40">
+                    Amankan Akses Founder Sekarang
                 </a>
 
+                <p class="mt-6 text-xs text-gray-500 font-medium">
+                    🛡️ Secure Checkout • Akses Instan • Lifetime Update
+                </p>
             </div>
         </div>
     </section>
 
-
-
-    <!-- FAQ -->
-    <section class="py-16 px-6">
+    <!-- Simple FAQ -->
+    <section class="py-24 px-6 border-t border-white/5">
         <div class="max-w-3xl mx-auto">
-            <h3 class="text-2xl font-bold text-center mb-10">Pertanyaan Cepat</h3>
-            <div class="space-y-6">
-                <div class="border-b border-white/5 pb-6">
-                    <h4 class="font-bold text-gold-400 mb-2">Butuh skill coding?</h4>
-                    <p class="text-gray-400">Tidak. Cukup download file dan ikuti video tutorial. 10-15 menit.</p>
+            <h3 class="text-3xl font-black text-center mb-16">Q&A Singkat</h3>
+            <div class="grid gap-8">
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <h4 class="font-black text-gold-400 mb-2">Butuh skill coding?</h4>
+                    <p class="text-gray-400 leading-relaxed">Sama sekali tidak. Ada video tutorial langkah demi langkah.
+                        15 menit langsung bisa render video pertama.</p>
                 </div>
-                <div class="border-b border-white/5 pb-6">
-                    <h4 class="font-bold text-gold-400 mb-2">Laptop saya spek kentang, bisa jalan?</h4>
-                    <p class="text-gray-400">Bisa! Gunakan "Raw Mode" untuk potongan instan tanpa pemrosesan berat.</p>
-                </div>
-                <div class="border-b border-white/5 pb-6">
-                    <h4 class="font-bold text-gold-400 mb-2">Kalau butuh bantuan gimana?</h4>
-                    <p class="text-gray-400">Founder dapat 1-on-1 priority support. Jalur langsung ke developer.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-gold-400 mb-2">Apakah ini langganan?</h4>
-                    <p class="text-gray-400">Bukan. Sekali bayar. Akses selamanya.</p>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+                    <h4 class="font-black text-gold-400 mb-2">Apakah ada biaya bulanan lagi?</h4>
+                    <p class="text-gray-400 leading-relaxed">Tidak ada. Anda bayar sekali untuk softwarenya, dan proses
+                        AI dilakukan di laptop Anda sendiri.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Custom Solution / Enterprise -->
-    <section class="py-12 px-6 border-t border-white/5 bg-black/30">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-xl font-bold mb-4">🏢 Butuh Solusi Custom?</h3>
-            <p class="text-gray-400 mb-6">Butuh fitur spesifik, white-label, atau lisensi agensi (bulk)?</p>
-            <a href="https://instagram.com/qlipper.ai" target="_blank"
-                class="inline-flex items-center gap-2 text-gold-400 border border-gold-500/30 bg-gold-500/10 px-6 py-3 rounded-xl hover:bg-gold-500/20 transition">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-                Diskusi di Instagram
+    <!-- Sticky Bottom CTA (Enabled for all widths) -->
+    <div class="sticky-cta bg-royal-1000/80 backdrop-blur-xl border-t border-white/10 p-4 md:px-12 md:py-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div class="hidden md:block">
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Founder's Edition Access</p>
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl font-black text-white">Rp 199.000</span>
+                    <span class="text-sm text-gray-500 line-through">Rp 299.000</span>
+                </div>
+            </div>
+            <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
+                class="gradient-gold text-black font-black py-4 px-10 rounded-2xl text-center block w-full md:w-auto text-lg shadow-lg shadow-gold-500/20">
+                Checkout Rp 199.000
             </a>
         </div>
-    </section>
+    </div>
 
-    <!-- Recent Purchases Pop-up -->
+    <!-- Purchase Toast Notifications -->
     <div id="purchase-toast"
-        class="purchase-toast hidden fixed top-16 left-6 z-50 max-w-xs bg-royal-950 border border-white/10 rounded-2xl p-4 flex items-start gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gold-500/20 flex items-center justify-center text-gold-400 text-lg">🛒</div>
+        class="purchase-toast hidden fixed top-20 right-6 z-50 max-w-xs bg-royal-950/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex items-start gap-4">
+        <div
+            class="w-12 h-12 rounded-xl bg-gold-500 flex items-center justify-center text-black text-xl font-black shadow-lg shadow-gold-500/20">
+            🛒</div>
         <div>
-            <p class="text-sm text-white font-semibold" id="purchase-name">Nama pembeli</p>
-            <p class="text-xs text-gray-400" id="purchase-meta">Baru saja checkout</p>
+            <p class="text-sm text-white font-black" id="purchase-name">Nama pembeli</p>
+            <p class="text-xs text-gold-400 font-bold" id="purchase-meta">Baru saja checkout</p>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="assets/logo.png" alt="Qlipper AI" class="w-8 h-8 rounded-lg">
-                <span class="font-bold">Qlipper AI</span>
+    <footer class="py-20 border-t border-white/5 pb-32">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <img src="assets/logo.png" alt="Qlipper AI" class="w-10 h-10 rounded-xl">
+                <span class="font-black text-xl">Qlipper AI</span>
             </div>
-            <p class="text-sm text-gray-500">© 2026 Qlipper AI. Bangga Buatan Indonesia 🇮🇩</p>
-            <a href="index.html" class="text-sm text-gray-400 hover:text-white transition">← Kembali ke Home</a>
+            <p class="text-sm text-gray-500 mb-8">© 2026 Qlipper AI. Bangga Buatan Indonesia 🇮🇩</p>
+            <div class="flex justify-center gap-8">
+                <a href="index.html"
+                    class="text-sm text-gray-400 hover:text-white transition font-bold underline underline-offset-4">←
+                    Kembali ke Home</a>
+                <a href="mailto:hello@qlipper.ai"
+                    class="text-sm text-gray-400 hover:text-white transition font-bold">Kontak</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Sticky Mobile CTA -->
-    <div class="sticky-cta md:hidden bg-royal-1000/95 backdrop-blur-xl border-t border-white/10 p-4">
-        <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
-            class="gradient-gold text-black font-black py-4 rounded-2xl text-center block w-full">
-            🚀 Dapatkan Akses Awal — Rp 199k
-        </a>
-    </div>
-
     <script>
-        // Slot counter (based on real buyer list)
+        // Real-world Buyer List Logic
         const buyerNames = [
-            "Abdul Rozak",
-            "Gus",
-            "Widayanto",
-            "Muhtadi",
-            "Arfand",
-            "Junio Calvin",
-            "Kurniawan",
-            "Maximus Sastrajendra Imanuel",
-            "Arya",
-            "Rizki Kurniawan",
-            "Nor R",
-            "Sunani",
-            "Deli Wafi",
-            "Haris Munandar",
-            "Oki",
-            "John Victor Tondi",
-            "Syahruddin Spdi",
-            "Muhammad Hakam Amnan",
-            "Ray",
-            "Akhmad Nur Prasetya Ginanjar",
-            "Aray",
-            "Driyanto",
-            "Sabryan Macca",
-            "Yudi Sudiyono",
-            "Dhani",
-            "Maula",
-            "Sujatmiko",
-            "Muhamad Ahnaf Lubab",
-            "Andy Siregar",
-            "Randy Lumbantoruan",
-            "Noer Iman Drestha Djoemena",
-            "Wenang",
-            "Ishan Alkafti",
-            "Pak Eko",
-            "Vinsensuryanto",
-            "Randi Adhityas Saputra",
-            "Basuki",
-            "Komang Surya"
+            "Abdul Rozak", "Gus", "Widayanto", "Muhtadi", "Arfand", "Junio Calvin",
+            "Kurniawan", "Maximus Sastrajendra", "Arya", "Rizki Kurniawan", "Nor R",
+            "Sunani", "Deli Wafi", "Haris Munandar", "Oki", "John Victor",
+            "Syahruddin", "Muhammad Hakam", "Ray", "Akhmad Nur", "Aray",
+            "Driyanto", "Sabryan Macca", "Yudi Sudiyono", "Dhani", "Maula",
+            "Sujatmiko", "Ahnaf Lubab", "Andy Siregar", "Randy Lumbantoruan",
+            "Noer Iman", "Wenang", "Ishan Alkafti", "Pak Eko", "Vinsensuryanto",
+            "Randi Adhityas", "Basuki", "Komang Surya"
         ];
 
         const totalSlots = 100;
         const soldCount = buyerNames.length;
         const remainingCount = Math.max(totalSlots - soldCount, 0);
 
-        const badgeEl = document.getElementById('slot-remaining-badge');
-        const counterEl = document.getElementById('slot-remaining-counter');
-        const soldEl = document.getElementById('slot-sold');
+        // Update UI Elements
+        document.getElementById('slot-remaining-badge').textContent = remainingCount;
+        document.getElementById('slot-remaining-counter').textContent = remainingCount;
         const progressEl = document.getElementById('slot-progress');
-
-        if (badgeEl) badgeEl.textContent = remainingCount;
-        if (counterEl) counterEl.textContent = remainingCount;
-        if (soldEl) soldEl.textContent = soldCount;
         const soldPercent = Math.min((soldCount / totalSlots) * 100, 100);
         if (progressEl) progressEl.style.width = `${soldPercent}%`;
 
-        // Recent purchase pop-up rotation
+        // Purchase Toast Rotation
         const toastEl = document.getElementById('purchase-toast');
         const nameEl = document.getElementById('purchase-name');
         const metaEl = document.getElementById('purchase-meta');
-
-        const timeLabels = [
-            "baru saja checkout",
-            "1 menit yang lalu",
-            "2 menit yang lalu",
-            "3 menit yang lalu",
-            "5 menit yang lalu",
-            "7 menit yang lalu",
-            "9 menit yang lalu"
-        ];
+        const timeLabels = ["baru saja checkout", "1 menit yang lalu", "2 menit yang lalu", "5 menit yang lalu"];
 
         let toastIndex = 0;
         function showNextToast() {
-            if (!toastEl || !nameEl || !metaEl) return;
-            const buyer = buyerNames[toastIndex % buyerNames.length];
-            const timeLabel = timeLabels[Math.floor(Math.random() * timeLabels.length)];
+            if (!toastEl) return;
+            const buyer = buyerNames[Math.floor(Math.random() * buyerNames.length)];
+            const label = timeLabels[Math.floor(Math.random() * timeLabels.length)];
             nameEl.textContent = buyer;
-            metaEl.textContent = `✅ ${timeLabel}`;
+            metaEl.textContent = `✅ ${label}`;
             toastEl.classList.remove('hidden');
-            setTimeout(() => toastEl.classList.add('hidden'), 4200);
-            toastIndex += 1;
+            setTimeout(() => toastEl.classList.add('hidden'), 5000);
         }
 
-        if (toastEl && buyerNames.length > 0) {
-            showNextToast();
-            setInterval(showNextToast, 9500);
+        if (buyerNames.length > 0) {
+            setTimeout(showNextToast, 3000);
+            setInterval(showNextToast, 12000);
         }
     </script>
 </body>
