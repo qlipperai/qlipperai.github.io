@@ -156,6 +156,9 @@
                 <a href="#user-guide" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-user-guide>
                     User Guide
                 </a>
+                <a href="#changelog" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-changelog>
+                    Version Changelog
+                </a>
                 <a href="#troubleshooting" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-troubleshooting>
                     Troubleshooting
                 </a>
@@ -178,6 +181,9 @@
                     </a>
                     <a href="#error-port" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorPort">
                         Port Already in Use
+                    </a>
+                    <a href="#error-ffmpeg" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorFFmpeg">
+                        FFmpeg Download Failed
                     </a>
                 </div>
             </nav>
@@ -470,6 +476,70 @@ npm start</code></pre>
                 </div>
             </section>
 
+            <!-- Version Changelog -->
+            <section id="changelog" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="changelog.title">What's New? (Version Changelog)</h2>
+                
+                <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="changelog.mainQuestion">What Features Are Included in the Latest Version?</h3>
+                    <p class="text-gray-300 mb-6" data-i18n="changelog.intro">
+                        Qlipper AI is constantly improving. Check the latest features and improvements:
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <!-- Latest Release -->
+                        <div class="bg-royal-1000/50 rounded-lg p-4 border border-gold-500/30">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v165.version">v1.6.5 (Latest)</h4>
+                                <span class="text-sm text-gray-400" data-i18n="changelog.v165.date">Feb 8, 2026</span>
+                            </div>
+                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v165.title"><strong>Smart Quality Picker + Accurate Subtitles</strong></p>
+                            <ul class="space-y-2 text-gray-300 ml-4" data-i18n-html="changelog.v165.features">
+                                <li>• <strong>Smart Quality Picker:</strong> Probes YouTube for available resolutions before download (no more blind 4K selection on 720p videos)</li>
+                                <li>• <strong>Auto-select Best Quality:</strong> Gold-accented UI shows exactly what's available</li>
+                                <li>• <strong>Whisper Word-Level Transcription:</strong> Precise subtitle timing using base model with word_timestamps=True</li>
+                                <li>• <strong>Isolated to Subtitles Only:</strong> Lazy loading with no performance hit on lower-end Windows devices</li>
+                                <li>• <strong>Caption Quality Indicator:</strong> Shows "YouTube Captions" vs "AI Enhanced" with manual "Enhance Accuracy" button</li>
+                                <li>• <strong>Smart Caching:</strong> Backend prefers Whisper word-level data over VTT when available</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- v1.6.4 -->
+                        <div class="bg-royal-1000/30 rounded-lg p-4 border border-white/10">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v164.version">v1.6.4</h4>
+                                <span class="text-sm text-gray-400" data-i18n="changelog.v164.date">Feb 8, 2026</span>
+                            </div>
+                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v164.title"><strong>Critical Bug Fixes + UX Improvements</strong></p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4" data-i18n-html="changelog.v164.features">
+                                <li>• Input/ColorPicker z-index layering fixes (100% click reliability)</li>
+                                <li>• FFmpeg filter escaping improvements (prevents crashes with special chars)</li>
+                                <li>• Subtitle system mutual exclusion (ASS preferred)</li>
+                                <li>• Subtitle spacing fixes (preview matches export)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- v1.6.3 -->
+                        <div class="bg-royal-1000/30 rounded-lg p-4 border border-white/10">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v163.version">v1.6.3</h4>
+                                <span class="text-sm text-gray-400" data-i18n="changelog.v163.date">Feb 7, 2026</span>
+                            </div>
+                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v163.title"><strong>ASS Subtitle Engine (10-100x faster)</strong></p>
+                            <ul class="space-y-1 text-gray-300 text-sm ml-4" data-i18n-html="changelog.v163.features">
+                                <li>• Native ASS subtitle burning (no more PNG overlays)</li>
+                                <li>• Word-by-word karaoke with glow/scale/color</li>
+                                <li>• Zero stream ID collisions</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mt-4 text-center" data-i18n="changelog.fullList">
+                            For the full version history, visit <a href="https://github.com/yourusername/qlipper-ai" class="text-gold-400 hover:underline" target="_blank">GitHub</a> or check the CHANGELOG.md file
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             <!-- Troubleshooting -->
             <section id="troubleshooting" class="mb-16">
                 <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="troubleshooting.title">Troubleshooting</h2>
@@ -645,6 +715,79 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
                     </div>
                 </div>
 
+                <!-- FFmpeg Installation Error -->
+                <div id="error-ffmpeg" class="faq-item bg-royal-950 rounded-xl p-6 border border-white/5 mb-6">
+                    <div class="faq-question flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-gold-400">FFmpeg Download Failed / Runtime Error</h3>
+                        <span class="text-2xl">▼</span>
+                    </div>
+                    <div class="faq-answer mt-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorFFmpeg.symptomsLine">
+                            <strong>Symptoms:</strong> Error message says "Downloaded ffmpeg but it failed to run" or "FFmpeg test failed"
+                        </p>
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorFFmpeg.causeLine">
+                            <strong>Cause:</strong> FFmpeg was downloaded but cannot execute. This is commonly due to antivirus blocking, corrupted download, missing dependencies, or permission issues.
+                        </p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorFFmpeg.solutions">Solutions:</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.quickFix">Quick Fix (Recommended):</p>
+                                <p class="text-gray-300 mb-2" data-i18n="troubleshooting.errorFFmpeg.quickFixDesc">Install FFmpeg through your system package manager. This avoids download issues and is the easiest solution.</p>
+                            </div>
+                            
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.macosTitle">macOS:</p>
+                                <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4 mb-4">
+                                    <li>Open Terminal</li>
+                                    <li>Install Homebrew (if not installed): <code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></li>
+                                    <li>Install FFmpeg: <code>brew install ffmpeg</code></li>
+                                    <li>Verify installation: <code>ffmpeg -version</code></li>
+                                    <li>Restart Qlipper AI</li>
+                                </ol>
+                            </div>
+                            
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.windowsTitle">Windows:</p>
+                                <p class="text-gray-300 mb-3" data-i18n="troubleshooting.errorFFmpeg.windowsMethod">Use Windows Package Manager (winget):</p>
+                                <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4 mb-4">
+                                    <li>Open Command Prompt (Win + R, type "cmd", press Enter)</li>
+                                    <li>Run: <code>winget install ffmpeg</code></li>
+                                    <li>If prompted, press "Y" to agree to the license</li>
+                                    <li>Wait for installation to complete</li>
+                                    <li>Verify installation: <code>ffmpeg -version</code></li>
+                                    <li>Close Command Prompt and restart Qlipper AI</li>
+                                </ol>
+                            </div>
+                            
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.altWindowsTitle">Alternative for Windows (Chocolatey):</p>
+                                <p class="text-gray-300 mb-2">If winget is not available, use Chocolatey:</p>
+                                <ol class="list-decimal list-inside space-y-1 text-gray-300 ml-4">
+                                    <li>Open Command Prompt as Administrator (right-click → "Run as administrator")</li>
+                                    <li>Run: <code>choco install ffmpeg</code></li>
+                                    <li>Restart your computer</li>
+                                    <li>Restart Qlipper AI</li>
+                                </ol>
+                            </div>
+                            
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.troubleshoot">Troubleshooting Steps:</p>
+                                <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4">
+                                    <li><strong>Check if antivirus is blocking:</strong> Temporarily disable antivirus/Windows Defender and restart Qlipper AI</li>
+                                    <li><strong>Clear cache:</strong> Delete the backend/bin folder and restart Qlipper AI</li>
+                                    <li><strong>Check permissions:</strong> Make sure your user account has write permissions to the installation directory</li>
+                                    <li><strong>Restart your computer:</strong> This often resolves permission and system issues</li>
+                                </ol>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.errorFFmpeg.noteLine">
+                            <strong>Note:</strong> After installing FFmpeg via package manager, you can safely delete the <code>backend/bin/</code> folder. Qlipper AI will use the system-installed FFmpeg instead.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Other Common Issues -->
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
                     <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="troubleshooting.other.title">Other Common Issues</h3>
@@ -719,6 +862,7 @@ npm install</code></pre>
                     errorFrontend: "Frontend Not Built",
                     errorGemini: "Gemini Model Error",
                     errorPort: "Port Already in Use"
+                    errorFFmpeg: "FFmpeg Download Failed",
                 },
                 gettingStarted: {
                     title: "Getting Started",
@@ -885,7 +1029,8 @@ npm install</code></pre>
                     errorNodejs: "Node.js Tidak Ditemukan",
                     errorFrontend: "Frontend Tidak Dibangun",
                     errorGemini: "Error Model Gemini",
-                    errorPort: "Port Sudah Digunakan"
+                    errorPort: "Port Sudah Digunakan",
+                    errorFFmpeg: "FFmpeg Gagal Diunduh"
                 },
                 gettingStarted: {
                     title: "Memulai",
@@ -1023,6 +1168,46 @@ npm install</code></pre>
                         ffmpegMac: "macOS: <code>brew install ffmpeg</code>",
                         ffmpegWindows: "Windows: Download dari <a href=\"https://ffmpeg.org/download.html\" class=\"text-gold-400 hover:underline\" target=\"_blank\">ffmpeg.org</a> dan tambahkan ke PATH"
                     }
+                },
+changelog: {
+                    title: "Apa Yang Baru? (Changelog Versi)",
+                    mainQuestion: "Fitur Apa Saja yang Disertakan dalam Versi Terbaru?",
+                    intro: "Qlipper AI terus berkembang. Periksa fitur dan peningkatan terbaru:",
+                    v165: {
+                        version: "v1.6.5 (Terbaru)",
+                        date: "Feb 8, 2026",
+                        title: "<strong>Smart Quality Picker + Accurate Subtitles</strong>",
+                        features: "<li>• <strong>Smart Quality Picker:</strong> Memprobasi YouTube untuk resolusi yang tersedia sebelum download</li><li>• <strong>Auto-select Best Quality:</strong> UI berwarna emas menampilkan apa yang tersedia</li><li>• <strong>Whisper Word-Level Transcription:</strong> Timing subtitle presisi menggunakan model base dengan word_timestamps=True</li><li>• <strong>Isolated to Subtitles Only:</strong> Lazy loading tanpa penurunan performa di perangkat Windows entry-level</li><li>• <strong>Caption Quality Indicator:</strong> Menampilkan "YouTube Captions" vs "AI Enhanced" dengan tombol "Enhance Accuracy"</li><li>• <strong>Smart Caching:</strong> Backend lebih memilih data word-level Whisper dibanding VTT</li>"
+                    },
+                    v164: {
+                        version: "v1.6.4",
+                        date: "Feb 8, 2026",
+                        title: "<strong>Perbaikan Bug Kritis + Peningkatan UX</strong>",
+                        features: "<li>• Perbaikan layering z-index Input/ColorPicker (100% keandalan klik)</li><li>• Peningkatan escaping filter FFmpeg (mencegah crash dengan karakter khusus)</li><li>• Mutual exclusion sistem subtitle (ASS dipilih)</li><li>• Perbaikan spacing subtitle (preview cocok dengan export)</li>"
+                    },
+                    v163: {
+                        version: "v1.6.3",
+                        date: "Feb 7, 2026",
+                        title: "<strong>ASS Subtitle Engine (10-100x lebih cepat)</strong>",
+                        features: "<li>• Burning subtitle ASS native (tidak ada overlay PNG)</li><li>• Karaoke word-by-word dengan glow/scale/color</li><li>• Nol collision stream ID</li>"
+                    },
+                    fullList: "Untuk riwayat versi lengkap, kunjungi GitHub atau periksa file CHANGELOG.md"
+                },
+                troubleshooting: {
+                    title: "Pemecahan Masalah",
+                    errorFFmpeg: {
+                        symptomsLine: "<strong>Gejala:</strong> Pesan error mengatakan "Downloaded ffmpeg but it failed to run" atau "FFmpeg test failed"",
+                        causeLine: "<strong>Penyebab:</strong> FFmpeg diunduh tetapi tidak dapat dijalankan. Ini umumnya karena antivirus memblokir, download rusak, dependensi hilang, atau masalah permission.",
+                        solutions: "Solusi:",
+                        quickFix: "Quick Fix (Direkomendasikan):",
+                        quickFixDesc: "Instal FFmpeg melalui package manager sistem Anda. Ini menghindari masalah download dan adalah solusi termudah.",
+                        macosTitle: "macOS:",
+                        windowsTitle: "Windows:",
+                        windowsMethod: "Gunakan Windows Package Manager (winget):",
+                        altWindowsTitle: "Alternatif untuk Windows (Chocolatey):",
+                        troubleshoot: "Langkah Pemecahan Masalah:",
+                        noteLine: "<strong>Catatan:</strong> Setelah menginstal FFmpeg via package manager, Anda dapat dengan aman menghapus folder <code>backend/bin/</code>. Qlipper AI akan menggunakan FFmpeg yang terinstal di sistem."
+                    },
                 },
                 footer: {
                     help: "Perlu bantuan lebih lanjut? Lihat dokumentasi lengkap di folder",
