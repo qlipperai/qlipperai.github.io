@@ -105,8 +105,10 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '887694117177435', {
+            em: 'email@email.com',
+        });
         fbq('init', '2720353788357400');
-        fbq('init', '887694117177435');
         fbq('track', 'PageView');
     </script>
     <noscript>
