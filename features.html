@@ -14,15 +14,10 @@
             theme: {
                 extend: {
                     colors: {
-                        ink: {
-                            950: '#07070c',
-                            900: '#0d1018',
-                            800: '#121a2b'
-                        },
-                        fog: {
-                            50: '#f7f7fb',
-                            100: '#efeff7',
-                            200: '#dedeea'
+                        royal: {
+                            900: '#0c0c14',
+                            950: '#050508',
+                            1000: '#050505'
                         },
                         gold: {
                             400: '#fbbf24',
@@ -41,35 +36,35 @@
         body {
             font-family: 'Inter', sans-serif;
             background:
-                radial-gradient(circle at 10% 5%, rgba(245, 158, 11, 0.16), transparent 40%),
-                radial-gradient(circle at 85% 20%, rgba(17, 24, 39, 0.10), transparent 45%),
-                linear-gradient(180deg, #f7f7fb 0%, #ffffff 40%, #f7f7fb 100%);
+                radial-gradient(circle at 18% -10%, rgba(245, 158, 11, 0.18), transparent 45%),
+                radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.06), transparent 40%),
+                linear-gradient(180deg, #050505 0%, #050508 60%, #050505 100%);
         }
 
         .grid-bg {
             background-image:
-                linear-gradient(rgba(17, 24, 39, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(17, 24, 39, 0.06) 1px, transparent 1px);
-            background-size: 36px 36px;
-            mask-image: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 0.9) 0%, transparent 70%);
+                linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at 50% 12%, rgba(0, 0, 0, 0.85) 0%, transparent 72%);
         }
 
         .glass {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55));
-            border: 1px solid rgba(17, 24, 39, 0.10);
-            box-shadow: 0 30px 80px rgba(17, 24, 39, 0.08);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
             backdrop-filter: blur(10px);
         }
 
-        .btn-gold {
+        .gradient-gold {
             background: linear-gradient(135deg, #f59e0b, #d97706);
         }
 
         .shot {
             background:
-                radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.25), transparent 55%),
-                linear-gradient(135deg, rgba(17, 24, 39, 0.06), rgba(17, 24, 39, 0.02));
-            border: 1px dashed rgba(17, 24, 39, 0.22);
+                radial-gradient(circle at 30% 20%, rgba(245, 158, 11, 0.22), transparent 55%),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+            border: 1px dashed rgba(255, 255, 255, 0.20);
         }
     </style>
 
@@ -113,28 +108,28 @@
     <!-- TikTok Pixel Code End -->
 </head>
 
-<body class="text-ink-950 antialiased">
+<body class="bg-royal-1000 text-gray-100 antialiased">
     <div class="grid-bg fixed inset-0 pointer-events-none"></div>
 
-    <header class="sticky top-0 z-50 border-b border-black/10 bg-white/70 backdrop-blur-xl">
+    <header class="sticky top-0 z-50 border-b border-white/5 bg-royal-1000/80 backdrop-blur-xl">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="assets/logo.png" alt="Qlipper AI" class="w-10 h-10 rounded-xl">
                 <span class="font-extrabold tracking-tight">Qlipper AI</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
-                <a href="index.html" class="text-black/70 hover:text-black transition">Home</a>
-                <a href="#what" class="text-black/70 hover:text-black transition">What is Qlipper</a>
-                <a href="#features" class="text-black/70 hover:text-black transition">Features</a>
-                <a href="offer.html" class="text-black/70 hover:text-black transition">Pricing</a>
+                <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
+                <a href="#what" class="text-gray-400 hover:text-white transition">What is Qlipper</a>
+                <a href="#features" class="text-gray-400 hover:text-white transition">Features</a>
+                <a href="offer.html" class="text-gray-400 hover:text-white transition">Pricing</a>
             </nav>
             <div class="flex items-center gap-3">
                 <a href="https://qlipper.myscalev.com/p/qlippers-ai-batch-1-early-access"
-                    class="btn-gold text-black font-extrabold text-sm px-4 py-2.5 rounded-xl hover:opacity-90 transition">
+                    class="gradient-gold text-black font-extrabold text-sm px-4 py-2.5 rounded-xl hover:opacity-90 transition">
                     Download
                 </a>
                 <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
-                    class="hidden sm:inline-flex items-center justify-center border border-black/15 bg-white/60 text-black font-extrabold text-sm px-4 py-2.5 rounded-xl hover:bg-white transition">
+                    class="hidden sm:inline-flex items-center justify-center border border-white/15 bg-white/5 text-white font-extrabold text-sm px-4 py-2.5 rounded-xl hover:bg-white/10 transition">
                     Checkout
                 </a>
             </div>
@@ -145,51 +140,51 @@
         <section class="px-6 pt-14 md:pt-20 pb-10 md:pb-16">
             <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
                 <div>
-                    <div class="inline-flex items-center gap-2 bg-black/5 border border-black/10 px-4 py-2 rounded-full text-xs font-bold tracking-wider text-black/70 mb-6">
+                    <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold tracking-wider text-gray-300 mb-6">
                         <span class="w-2 h-2 bg-gold-500 rounded-full"></span>
                         PRIVATE AI VIDEO EDITOR
                     </div>
                     <h1 class="text-4xl md:text-6xl font-black leading-[1.05] mb-6">
                         Turn long videos into shorts.
-                        <span class="block text-black/60">Fast. Local. Yours.</span>
+                        <span class="block text-gray-400">Fast. Local. Yours.</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-black/70 leading-relaxed mb-8">
+                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
                         Qlipper helps you clip, reframe, and export short-form content from long videos - without forcing cloud uploads.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3">
                         <a href="https://qlipper.myscalev.com/p/qlippers-ai-batch-1-early-access"
-                            class="btn-gold text-black font-black text-center px-8 py-4 rounded-2xl hover:opacity-90 transition">
+                            class="gradient-gold text-black font-black text-center px-8 py-4 rounded-2xl hover:opacity-90 transition">
                             Download Early Access
                         </a>
                         <a href="#features"
-                            class="border border-black/15 bg-white/60 text-black font-black text-center px-8 py-4 rounded-2xl hover:bg-white transition">
+                            class="border border-white/20 bg-white/5 text-white font-black text-center px-8 py-4 rounded-2xl hover:bg-white/10 transition">
                             See Features
                         </a>
                     </div>
-                    <p class="text-xs text-black/55 mt-4">
-                        Prefer to buy first? <a class="underline hover:text-black" href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1">Go to checkout</a>.
+                    <p class="text-xs text-gray-400 mt-4">
+                        Prefer to buy first? <a class="underline hover:text-white" href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1">Go to checkout</a>.
                     </p>
                 </div>
 
                 <div class="glass rounded-3xl p-5 md:p-7">
                     <div class="shot rounded-2xl aspect-[16/9] flex items-center justify-center">
                         <div class="text-center px-6">
-                            <p class="text-sm font-extrabold text-black/70">Hero Screenshot Placeholder</p>
-                            <p class="text-xs text-black/55 mt-1">Replace with: product overview screenshot</p>
+                            <p class="text-sm font-extrabold text-gray-200">Hero Screenshot Placeholder</p>
+                            <p class="text-xs text-gray-400 mt-1">Replace with: product overview screenshot</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-3 gap-3 mt-5 text-center">
-                        <div class="bg-white/70 border border-black/10 rounded-2xl p-4">
-                            <p class="text-2xl font-black">Local</p>
-                            <p class="text-xs text-black/55 mt-1">No forced uploads</p>
+                        <div class="bg-black/30 border border-white/10 rounded-2xl p-4">
+                            <p class="text-2xl font-black text-gold-400">Local</p>
+                            <p class="text-xs text-gray-400 mt-1">No forced uploads</p>
                         </div>
-                        <div class="bg-white/70 border border-black/10 rounded-2xl p-4">
-                            <p class="text-2xl font-black">Fast</p>
-                            <p class="text-xs text-black/55 mt-1">GPU-friendly</p>
+                        <div class="bg-black/30 border border-white/10 rounded-2xl p-4">
+                            <p class="text-2xl font-black text-gold-400">Fast</p>
+                            <p class="text-xs text-gray-400 mt-1">GPU-friendly</p>
                         </div>
-                        <div class="bg-white/70 border border-black/10 rounded-2xl p-4">
-                            <p class="text-2xl font-black">Export</p>
-                            <p class="text-xs text-black/55 mt-1">Ready for social</p>
+                        <div class="bg-black/30 border border-white/10 rounded-2xl p-4">
+                            <p class="text-2xl font-black text-gold-400">Export</p>
+                            <p class="text-xs text-gray-400 mt-1">Ready for social</p>
                         </div>
                     </div>
                 </div>
@@ -200,27 +195,27 @@
             <div class="max-w-6xl mx-auto">
                 <div class="max-w-3xl">
                     <h2 class="text-3xl md:text-4xl font-black mb-4">What is Qlipper?</h2>
-                    <p class="text-black/70 text-lg leading-relaxed">
+                    <p class="text-gray-300 text-lg leading-relaxed">
                         Qlipper is a private AI video editor designed for creators who want a repeatable workflow for turning long-form videos into short clips.
                         It helps you find moments, frame them for vertical platforms, and export consistently.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-5 mt-10">
-                    <div class="bg-white/70 border border-black/10 rounded-3xl p-7">
-                        <p class="text-xs font-black tracking-wider text-black/60 mb-2">PRIVACY</p>
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+                        <p class="text-xs font-black tracking-wider text-gray-400 mb-2">PRIVACY</p>
                         <h3 class="text-xl font-black mb-2">Local-first workflow</h3>
-                        <p class="text-black/70 text-sm leading-relaxed">Keep your source videos under your control. Build content without feeling locked into cloud-only tools.</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">Keep your source videos under your control. Build content without feeling locked into cloud-only tools.</p>
                     </div>
-                    <div class="bg-white/70 border border-black/10 rounded-3xl p-7">
-                        <p class="text-xs font-black tracking-wider text-black/60 mb-2">SPEED</p>
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+                        <p class="text-xs font-black tracking-wider text-gray-400 mb-2">SPEED</p>
                         <h3 class="text-xl font-black mb-2">Designed to move fast</h3>
-                        <p class="text-black/70 text-sm leading-relaxed">A workflow that minimizes waiting: less uploading, less context switching, more publishing.</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">A workflow that minimizes waiting: less uploading, less context switching, more publishing.</p>
                     </div>
-                    <div class="bg-white/70 border border-black/10 rounded-3xl p-7">
-                        <p class="text-xs font-black tracking-wider text-black/60 mb-2">OUTPUT</p>
+                    <div class="bg-white/5 border border-white/10 rounded-3xl p-7">
+                        <p class="text-xs font-black tracking-wider text-gray-400 mb-2">OUTPUT</p>
                         <h3 class="text-xl font-black mb-2">Short-form ready</h3>
-                        <p class="text-black/70 text-sm leading-relaxed">Export formats for TikTok / Reels / Shorts with consistent framing and styling.</p>
+                        <p class="text-gray-300 text-sm leading-relaxed">Export formats for TikTok / Reels / Shorts with consistent framing and styling.</p>
                     </div>
                 </div>
             </div>
@@ -231,129 +226,129 @@
                 <div class="flex items-end justify-between gap-6 flex-wrap">
                     <div>
                         <h2 class="text-3xl md:text-4xl font-black mb-3">Features</h2>
-                        <p class="text-black/70 text-lg">Each section includes a screenshot placeholder you can replace later.</p>
+                        <p class="text-gray-300 text-lg">Each section includes a screenshot placeholder you can replace later.</p>
                     </div>
                     <div class="flex items-center gap-2 text-sm font-bold">
-                        <a href="#f1" class="px-3 py-2 rounded-full bg-black/5 hover:bg-black/10 transition">1</a>
-                        <a href="#f2" class="px-3 py-2 rounded-full bg-black/5 hover:bg-black/10 transition">2</a>
-                        <a href="#f3" class="px-3 py-2 rounded-full bg-black/5 hover:bg-black/10 transition">3</a>
-                        <a href="#f4" class="px-3 py-2 rounded-full bg-black/5 hover:bg-black/10 transition">4</a>
-                        <a href="#f5" class="px-3 py-2 rounded-full bg-black/5 hover:bg-black/10 transition">5</a>
-                        <a href="#f6" class="px-3 py-2 rounded-full bg-black/5 hover:bg-black/10 transition">6</a>
+                        <a href="#f1" class="px-3 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition">1</a>
+                        <a href="#f2" class="px-3 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition">2</a>
+                        <a href="#f3" class="px-3 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition">3</a>
+                        <a href="#f4" class="px-3 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition">4</a>
+                        <a href="#f5" class="px-3 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition">5</a>
+                        <a href="#f6" class="px-3 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition">6</a>
                     </div>
                 </div>
 
                 <div class="mt-10 space-y-10">
                     <section id="f1" class="grid lg:grid-cols-2 gap-8 items-center">
                         <div>
-                            <p class="text-xs font-black tracking-wider text-black/60 mb-2">FEATURE 01</p>
+                            <p class="text-xs font-black tracking-wider text-gray-400 mb-2">FEATURE 01</p>
                             <h3 class="text-2xl md:text-3xl font-black mb-3">Context-aware clipping</h3>
-                            <p class="text-black/70 leading-relaxed">Find moments that feel like clips - not just silence cuts. Designed to catch humor, tension, and payoff beats.</p>
+                            <p class="text-gray-300 leading-relaxed">Find moments that feel like clips - not just silence cuts. Designed to catch humor, tension, and payoff beats.</p>
                             <div class="mt-5 flex gap-3 flex-wrap text-sm">
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Highlights</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Story beats</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Consistent output</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Highlights</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Story beats</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Consistent output</span>
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="context-aware-clipping">
                             <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-black/70">Screenshot Placeholder</p>
-                                <p class="text-xs text-black/55 mt-1">context-aware clipping</p>
+                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
+                                <p class="text-xs text-gray-400 mt-1">context-aware clipping</p>
                             </div>
                         </div>
                     </section>
 
                     <section id="f2" class="grid lg:grid-cols-2 gap-8 items-center">
                         <div class="lg:order-2">
-                            <p class="text-xs font-black tracking-wider text-black/60 mb-2">FEATURE 02</p>
+                            <p class="text-xs font-black tracking-wider text-gray-400 mb-2">FEATURE 02</p>
                             <h3 class="text-2xl md:text-3xl font-black mb-3">Auto reframe for vertical</h3>
-                            <p class="text-black/70 leading-relaxed">Convert wide footage into 9:16 with framing that keeps the subject readable. Add blur background when needed.</p>
+                            <p class="text-gray-300 leading-relaxed">Convert wide footage into 9:16 with framing that keeps the subject readable. Add blur background when needed.</p>
                             <div class="mt-5 flex gap-3 flex-wrap text-sm">
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">9:16</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Auto blur</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Readable captions</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">9:16</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Auto blur</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Readable captions</span>
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center lg:order-1" data-screenshot="auto-reframe">
                             <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-black/70">Screenshot Placeholder</p>
-                                <p class="text-xs text-black/55 mt-1">auto reframe</p>
+                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
+                                <p class="text-xs text-gray-400 mt-1">auto reframe</p>
                             </div>
                         </div>
                     </section>
 
                     <section id="f3" class="grid lg:grid-cols-2 gap-8 items-center">
                         <div>
-                            <p class="text-xs font-black tracking-wider text-black/60 mb-2">FEATURE 03</p>
+                            <p class="text-xs font-black tracking-wider text-gray-400 mb-2">FEATURE 03</p>
                             <h3 class="text-2xl md:text-3xl font-black mb-3">Multi-format export</h3>
-                            <p class="text-black/70 leading-relaxed">Export for TikTok, Instagram, and YouTube Shorts with consistent presets so you can post faster.</p>
+                            <p class="text-gray-300 leading-relaxed">Export for TikTok, Instagram, and YouTube Shorts with consistent presets so you can post faster.</p>
                             <div class="mt-5 flex gap-3 flex-wrap text-sm">
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">TikTok</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Reels</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Shorts</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">TikTok</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Reels</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Shorts</span>
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="export-presets">
                             <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-black/70">Screenshot Placeholder</p>
-                                <p class="text-xs text-black/55 mt-1">export presets</p>
+                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
+                                <p class="text-xs text-gray-400 mt-1">export presets</p>
                             </div>
                         </div>
                     </section>
 
                     <section id="f4" class="grid lg:grid-cols-2 gap-8 items-center">
                         <div class="lg:order-2">
-                            <p class="text-xs font-black tracking-wider text-black/60 mb-2">FEATURE 04</p>
+                            <p class="text-xs font-black tracking-wider text-gray-400 mb-2">FEATURE 04</p>
                             <h3 class="text-2xl md:text-3xl font-black mb-3">GPU-accelerated rendering</h3>
-                            <p class="text-black/70 leading-relaxed">A workflow built to feel native. Reduce waiting time, speed up batches, and keep momentum.</p>
+                            <p class="text-gray-300 leading-relaxed">A workflow built to feel native. Reduce waiting time, speed up batches, and keep momentum.</p>
                             <div class="mt-5 flex gap-3 flex-wrap text-sm">
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Batch exports</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Fast renders</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Low friction</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Batch exports</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Fast renders</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Low friction</span>
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center lg:order-1" data-screenshot="gpu-rendering">
                             <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-black/70">Screenshot Placeholder</p>
-                                <p class="text-xs text-black/55 mt-1">gpu rendering</p>
+                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
+                                <p class="text-xs text-gray-400 mt-1">gpu rendering</p>
                             </div>
                         </div>
                     </section>
 
                     <section id="f5" class="grid lg:grid-cols-2 gap-8 items-center">
                         <div>
-                            <p class="text-xs font-black tracking-wider text-black/60 mb-2">FEATURE 05</p>
+                            <p class="text-xs font-black tracking-wider text-gray-400 mb-2">FEATURE 05</p>
                             <h3 class="text-2xl md:text-3xl font-black mb-3">Local-first by design</h3>
-                            <p class="text-black/70 leading-relaxed">Keep your content pipeline under your control. Great for sensitive client footage or teams that care about privacy.</p>
+                            <p class="text-gray-300 leading-relaxed">Keep your content pipeline under your control. Great for sensitive client footage or teams that care about privacy.</p>
                             <div class="mt-5 flex gap-3 flex-wrap text-sm">
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Privacy</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Control</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Confidence</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Privacy</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Control</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Confidence</span>
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="local-first">
                             <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-black/70">Screenshot Placeholder</p>
-                                <p class="text-xs text-black/55 mt-1">local-first</p>
+                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
+                                <p class="text-xs text-gray-400 mt-1">local-first</p>
                             </div>
                         </div>
                     </section>
 
                     <section id="f6" class="grid lg:grid-cols-2 gap-8 items-center">
                         <div class="lg:order-2">
-                            <p class="text-xs font-black tracking-wider text-black/60 mb-2">FEATURE 06</p>
+                            <p class="text-xs font-black tracking-wider text-gray-400 mb-2">FEATURE 06</p>
                             <h3 class="text-2xl md:text-3xl font-black mb-3">Repeatable workflow</h3>
-                            <p class="text-black/70 leading-relaxed">A clear path from source video to published shorts. Less guesswork, more shipping.</p>
+                            <p class="text-gray-300 leading-relaxed">A clear path from source video to published shorts. Less guesswork, more shipping.</p>
                             <div class="mt-5 flex gap-3 flex-wrap text-sm">
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Steps</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Templates</span>
-                                <span class="bg-black/5 border border-black/10 px-3 py-2 rounded-full">Consistency</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Steps</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Templates</span>
+                                <span class="bg-white/5 border border-white/10 px-3 py-2 rounded-full">Consistency</span>
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center lg:order-1" data-screenshot="workflow">
                             <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-black/70">Screenshot Placeholder</p>
-                                <p class="text-xs text-black/55 mt-1">workflow</p>
+                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
+                                <p class="text-xs text-gray-400 mt-1">workflow</p>
                             </div>
                         </div>
                     </section>
@@ -367,22 +362,22 @@
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
                             <h2 class="text-3xl md:text-4xl font-black mb-4">Ready after the features?</h2>
-                            <p class="text-black/70 text-lg leading-relaxed mb-6">Don’t leave now - the fastest way to start is to go straight to checkout.</p>
+                            <p class="text-gray-300 text-lg leading-relaxed mb-6">Don’t leave now - the fastest way to start is to go straight to checkout.</p>
                             <div class="flex flex-col sm:flex-row gap-3">
                                 <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
-                                    class="btn-gold text-black font-black text-center px-8 py-4 rounded-2xl hover:opacity-90 transition">
+                                    class="gradient-gold text-black font-black text-center px-8 py-4 rounded-2xl hover:opacity-90 transition">
                                     Continue to Checkout
                                 </a>
                                 <a href="offer.html"
-                                    class="border border-black/15 bg-white/60 text-black font-black text-center px-8 py-4 rounded-2xl hover:bg-white transition">
+                                    class="border border-white/20 bg-white/5 text-white font-black text-center px-8 py-4 rounded-2xl hover:bg-white/10 transition">
                                     See Pricing
                                 </a>
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="checkout-proof">
                             <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-black/70">Screenshot Placeholder</p>
-                                <p class="text-xs text-black/55 mt-1">social proof / testimonials</p>
+                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
+                                <p class="text-xs text-gray-400 mt-1">social proof / testimonials</p>
                             </div>
                         </div>
                     </div>
@@ -391,26 +386,26 @@
         </section>
     </main>
 
-    <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-black/10 bg-white/75 backdrop-blur-xl sm:hidden">
+    <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-royal-1000/85 backdrop-blur-xl sm:hidden">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-3">
             <a href="https://qlipper.myscalev.com/p/qlippers-ai-batch-1-early-access"
-                class="flex-1 btn-gold text-black font-black text-center py-3 rounded-2xl">
+                class="flex-1 gradient-gold text-black font-black text-center py-3 rounded-2xl">
                 Download
             </a>
             <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
-                class="flex-1 border border-black/15 bg-white/70 text-black font-black text-center py-3 rounded-2xl">
+                class="flex-1 border border-white/20 bg-white/5 text-white font-black text-center py-3 rounded-2xl">
                 Checkout
             </a>
         </div>
     </div>
 
-    <footer class="px-6 py-10 border-t border-black/10">
+    <footer class="px-6 py-10 border-t border-white/5">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-            <p class="text-black/60">© 2026 Qlipper AI</p>
+            <p class="text-gray-500">© 2026 Qlipper AI</p>
             <div class="flex items-center gap-4">
-                <a href="index.html" class="text-black/70 hover:text-black">Home</a>
-                <a href="tutorial.html" class="text-black/70 hover:text-black">Tutorial</a>
-                <a href="mailto:hello@qlipper.ai" class="text-black/70 hover:text-black">Contact</a>
+                <a href="index.html" class="text-gray-400 hover:text-white">Home</a>
+                <a href="tutorial.html" class="text-gray-400 hover:text-white">Tutorial</a>
+                <a href="mailto:hello@qlipper.ai" class="text-gray-400 hover:text-white">Contact</a>
             </div>
         </div>
     </footer>
