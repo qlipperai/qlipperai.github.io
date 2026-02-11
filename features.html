@@ -69,11 +69,22 @@
             position: relative;
         }
 
-        .shot img {
+        .shot img,
+        .shot svg {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        .shot svg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .shot .shot-overlay {
+            position: relative;
+            z-index: 1;
         }
     </style>
 
@@ -177,9 +188,29 @@
 
                 <div class="glass rounded-3xl p-5 md:p-7">
                     <div class="shot rounded-2xl aspect-[16/9] flex items-center justify-center">
-                        <div class="text-center px-6">
-                            <p class="text-sm font-extrabold text-gray-200">Hero Screenshot Placeholder</p>
-                            <p class="text-xs text-gray-400 mt-1">Replace with: product overview screenshot</p>
+                        <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                            <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.18)" />
+                            <circle cx="250" cy="150" r="220" fill="rgba(245,158,11,0.14)" />
+                            <circle cx="980" cy="120" r="260" fill="rgba(255,255,255,0.05)" />
+                            <rect x="110" y="130" width="980" height="420" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" />
+                            <rect x="150" y="170" width="900" height="70" rx="22" fill="rgba(255,255,255,0.05)" />
+                            <rect x="190" y="190" width="240" height="30" rx="15" fill="rgba(255,255,255,0.10)" />
+                            <rect x="450" y="190" width="180" height="30" rx="15" fill="rgba(255,255,255,0.08)" />
+                            <rect x="650" y="190" width="160" height="30" rx="15" fill="rgba(255,255,255,0.06)" />
+                            <rect x="830" y="190" width="180" height="30" rx="15" fill="rgba(245,158,11,0.18)" stroke="rgba(245,158,11,0.35)" />
+
+                            <rect x="150" y="260" width="580" height="260" rx="24" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.10)" />
+                            <rect x="190" y="305" width="420" height="22" rx="11" fill="rgba(255,255,255,0.12)" />
+                            <rect x="190" y="345" width="480" height="22" rx="11" fill="rgba(255,255,255,0.09)" />
+                            <rect x="190" y="385" width="380" height="22" rx="11" fill="rgba(255,255,255,0.07)" />
+
+                            <rect x="770" y="260" width="280" height="260" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" />
+                            <rect x="810" y="300" width="200" height="140" rx="18" fill="rgba(0,0,0,0.25)" stroke="rgba(245,158,11,0.35)" />
+                            <rect x="810" y="460" width="200" height="20" rx="10" fill="rgba(255,255,255,0.10)" />
+                        </svg>
+                        <div class="shot-overlay text-center px-6">
+                            <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                            <p class="text-xs text-gray-400 mt-1">Product overview</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-3 gap-3 mt-5 text-center">
@@ -261,9 +292,20 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="context-aware-clipping">
-                            <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">context-aware clipping</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="120" y="165" width="960" height="345" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="170" y="220" width="860" height="46" rx="23" fill="rgba(255,255,255,0.08)" />
+                                <rect x="170" y="285" width="860" height="46" rx="23" fill="rgba(255,255,255,0.06)" />
+                                <rect x="170" y="350" width="860" height="46" rx="23" fill="rgba(255,255,255,0.05)" />
+                                <rect x="170" y="420" width="860" height="18" rx="9" fill="rgba(255,255,255,0.06)" />
+                                <rect x="170" y="420" width="540" height="18" rx="9" fill="rgba(245,158,11,0.22)" />
+                                <circle cx="710" cy="429" r="18" fill="rgba(245,158,11,0.95)" />
+                                <rect x="760" y="214" width="270" height="60" rx="18" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.30)" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">Context-aware clipping</p>
                             </div>
                         </div>
                     </section>
@@ -280,9 +322,20 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center lg:order-1" data-screenshot="auto-reframe">
-                            <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">auto reframe</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="130" y="165" width="940" height="345" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="190" y="210" width="560" height="255" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="820" y="210" width="190" height="255" rx="24" fill="rgba(0,0,0,0.25)" stroke="rgba(245,158,11,0.35)" />
+                                <rect x="845" y="235" width="140" height="205" rx="18" fill="rgba(255,255,255,0.04)" />
+                                <path d="M780 255 L810 225" stroke="rgba(245,158,11,0.65)" stroke-width="8" stroke-linecap="round" />
+                                <path d="M780 420 L810 450" stroke="rgba(245,158,11,0.65)" stroke-width="8" stroke-linecap="round" />
+                                <path d="M1010 225 L1040 255" stroke="rgba(245,158,11,0.35)" stroke-width="8" stroke-linecap="round" />
+                                <path d="M1010 450 L1040 420" stroke="rgba(245,158,11,0.35)" stroke-width="8" stroke-linecap="round" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">Auto reframe</p>
                             </div>
                         </div>
                     </section>
@@ -299,12 +352,27 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="hooks-subtitles">
-                            <img src="assets/features/hooks-subtitles.png" alt="Hook overlay and subtitle controls" loading="lazy"
-                                onload="var f=this.parentNode.querySelector('[data-shot-fallback]'); if(f) f.style.display='none';"
-                                onerror="this.remove();" />
-                            <div class="text-center px-6" data-shot-fallback>
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">hooks + subtitles</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="120" y="150" width="960" height="375" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="170" y="200" width="620" height="275" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="820" y="200" width="210" height="275" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="200" y="230" width="420" height="42" rx="21" fill="rgba(245,158,11,0.16)" stroke="rgba(245,158,11,0.30)" />
+                                <rect x="230" y="244" width="250" height="14" rx="7" fill="rgba(0,0,0,0.35)" />
+                                <rect x="200" y="404" width="530" height="60" rx="20" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="235" y="422" width="140" height="14" rx="7" fill="rgba(255,255,255,0.14)" />
+                                <rect x="385" y="422" width="120" height="14" rx="7" fill="rgba(245,158,11,0.55)" />
+                                <rect x="515" y="422" width="140" height="14" rx="7" fill="rgba(255,255,255,0.12)" />
+                                <rect x="850" y="230" width="150" height="18" rx="9" fill="rgba(255,255,255,0.12)" />
+                                <rect x="850" y="265" width="120" height="18" rx="9" fill="rgba(255,255,255,0.10)" />
+                                <rect x="850" y="300" width="160" height="18" rx="9" fill="rgba(255,255,255,0.08)" />
+                                <rect x="850" y="350" width="140" height="18" rx="9" fill="rgba(255,255,255,0.10)" />
+                                <rect x="850" y="385" width="160" height="18" rx="9" fill="rgba(255,255,255,0.08)" />
+                                <rect x="850" y="420" width="110" height="18" rx="9" fill="rgba(255,255,255,0.10)" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">Hooks + subtitles</p>
                             </div>
                         </div>
                     </section>
@@ -321,12 +389,22 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center lg:order-1" data-screenshot="multi-format-export">
-                            <img src="assets/features/multi-format-export.png" alt="Multi-format export presets" loading="lazy"
-                                onload="var f=this.parentNode.querySelector('[data-shot-fallback]'); if(f) f.style.display='none';"
-                                onerror="this.remove();" />
-                            <div class="text-center px-6" data-shot-fallback>
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">multi-format export</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="120" y="165" width="960" height="345" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="190" y="215" width="320" height="245" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="540" y="215" width="320" height="245" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(245,158,11,0.35)" />
+                                <rect x="890" y="215" width="120" height="245" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="220" y="245" width="260" height="36" rx="18" fill="rgba(255,255,255,0.09)" />
+                                <rect x="570" y="245" width="260" height="36" rx="18" fill="rgba(255,255,255,0.09)" />
+                                <rect x="915" y="245" width="70" height="36" rx="18" fill="rgba(255,255,255,0.09)" />
+                                <rect x="220" y="330" width="180" height="14" rx="7" fill="rgba(255,255,255,0.10)" />
+                                <rect x="570" y="330" width="200" height="14" rx="7" fill="rgba(245,158,11,0.25)" />
+                                <rect x="915" y="330" width="70" height="14" rx="7" fill="rgba(255,255,255,0.10)" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">Multi-format export</p>
                             </div>
                         </div>
                     </section>
@@ -343,9 +421,24 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="gpu-rendering">
-                            <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">gpu rendering</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="150" y="175" width="900" height="325" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="210" y="235" width="380" height="205" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="630" y="245" width="360" height="54" rx="18" fill="rgba(255,255,255,0.06)" />
+                                <rect x="630" y="318" width="360" height="54" rx="18" fill="rgba(255,255,255,0.05)" />
+                                <rect x="630" y="391" width="360" height="54" rx="18" fill="rgba(255,255,255,0.04)" />
+                                <rect x="250" y="275" width="300" height="28" rx="14" fill="rgba(245,158,11,0.18)" />
+                                <rect x="250" y="320" width="220" height="18" rx="9" fill="rgba(255,255,255,0.10)" />
+                                <rect x="250" y="348" width="260" height="18" rx="9" fill="rgba(255,255,255,0.08)" />
+                                <rect x="250" y="376" width="180" height="18" rx="9" fill="rgba(255,255,255,0.08)" />
+                                <circle cx="950" cy="265" r="9" fill="rgba(245,158,11,0.80)" />
+                                <circle cx="925" cy="265" r="9" fill="rgba(245,158,11,0.50)" />
+                                <circle cx="900" cy="265" r="9" fill="rgba(245,158,11,0.28)" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">GPU-accelerated rendering</p>
                             </div>
                         </div>
                     </section>
@@ -362,9 +455,22 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center lg:order-1" data-screenshot="local-first">
-                            <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">local-first</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="170" y="175" width="860" height="325" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <circle cx="600" cy="335" r="140" fill="rgba(245,158,11,0.10)" />
+                                <rect x="515" y="320" width="170" height="150" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" />
+                                <path d="M550 320 v-44 a50 50 0 0 1 100 0 v44" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="14" stroke-linecap="round" />
+                                <circle cx="600" cy="392" r="16" fill="rgba(245,158,11,0.90)" />
+                                <path d="M600 408 v28" stroke="rgba(245,158,11,0.90)" stroke-width="10" stroke-linecap="round" />
+                                <rect x="240" y="235" width="240" height="20" rx="10" fill="rgba(255,255,255,0.10)" />
+                                <rect x="240" y="265" width="280" height="20" rx="10" fill="rgba(255,255,255,0.08)" />
+                                <rect x="720" y="235" width="240" height="20" rx="10" fill="rgba(255,255,255,0.10)" />
+                                <rect x="700" y="265" width="260" height="20" rx="10" fill="rgba(255,255,255,0.08)" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">Local-first privacy</p>
                             </div>
                         </div>
                     </section>
@@ -381,9 +487,28 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="workflow">
-                            <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">workflow</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="150" y="175" width="900" height="325" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="210" y="250" width="230" height="175" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="485" y="250" width="230" height="175" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(245,158,11,0.35)" />
+                                <rect x="760" y="250" width="230" height="175" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="240" y="285" width="160" height="16" rx="8" fill="rgba(255,255,255,0.12)" />
+                                <rect x="240" y="312" width="120" height="12" rx="6" fill="rgba(255,255,255,0.08)" />
+                                <rect x="515" y="285" width="160" height="16" rx="8" fill="rgba(245,158,11,0.22)" />
+                                <rect x="515" y="312" width="140" height="12" rx="6" fill="rgba(255,255,255,0.09)" />
+                                <rect x="790" y="285" width="160" height="16" rx="8" fill="rgba(255,255,255,0.12)" />
+                                <rect x="790" y="312" width="130" height="12" rx="6" fill="rgba(255,255,255,0.08)" />
+                                <path d="M440 338 L485 338" stroke="rgba(245,158,11,0.60)" stroke-width="10" stroke-linecap="round" />
+                                <path d="M715 338 L760 338" stroke="rgba(245,158,11,0.60)" stroke-width="10" stroke-linecap="round" />
+                                <path d="M470 338 l-16 -12" stroke="rgba(245,158,11,0.60)" stroke-width="10" stroke-linecap="round" />
+                                <path d="M470 338 l-16 12" stroke="rgba(245,158,11,0.60)" stroke-width="10" stroke-linecap="round" />
+                                <path d="M745 338 l-16 -12" stroke="rgba(245,158,11,0.60)" stroke-width="10" stroke-linecap="round" />
+                                <path d="M745 338 l-16 12" stroke="rgba(245,158,11,0.60)" stroke-width="10" stroke-linecap="round" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">Repeatable workflow</p>
                             </div>
                         </div>
                     </section>
@@ -410,9 +535,25 @@
                             </div>
                         </div>
                         <div class="shot rounded-3xl aspect-[16/9] flex items-center justify-center" data-screenshot="checkout-proof">
-                            <div class="text-center px-6">
-                                <p class="text-sm font-extrabold text-gray-200">Screenshot Placeholder</p>
-                                <p class="text-xs text-gray-400 mt-1">social proof / testimonials</p>
+                            <svg viewBox="0 0 1200 675" aria-hidden="true" focusable="false">
+                                <rect x="0" y="0" width="1200" height="675" fill="rgba(0,0,0,0.16)" />
+                                <rect x="160" y="185" width="880" height="305" rx="28" fill="rgba(0,0,0,0.25)" stroke="rgba(255,255,255,0.12)" />
+                                <rect x="220" y="240" width="420" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="660" y="240" width="320" height="92" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="220" y="350" width="360" height="92" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.10)" />
+                                <rect x="600" y="350" width="380" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" />
+                                <circle cx="260" cy="286" r="18" fill="rgba(245,158,11,0.80)" />
+                                <rect x="292" y="270" width="260" height="18" rx="9" fill="rgba(255,255,255,0.12)" />
+                                <rect x="292" y="294" width="200" height="14" rx="7" fill="rgba(255,255,255,0.08)" />
+                                <circle cx="700" cy="286" r="18" fill="rgba(255,255,255,0.18)" />
+                                <rect x="732" y="270" width="200" height="18" rx="9" fill="rgba(255,255,255,0.10)" />
+                                <rect x="732" y="294" width="160" height="14" rx="7" fill="rgba(255,255,255,0.08)" />
+                                <path d="M260 230 l10 18 l20 3 l-15 14 l4 20 l-19 -10 l-19 10 l4 -20 l-15 -14 l20 -3 z" fill="rgba(245,158,11,0.25)" />
+                                <path d="M300 220 l10 18 l20 3 l-15 14 l4 20 l-19 -10 l-19 10 l4 -20 l-15 -14 l20 -3 z" fill="rgba(245,158,11,0.18)" />
+                            </svg>
+                            <div class="shot-overlay text-center px-6">
+                                <p class="text-sm font-extrabold text-gray-200">Sample Illustration</p>
+                                <p class="text-xs text-gray-400 mt-1">Social proof</p>
                             </div>
                         </div>
                     </div>
