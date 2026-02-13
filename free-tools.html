@@ -11,6 +11,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <!-- COI for GitHub Pages -->
+    <script src="coi-serviceworker.js"></script>
     <!-- Google Generative AI -->
     <script type="importmap">
       {
@@ -99,25 +101,26 @@
 
             <!-- Hero -->
             <div class="text-center mb-10">
-                <h1 class="text-3xl md:text-5xl font-black mb-4">Client-Side AI Clipper</h1>
-                <p class="text-gray-400">Process videos 100% locally in your browser using FFmpeg WASM + Gemini Flash.
-                </p>
+                <h1 class="text-3xl md:text-5xl font-black mb-4">You Link, We Clip.</h1>
+                <p class="text-gray-400">Paste a YouTube link -> Download -> AI Auto-Clip. <br>100% Free &
+                    Browser-based.</p>
             </div>
 
             <!-- Configuration Card -->
-            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm">
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-sm shadow-2xl">
                 <!-- Step 1: API Key -->
-                <div class="mb-8">
-                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">1. Google Gemini
-                        API Key</label>
+                <div class="mb-8 p-4 bg-black/30 rounded-xl border border-white/5">
+                    <label
+                        class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 flex justify-between">
+                        <span>1. Gemini API Key</span>
+                        <span id="keyStatus" class="text-gray-500">Not Saved</span>
+                    </label>
                     <div class="relative">
-                        <input type="password" id="apiKey" placeholder="Paste your API Key here (starts with AIza...)"
+                        <input type="password" id="apiKey" placeholder="Paste AIza... key here"
                             class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition">
                         <button id="saveKeyBtn"
                             class="absolute right-2 top-1.5 text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg transition">Save</button>
                     </div>
-                    <p class="text-[10px] text-gray-500 mt-2">Key is stored locally in your browser. We never see it.
-                    </p>
                 </div>
 
                 <!-- Step 2: Video Input -->
@@ -127,15 +130,32 @@
 
                     <!-- Tabs -->
                     <div class="flex gap-4 mb-4 border-b border-white/10 pb-2">
-                        <button class="text-sm font-bold text-gold-400 border-b-2 border-gold-400 pb-2">Upload
+                        <button id="tabYoutube"
+                            class="text-sm font-bold text-gold-400 border-b-2 border-gold-400 pb-2 transition">YouTube
+                            Link</button>
+                        <button id="tabFile"
+                            class="text-sm font-bold text-gray-500 hover:text-white pb-2 transition">Upload
                             File</button>
-                        <button class="text-sm font-bold text-gray-500 pb-2 cursor-not-allowed"
-                            title="YouTube direct download requires a backend proxy. Use the desktop app for this.">YouTube
-                            Link (Pro App Only)</button>
                     </div>
 
-                    <div class="border-2 border-dashed border-white/10 rounded-xl p-8 text-center hover:border-gold-500/50 transition cursor-pointer"
-                        id="dropZone">
+                    <!-- YouTube Input -->
+                    <div id="panelYoutube" class="block">
+                        <div class="flex gap-2">
+                            <input type="text" id="ytUrl" placeholder="https://www.youtube.com/watch?v=..."
+                                class="flex-1 bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-500 transition">
+                            <button id="fetchYtBtn"
+                                class="bg-white/10 hover:bg-white/20 text-white font-bold px-4 py-2 rounded-xl border border-white/10 transition">
+                                Load
+                            </button>
+                        </div>
+                        <p class="text-[10px] text-gray-500 mt-2">Uses public APIs to fetch video stream. Works best on
+                            shorter videos (< 10min).</p>
+                    </div>
+
+                    <!-- File Input -->
+                    <div id="panelFile"
+                        class="hidden border-2 border-dashed border-white/10 rounded-xl p-8 text-center hover:border-gold-500/50 transition cursor-pointer"
+                        onclick="document.getElementById('videoUpload').click()">
                         <input type="file" id="videoUpload" accept="video/*" class="hidden">
                         <div class="text-4xl mb-2">📁</div>
                         <p class="text-sm font-bold text-white">Click to upload video</p>
@@ -146,19 +166,22 @@
                 <!-- Step 3: Action -->
                 <button id="processBtn" disabled
                     class="w-full gradient-gold text-black font-black py-4 rounded-xl text-lg shadow-lg shadow-gold-500/20 opacity-50 cursor-not-allowed transition hover:scale-[1.02]">
-                    Analyze & Clip Video ⚡
+                    Start Magic Clipping ✨
                 </button>
 
                 <!-- Status / Logs -->
                 <div id="statusArea"
-                    class="hidden mt-6 bg-black/60 rounded-xl p-4 font-mono text-xs text-gray-400 max-h-40 overflow-y-auto scrollbar-thin">
+                    class="hidden mt-6 bg-black/60 rounded-xl p-4 font-mono text-xs text-gray-400 max-h-40 overflow-y-auto scrollbar-thin border border-white/5">
                     <div id="logs" class="space-y-1"></div>
                 </div>
             </div>
 
             <!-- Output Area -->
-            <div id="outputArea" class="hidden space-y-4">
-                <h3 class="text-xl font-bold">Generated Clips</h3>
+            <div id="outputArea" class="hidden space-y-6">
+                <h3 class="text-2xl font-bold flex items-center gap-2">
+                    <span class="bg-gold-500 text-black text-xs font-black px-2 py-1 rounded">NEW</span>
+                    Generated Clips
+                </h3>
                 <div id="clipsGrid" class="grid gap-4">
                     <!-- Clips will be injected here -->
                 </div>
@@ -170,22 +193,26 @@
     <footer class="py-8 border-t border-white/5 text-center px-6">
         <p class="text-xs text-gray-500">
             Powered by FFmpeg WASM & Gemini 1.5 Flash. <br>
-            For unlimited YouTube downloads and automated subtitles, <a href="offer.html"
-                class="text-gold-400 hover:underline">get the Desktop App</a>.
+            <a href="offer.html" class="text-gold-400 hover:underline">Download Desktop App</a> for 4K support &
+            automated subtitles.
         </p>
     </footer>
 
     <!-- Logic -->
     <script type="module">
         import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
-        // Import FFmpeg from CDN manually since imports are tricky in plain HTML
-        // We will load scripts via script tags in head
 
         // DOM Elements
         const apiKeyInput = document.getElementById('apiKey');
         const saveKeyBtn = document.getElementById('saveKeyBtn');
+        const keyStatus = document.getElementById('keyStatus');
+        const tabYoutube = document.getElementById('tabYoutube');
+        const tabFile = document.getElementById('tabFile');
+        const panelYoutube = document.getElementById('panelYoutube');
+        const panelFile = document.getElementById('panelFile');
+        const ytUrlInput = document.getElementById('ytUrl');
+        const fetchYtBtn = document.getElementById('fetchYtBtn');
         const videoUpload = document.getElementById('videoUpload');
-        const dropZone = document.getElementById('dropZone');
         const processBtn = document.getElementById('processBtn');
         const statusArea = document.getElementById('statusArea');
         const logsDiv = document.getElementById('logs');
@@ -194,39 +221,142 @@
 
         // State
         let ffmpeg = null;
-        let videoFile = null;
+        let videoData = null; // Blob or ArrayBuffer
         let genAI = null;
+        let mode = 'youtube'; // 'youtube' or 'file'
 
         // --- Init ---
-        // Load API Key
         const savedKey = localStorage.getItem('qlipper_gemini_key');
         if (savedKey) {
             apiKeyInput.value = savedKey;
+            keyStatus.textContent = "Saved ✅";
+            keyStatus.classList.add('text-green-500');
+            keyStatus.classList.remove('text-gray-500');
             checkReady();
         }
+
+        // --- Tabs ---
+        function switchTab(target) {
+            mode = target;
+            if (target === 'youtube') {
+                tabYoutube.classList.add('text-gold-400', 'border-b-2', 'border-gold-400');
+                tabYoutube.classList.remove('text-gray-500');
+                tabFile.classList.remove('text-gold-400', 'border-b-2', 'border-gold-400');
+                tabFile.classList.add('text-gray-500');
+                panelYoutube.classList.remove('hidden');
+                panelFile.classList.add('hidden');
+            } else {
+                tabFile.classList.add('text-gold-400', 'border-b-2', 'border-gold-400');
+                tabFile.classList.remove('text-gray-500');
+                tabYoutube.classList.remove('text-gold-400', 'border-b-2', 'border-gold-400');
+                tabYoutube.classList.add('text-gray-500');
+                panelFile.classList.remove('hidden');
+                panelYoutube.classList.add('hidden');
+            }
+            checkReady();
+        }
+        tabYoutube.addEventListener('click', () => switchTab('youtube'));
+        tabFile.addEventListener('click', () => switchTab('file'));
 
         // --- Handlers ---
         saveKeyBtn.addEventListener('click', () => {
             const key = apiKeyInput.value.trim();
             if (key) {
                 localStorage.setItem('qlipper_gemini_key', key);
+                keyStatus.textContent = "Saved ✅";
+                keyStatus.classList.add('text-green-500');
                 log('API Key saved locally.');
                 checkReady();
             }
         });
 
-        dropZone.addEventListener('click', () => videoUpload.click());
+        // File Handler
         videoUpload.addEventListener('change', (e) => {
             if (e.target.files && e.target.files[0]) {
-                videoFile = e.target.files[0];
-                log(`Selected file: ${videoFile.name} (${(videoFile.size / 1024 / 1024).toFixed(2)} MB)`);
-                dropZone.classList.add('border-gold-500');
+                videoData = e.target.files[0];
+                log(`Selected file: ${videoData.name} (${(videoData.size / 1024 / 1024).toFixed(2)} MB)`);
+                panelFile.classList.add('border-gold-500');
                 checkReady();
             }
         });
 
+        // YouTube handler (Fetch via Cobalt)
+        fetchYtBtn.addEventListener('click', async () => {
+            const url = ytUrlInput.value.trim();
+            if (!url) return;
+
+            fetchYtBtn.disabled = true;
+            fetchYtBtn.textContent = 'Fetching...';
+            log(`Resolving YouTube URL via Public API...`);
+
+            try {
+                // Using a public Cobalt instance (api.cobalt.tools is often rate limited, using a rotation or stable alternative if possible)
+                // We will try a few known instances if one fails
+                const instances = [
+                    'https://api.cobalt.tools', // Main
+                    'https://co.wuk.sh', // Backup
+                    'https://cobalt.bowring.uk' // Backup
+                ];
+
+                let streamUrl = null;
+
+                for (const instance of instances) {
+                    try {
+                        log(`Trying resolver: ${instance}...`);
+                        const res = await fetch(`${instance}/api/json`, {
+                            method: 'POST',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                url: url,
+                                vCodec: 'h264',
+                                vQuality: '720',
+                                aFormat: 'mp3',
+                                filenamePattern: 'basic'
+                            })
+                        });
+
+                        const data = await res.json();
+                        if (data.url) {
+                            streamUrl = data.url;
+                            log(`Resolved video URL!`);
+                            break;
+                        }
+                    } catch (e) {
+                        console.error(e);
+                        continue;
+                    }
+                }
+
+                if (!streamUrl) throw new Error("Could not resolve video URL from any provider.");
+
+                // Now Fetch the blob (CORS might be an issue depending on the resolved URL)
+                log('Downloading video data (this may take a moment)...');
+                const vidRes = await fetch(streamUrl);
+                if (!vidRes.ok) throw new Error("Failed to download video stream");
+
+                const blob = await vidRes.blob();
+                videoData = blob;
+                log(`Video downloaded: ${(blob.size / 1024 / 1024).toFixed(2)} MB`);
+
+                fetchYtBtn.textContent = 'Loaded ✅';
+                fetchYtBtn.classList.add('bg-green-500/20', 'text-green-500', 'border-green-500/50');
+                checkReady();
+
+            } catch (e) {
+                log(`Error: ${e.message}`);
+                fetchYtBtn.textContent = 'Failed ❌';
+                setTimeout(() => fetchYtBtn.textContent = 'Load', 3000);
+                alert("Could not download video. It might be restricted or too long. Try uploading the file directly.");
+            } finally {
+                fetchYtBtn.disabled = false;
+            }
+        });
+
         function checkReady() {
-            if (apiKeyInput.value && videoFile) {
+            if (apiKeyInput.value && videoData) {
                 processBtn.disabled = false;
                 processBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             }
@@ -242,22 +372,16 @@
             logsDiv.scrollTop = logsDiv.scrollHeight;
         }
 
-        // Load FFmpeg Script dynamically if needed, but it's in head
+        // Load FFmpeg Script manually to ensure control
         async function loadFFmpeg() {
-            if (window.FFmpeg) return window.FFmpeg;
-            // It should be loaded from CDN in head
+            if (window.FFmpeg) return;
             const script = document.createElement('script');
             script.src = "https://unpkg.com/@ffmpeg/ffmpeg@0.12.7/dist/umd/ffmpeg.js";
             document.head.appendChild(script);
             await new Promise(r => script.onload = r);
-
-            const scriptUtil = document.createElement('script');
-            scriptUtil.src = "https://unpkg.com/@ffmpeg/util@0.12.1/dist/umd/index.js";
-            document.head.appendChild(scriptUtil);
-            await new Promise(r => scriptUtil.onload = r);
         }
 
-        // --- Core Logic ---
+        // --- Process Workflow ---
         processBtn.addEventListener('click', async () => {
             processBtn.disabled = true;
             processBtn.textContent = "Processing... (Do not close tab)";
@@ -267,18 +391,11 @@
                 // 1. Initialize FFmpeg
                 if (!ffmpeg) {
                     log('Initializing FFmpeg Engine...');
-                    // Ensure scripts are loaded
                     await loadFFmpeg();
-
                     const { FFmpeg } = window.FFmpeg;
                     const { toBlobURL } = window.FFmpegUtil;
 
                     ffmpeg = new FFmpeg();
-                    ffmpeg.on('log', ({ message }) => {
-                        // console.log(message); 
-                    });
-
-                    // Load ffmpeg.wasm from CDN
                     const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd';
                     await ffmpeg.load({
                         coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
@@ -287,25 +404,22 @@
                     log('FFmpeg engine ready.');
                 }
 
-                // 2. Write file to memory
-                log('Reading video file into memory...');
+                // 2. Write file
+                log('Writing video to memory...');
                 const { fetchFile } = window.FFmpegUtil;
-                await ffmpeg.writeFile('input.mp4', await fetchFile(videoFile));
-                log('File loaded.');
+                await ffmpeg.writeFile('input.mp4', await fetchFile(videoData));
 
-                // 3. Extract Audio for Analysis (Faster to upload audio than video)
-                log('Extracting audio track for AI analysis (this is fast)...');
+                // 3. Extract Audio
+                log('Extracting audio track...');
                 await ffmpeg.exec(['-i', 'input.mp4', '-vn', '-acodec', 'libmp3lame', 'audio.mp3']);
                 const audioData = await ffmpeg.readFile('audio.mp3');
                 const audioBlob = new Blob([audioData.buffer], { type: 'audio/mp3' });
-                log(`Audio extracted: ${(audioBlob.size / 1024 / 1024).toFixed(2)} MB`);
 
                 // 4. Gemini Analysis
-                log('Sending audio to Google Gemini 1.5 Flash...');
+                log('Analyzing with Gemini 1.5 Flash...');
                 genAI = new GoogleGenerativeAI(apiKeyInput.value);
                 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-                // Convert blob to base64
                 const base64Audio = await new Promise((resolve) => {
                     const reader = new FileReader();
                     reader.onloadend = () => resolve(reader.result.split(',')[1]);
@@ -313,116 +427,63 @@
                 });
 
                 const prompt = `
-                You are a professional video editor. Analyze this audio to find the most viral, interesting, or meaningful segments.
-                Return exactly 3 clips.
-                For each clip, provide:
-                - title: short catchment title
-                - start: start time in "MM:SS" format
-                - end: end time in "MM:SS" format
-                - reason: why this is a good clip
-                
-                Return the response strictly as a JSON array of objects. No markdown.
-                Example: [{"title": "Intro", "start": "00:00", "end": "00:15", "reason": "Hook"}]
+                Analyze this audio for viral potential. Find exactly 3 best segments.
+                Return JSON array only: [{"title": "string", "start": "MM:SS", "end": "MM:SS", "reason": "string"}]
                 `;
 
-                const result = await model.generateContent([
-                    prompt,
-                    {
-                        inlineData: {
-                            mimeType: "audio/mp3",
-                            data: base64Audio
-                        }
-                    }
-                ]);
+                const result = await model.generateContent([prompt, { inlineData: { mimeType: "audio/mp3", data: base64Audio } }]);
+                const text = result.response.text();
+                const json = text.replace(/```json/g, '').replace(/```/g, '').trim();
+                const segments = JSON.parse(json);
+                log(`Found ${segments.length} clips.`);
 
-                const responseText = result.response.text();
-                log('AI Analysis complete. Parsing results...');
-
-                // Parse JSON (handle markdown stripping if needed)
-                let cleanJson = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
-                let segments;
-                try {
-                    segments = JSON.parse(cleanJson);
-                } catch (e) {
-                    log('JSON Parse failed. Raw response: ' + cleanJson.substring(0, 50));
-                    throw new Error('Failed to parse AI response');
-                }
-
-                log(`Found ${segments.length} clips! Cutting now...`);
-
-                // 5. Clip Generation
+                // 5. Generate Clips
                 outputArea.classList.remove('hidden');
-                clipsGrid.innerHTML = ''; // Clear previous
+                clipsGrid.innerHTML = '';
 
                 for (let i = 0; i < segments.length; i++) {
                     const seg = segments[i];
-                    log(`CUTTING Clip ${i + 1}: "${seg.title}" (${seg.start} - ${seg.end})...`);
+                    log(`Processing: ${seg.title}...`);
 
-                    const startSeconds = timeToSeconds(seg.start);
-                    const endSeconds = timeToSeconds(seg.end);
-                    const duration = endSeconds - startSeconds;
+                    const start = timeToSeconds(seg.start);
+                    const end = timeToSeconds(seg.end);
+                    const dur = end - start;
+                    const outName = `clip_${i}.mp4`;
 
-                    if (duration <= 0) {
-                        log(`Skipping invalid duration clip: ${seg.title}`);
-                        continue;
-                    }
+                    await ffmpeg.exec(['-ss', `${start}`, '-i', 'input.mp4', '-t', `${dur}`, '-c', 'copy', outName]);
 
-                    const outName = `clip_${i + 1}.mp4`;
-
-                    // FFmpeg Cut Command
-                    await ffmpeg.exec([
-                        '-ss', `${startSeconds}`,
-                        '-i', 'input.mp4',
-                        '-t', `${duration}`,
-                        '-c', 'copy', // Stream copy for speed!
-                        outName
-                    ]);
-
-                    // Read result
                     const data = await ffmpeg.readFile(outName);
                     const url = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
 
-                    // Create UI Card
                     const card = document.createElement('div');
-                    card.className = 'bg-white/5 border border-white/10 rounded-xl p-4 flex flex-col sm:flex-row gap-4 items-center';
+                    card.className = 'bg-white/5 border border-white/10 rounded-xl p-4 flex flex-col sm:flex-row gap-4';
                     card.innerHTML = `
-                        <video src="${url}" controls class="w-full sm:w-48 h-28 bg-black rounded-lg object-contain border border-white/10"></video>
-                        <div class="flex-1 min-w-0 w-full">
-                            <h4 class="font-bold text-white truncate text-lg">${seg.title}</h4>
-                            <p class="text-xs text-gold-400 font-mono mb-2">${seg.start} - ${seg.end} (${duration}s)</p>
-                            <p class="text-sm text-gray-400 line-clamp-2 mb-3">${seg.reason}</p>
-                            <a href="${url}" download="qlipper_${seg.title.replace(/[^a-z0-9]/gi, '_')}.mp4" 
-                               class="inline-block bg-gold-500 hover:bg-gold-400 text-black font-bold px-4 py-2 rounded-lg transition text-sm">
-                               ⬇ Download Clip
-                            </a>
-                        </div>
+                         <video src="${url}" controls class="w-full sm:w-48 h-28 bg-black rounded-lg border border-white/10"></video>
+                         <div class="flex-1">
+                             <h4 class="font-bold text-white text-lg">${seg.title}</h4>
+                             <p class="text-xs text-gold-400 font-mono mb-2">${seg.start} - ${seg.end}</p>
+                             <p class="text-sm text-gray-400 mb-3">${seg.reason}</p>
+                             <a href="${url}" download="qlipper_${seg.title.replace(/\s/g, '_')}.mp4" class="inline-block bg-gold-500 text-black font-bold px-4 py-2 rounded-lg text-sm hover:opacity-90">Download</a>
+                         </div>
                     `;
                     clipsGrid.appendChild(card);
                 }
 
-                log('All Done! You can create more clips now.');
-                processBtn.textContent = "Analyze & Clip Video ⚡";
+                log('All Done! ✨');
+                processBtn.textContent = 'Start Magic Clipping ✨';
                 processBtn.disabled = false;
 
             } catch (e) {
                 log(`ERROR: ${e.message}`);
                 console.error(e);
-                processBtn.textContent = "Error - Try Again";
+                processBtn.textContent = 'Error - Try Again';
                 processBtn.disabled = false;
-
-                // Show helpful error for common issues
-                if (e.message.includes('SharedArrayBuffer')) {
-                    log('CRITICAL: SharedArrayBuffer is not available. This site requires Cross-Origin-Opener-Policy: same-origin and Cross-Origin-Embedder-Policy: require-corp headers to function.');
-                }
             }
         });
 
-        // --- Helpers ---
-        function timeToSeconds(timeStr) {
-            const parts = timeStr.trim().split(':').map(Number);
-            if (parts.length === 2) return parts[0] * 60 + parts[1];
-            if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
-            return 0;
+        function timeToSeconds(str) {
+            const p = str.trim().split(':').map(Number);
+            return (p[0] * 60) + p[1];
         }
 
     </script>
