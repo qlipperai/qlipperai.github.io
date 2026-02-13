@@ -11,6 +11,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="preload" as="image" href="assets/logo.webp">
+    <link rel="preload" as="image" href="assets/dashboard-preview.webp">
     <script>
         tailwind.config = {
             theme: {
@@ -215,8 +217,8 @@
                     </div>
                     <div
                         class="relative bg-white/5 border border-white/10 rounded-[2.5rem] p-4 md:p-6 backdrop-blur-sm glow">
-                        <img src="assets/dashboard-preview.png" alt="Qlipper Dashboard"
-                            class="rounded-[1.5rem] w-full border border-white/5">
+                        <img src="assets/dashboard-preview.webp" alt="Qlipper Dashboard" width="1024" height="655"
+                            class="rounded-[1.5rem] w-full border border-white/5 h-auto">
 
                         <!-- Mini Stats Grid -->
                         <div class="grid grid-cols-3 gap-4 mt-6">
@@ -253,52 +255,64 @@
 
             <div class="mt-8 -mx-6 px-6 overflow-x-auto">
                 <div class="flex gap-4 pb-4 snap-x snap-mandatory">
-                    <article class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <article
+                        class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
                         <div class="flex items-center justify-between gap-4 mb-3">
                             <h3 class="font-black text-lg">Context-aware clipping</h3>
                             <span class="text-2xl">🧠</span>
                         </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">AI cari momen yang terasa “clip-worthy” (humor, emosi, payoff) - bukan cuma potong hening.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">AI cari momen yang terasa “clip-worthy” (humor,
+                            emosi, payoff) - bukan cuma potong hening.</p>
                     </article>
 
-                    <article class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <article
+                        class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
                         <div class="flex items-center justify-between gap-4 mb-3">
                             <h3 class="font-black text-lg">Multiple filters + aspect ratios</h3>
                             <span class="text-2xl">🎨</span>
                         </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">Pilih filter/style (blur, motion blur, zoom crop, split, square, dll) + aspect ratio (9:16, 3:4, 1:1, 16:9) sesuai platform.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Pilih filter/style (blur, motion blur, zoom
+                            crop, split, square, dll) + aspect ratio (9:16, 3:4, 1:1, 16:9) sesuai platform.</p>
                     </article>
 
-                    <article class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <article
+                        class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
                         <div class="flex items-center justify-between gap-4 mb-3">
                             <h3 class="font-black text-lg">No watermark</h3>
                             <span class="text-2xl">✅</span>
                         </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">Output bersih siap publish. Fokus ke brand Anda - bukan logo tool.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Output bersih siap publish. Fokus ke brand Anda
+                            - bukan logo tool.</p>
                     </article>
 
-                    <article class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <article
+                        class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
                         <div class="flex items-center justify-between gap-4 mb-3">
                             <h3 class="font-black text-lg">Multi-format export</h3>
                             <span class="text-2xl">🎛️</span>
                         </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">Preset output TikTok/Reels/YouTube: 9:16, 1:1, 16:9. Tinggal pilih dan render.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Preset output TikTok/Reels/YouTube: 9:16, 1:1,
+                            16:9. Tinggal pilih dan render.</p>
                     </article>
 
-                    <article class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <article
+                        class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
                         <div class="flex items-center justify-between gap-4 mb-3">
                             <h3 class="font-black text-lg">GPU-accelerated</h3>
                             <span class="text-2xl">⚡</span>
                         </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">Render batch lebih ngebut. Workflow dibuat biar bisa “shipping” konten tanpa nunggu lama.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Render batch lebih ngebut. Workflow dibuat biar
+                            bisa “shipping” konten tanpa nunggu lama.</p>
                     </article>
 
-                    <article class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
+                    <article
+                        class="snap-start min-w-[260px] sm:min-w-[320px] bg-white/5 border border-white/10 rounded-3xl p-6">
                         <div class="flex items-center justify-between gap-4 mb-3">
                             <h3 class="font-black text-lg">Local-first privacy</h3>
                             <span class="text-2xl">🔒</span>
                         </div>
-                        <p class="text-gray-400 text-sm leading-relaxed">Tanpa “dipaksa upload” ke cloud. Lebih aman untuk footage sensitif dan project klien.</p>
+                        <p class="text-gray-400 text-sm leading-relaxed">Tanpa “dipaksa upload” ke cloud. Lebih aman
+                            untuk footage sensitif dan project klien.</p>
                     </article>
                 </div>
             </div>
@@ -479,7 +493,7 @@
     <footer class="py-20 border-t border-white/5 pb-32">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex items-center justify-center gap-3 mb-6">
-                <img src="assets/logo.png" alt="Qlipper AI" class="w-10 h-10 rounded-xl">
+                <img src="assets/logo.webp" alt="Qlipper AI" width="792" height="792" class="w-10 h-10 rounded-xl">
                 <span class="font-black text-xl">Qlipper AI</span>
             </div>
             <p class="text-sm text-gray-500 mb-8">© 2026 Qlipper AI. Bangga Buatan Indonesia 🇮🇩</p>
