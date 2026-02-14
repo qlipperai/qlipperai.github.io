@@ -430,8 +430,9 @@
                 </div>
 
                 <!-- Checkout Iframe -->
-                <div class="mt-8 rounded-2xl overflow-hidden bg-white/5 border border-white/10">
-                    <iframe id="myiframe" width="100%" frameborder="0" src="https://qlipper.myscalev.com/landing-page-baru"></iframe>
+                <div class="mt-8 rounded-2xl overflow-hidden bg-white border border-white/10">
+                    <iframe id="myiframe" width="100%" frameborder="0"
+                        src="https://qlipper.myscalev.com/landing-page-baru"></iframe>
                 </div>
 
                 <p class="mt-6 text-xs text-gray-500 font-medium">
@@ -509,22 +510,46 @@
 
     <script>
         // Scales Iframe Height Script
-        const iframe=document.getElementById('myiframe')
-        function resizeIframe(height){iframe.style.height=height+'px'}
-        function isUrl(string){try{new URL(string)
-        return true}catch(_){return false}}
-        function isJSONObject(string){try{const parsed=JSON.parse(string)
-        return typeof parsed==='object'&&parsed!==null}catch(e){return false}}
-        function isIframeSameOrigin(){try{const doc=iframe.contentDocument||iframe.contentWindow.document
-        return true}catch(e){return false}}
-        window.addEventListener('message',function(e){if(e.origin==='https://qlipper.myscalev.com'){if(isUrl(e.data)){location.href=e.data}
-        if(isJSONObject(e.data)&&!isIframeSameOrigin()){const message=JSON.parse(e.data)
-        if(message.type==='resize'){resizeIframe(message.height)}}}},false)
-        document.addEventListener('DOMContentLoaded', function () {var observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {if (entry.isIntersecting) {
-        iframe.src = iframe.src
-        observer.disconnect()}})})
-        observer.observe(iframe)})
+        const iframe = document.getElementById('myiframe')
+        function resizeIframe(height) { iframe.style.height = height + 'px' }
+        function isUrl(string) {
+            try {
+                new URL(string)
+                return true
+            } catch (_) { return false }
+        }
+        function isJSONObject(string) {
+            try {
+                const parsed = JSON.parse(string)
+                return typeof parsed === 'object' && parsed !== null
+            } catch (e) { return false }
+        }
+        function isIframeSameOrigin() {
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document
+                return true
+            } catch (e) { return false }
+        }
+        window.addEventListener('message', function (e) {
+            if (e.origin === 'https://qlipper.myscalev.com') {
+                if (isUrl(e.data)) { location.href = e.data }
+                if (isJSONObject(e.data) && !isIframeSameOrigin()) {
+                    const message = JSON.parse(e.data)
+                    if (message.type === 'resize') { resizeIframe(message.height) }
+                }
+            }
+        }, false)
+        document.addEventListener('DOMContentLoaded', function () {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        iframe.src = iframe.src
+                        observer.disconnect()
+                    }
+                })
+            })
+            observer.observe(iframe)
+        })
     </script>
 
     <script>
