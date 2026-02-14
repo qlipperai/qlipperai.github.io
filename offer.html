@@ -429,10 +429,10 @@
                     </div>
                 </div>
 
-                <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
-                    class="gradient-gold text-black font-black px-10 py-6 rounded-2xl text-xl block w-full hover:opacity-90 transition shadow-2xl shadow-gold-500/40">
-                    Amankan Akses Sekarang
-                </a>
+                <!-- Checkout Iframe -->
+                <div class="mt-8 rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+                    <iframe id="myiframe" width="100%" frameborder="0" src="https://qlipper.myscalev.com/landing-page-baru"></iframe>
+                </div>
 
                 <p class="mt-6 text-xs text-gray-500 font-medium">
                     🛡️ Secure Checkout • Akses Instan • Lifetime Update
@@ -470,9 +470,9 @@
                     <span class="text-sm text-gray-500 line-through">Rp 299.000</span>
                 </div>
             </div>
-            <a href="https://qlipper.myscalev.com/c/checkout?variant_ids=430560&qty=1"
+            <a href="#pricing"
                 class="gradient-gold text-black font-black py-4 px-10 rounded-2xl text-center block w-full md:w-auto text-lg shadow-lg shadow-gold-500/20">
-                Checkout Rp 199.000
+                Amankan Slot Sekarang
             </a>
         </div>
     </div>
@@ -506,6 +506,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Scales Iframe Height Script
+        const iframe=document.getElementById('myiframe')
+        function resizeIframe(height){iframe.style.height=height+'px'}
+        function isUrl(string){try{new URL(string)
+        return true}catch(_){return false}}
+        function isJSONObject(string){try{const parsed=JSON.parse(string)
+        return typeof parsed==='object'&&parsed!==null}catch(e){return false}}
+        function isIframeSameOrigin(){try{const doc=iframe.contentDocument||iframe.contentWindow.document
+        return true}catch(e){return false}}
+        window.addEventListener('message',function(e){if(e.origin==='https://qlipper.myscalev.com'){if(isUrl(e.data)){location.href=e.data}
+        if(isJSONObject(e.data)&&!isIframeSameOrigin()){const message=JSON.parse(e.data)
+        if(message.type==='resize'){resizeIframe(message.height)}}}},false)
+        document.addEventListener('DOMContentLoaded', function () {var observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {if (entry.isIntersecting) {
+        iframe.src = iframe.src
+        observer.disconnect()}})})
+        observer.observe(iframe)})
+    </script>
 
     <script>
         // Real-world Buyer List Logic
