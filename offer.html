@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qlipper AI - Founder's Edition (Batch 1)</title>
+    <title>Qlipper AI - Early Access (Batch 1)</title>
     <meta name="description"
         content="Berhenti sewa alat kreatif Anda. Miliki mesinnya seharga Rp 199k. Akses seumur hidup.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -16,6 +16,93 @@
     <style>
         body {
             background-color: #050505;
+        }
+
+        /* Typewriter cursor */
+        .tw-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: #f59e0b;
+            margin-left: 4px;
+            vertical-align: text-bottom;
+            animation: blink .7s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .tw-word {
+            color: #f59e0b;
+            display: inline;
+        }
+
+        /* Marquee */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-track {
+            display: inline-flex;
+            animation: scroll-left 30s linear infinite;
+        }
+
+        .marquee-track.reverse {
+            animation: scroll-right 35s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            margin: 0 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            flex-shrink: 0;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .marquee-track,
+            .marquee-track.reverse {
+                animation: none;
+            }
+
+            .tw-cursor {
+                animation: none;
+                opacity: 1;
+            }
         }
     </style>
 
@@ -77,20 +164,28 @@
     <section class="pt-16 pb-12 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 text-red-500 font-black text-xs tracking-[0.3em] mb-4">
-                    <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
-                    PERINGATAN KERAS
+                <div
+                    class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-xs font-bold tracking-[0.2em] text-gray-300 mb-6">
+                    <span class="w-2 h-2 bg-gold-500 rounded-full"></span>
+                    AI VIDEO CLIPPING ENGINE
                 </div>
-                <h1 class="text-3xl md:text-6xl font-black leading-tight mb-8 uppercase">
-                    STOP <span class="text-red-500">LANGGANAN</span><br>TOOL CLOUD MAHAL.
+                <h1 class="text-3xl md:text-6xl font-black leading-tight mb-8">
+                    Bikin Ribuan Shorts<br>
+                    <span class="tw-word" id="tw-target"></span><span class="tw-cursor"></span><br>
+                    Dari Laptop Sendiri ⚡
                 </h1>
-                <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                    Kenapa keluar <span class="text-red-400 font-bold">Rp 300rb/bulan (di Opus & Vizard)</span> kalau
-                    bisa bikin ribuan
-                    klip otomatis dengan AI di laptop sendiri seharga <span
-                        class="text-gold-400 font-black underline decoration-2 underline-offset-4">Rp 199k sekali
-                        bayar</span>?
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-8">
+                    Lupakan cloud mahal dan kuota terbatas.<br>
+                    Qlipper AI proses video langsung di perangkat kamu — cepat, privat,
+                    dan <span class="text-gold-400 font-black">selamanya milik kamu</span>.
                 </p>
+                <div class="flex flex-col items-center gap-4">
+                    <a href="#pricing"
+                        class="gradient-gold text-black font-black text-lg px-10 py-5 rounded-2xl hover:opacity-90 transition inline-flex items-center gap-2">
+                        Klaim Akses Sekarang 👇
+                    </a>
+                    <p class="text-sm text-gray-500">⭐⭐⭐⭐⭐ Dipercaya 100+ creator Indonesia</p>
+                </div>
             </div>
 
             <!-- The Grid Hero Section -->
@@ -164,6 +259,42 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Chip Marquee -->
+    <section class="py-6 border-y border-white/5 bg-black/30 overflow-hidden">
+        <div class="marquee mb-3">
+            <div class="marquee-track">
+                <span class="chip">🎬 UNLIMITED CLIPS</span>
+                <span class="chip">🔒 100% LOKAL</span>
+                <span class="chip">⚡ GPU ACCELERATED</span>
+                <span class="chip">💰 SEKALI BAYAR</span>
+                <span class="chip">🎨 NO WATERMARK</span>
+                <span class="chip">🧠 AI CONTEXT-AWARE</span>
+                <span class="chip">🎬 UNLIMITED CLIPS</span>
+                <span class="chip">🔒 100% LOKAL</span>
+                <span class="chip">⚡ GPU ACCELERATED</span>
+                <span class="chip">💰 SEKALI BAYAR</span>
+                <span class="chip">🎨 NO WATERMARK</span>
+                <span class="chip">🧠 AI CONTEXT-AWARE</span>
+            </div>
+        </div>
+        <div class="marquee">
+            <div class="marquee-track reverse">
+                <span class="chip">📱 MULTI-FORMAT</span>
+                <span class="chip">🔄 MODEL AGNOSTIC</span>
+                <span class="chip">🇮🇩 UNTUK CREATOR INDONESIA</span>
+                <span class="chip">✅ LIFETIME ACCESS</span>
+                <span class="chip">🎯 BATCH EXPORT</span>
+                <span class="chip">🛡️ PRIVASI TERJAGA</span>
+                <span class="chip">📱 MULTI-FORMAT</span>
+                <span class="chip">🔄 MODEL AGNOSTIC</span>
+                <span class="chip">🇮🇩 UNTUK CREATOR INDONESIA</span>
+                <span class="chip">✅ LIFETIME ACCESS</span>
+                <span class="chip">🎯 BATCH EXPORT</span>
+                <span class="chip">🛡️ PRIVASI TERJAGA</span>
             </div>
         </div>
     </section>
@@ -333,7 +464,7 @@
                     Limited Batch 1
                 </div>
 
-                <h3 class="text-2xl font-black text-white mb-2">Founder's Edition</h3>
+                <h3 class="text-2xl font-black text-white mb-2">Early Access</h3>
                 <p class="text-gray-400 mb-8 font-medium">Miliki mesinnya selamanya.</p>
 
                 <div class="mb-10">
@@ -525,6 +656,37 @@
             setTimeout(showNextToast, 3000);
             setInterval(showNextToast, 12000);
         }
+    </script>
+
+    <!-- Typewriter Effect -->
+    <script>
+        (function () {
+            const words = ['Otomatis', 'Tanpa Langganan', 'Tanpa Upload', 'Tanpa Watermark', 'Sekali Bayar'];
+            const el = document.getElementById('tw-target');
+            if (!el) return;
+            let wordIdx = 0, charIdx = 0, deleting = false;
+            const typeSpeed = 100, deleteSpeed = 60, pauseEnd = 2000, pauseStart = 400;
+
+            function tick() {
+                const current = words[wordIdx];
+                if (!deleting) {
+                    el.textContent = current.slice(0, ++charIdx);
+                    if (charIdx === current.length) {
+                        deleting = true;
+                        return setTimeout(tick, pauseEnd);
+                    }
+                    return setTimeout(tick, typeSpeed);
+                }
+                el.textContent = current.slice(0, --charIdx);
+                if (charIdx === 0) {
+                    deleting = false;
+                    wordIdx = (wordIdx + 1) % words.length;
+                    return setTimeout(tick, pauseStart);
+                }
+                setTimeout(tick, deleteSpeed);
+            }
+            setTimeout(tick, 600);
+        })();
     </script>
 </body>
 
