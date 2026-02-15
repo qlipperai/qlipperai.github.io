@@ -5,49 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qlipper AI - Tutorial & FAQ</title>
-    <meta name="description"
-        content="Complete installation guide, user manual, and troubleshooting FAQ for Qlipper AI">
+    <meta name="description" content="Complete installation guide, user manual, and troubleshooting FAQ for Qlipper AI">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        royal: {
-                            900: '#0c0c14',
-                            950: '#050508',
-                            1000: '#050505'
-                        },
-                        gold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
-        }
-
-        .gradient-gold {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #fff, #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background-color: #050505;
         }
 
         .sidebar-link {
@@ -143,7 +109,8 @@
                 <a href="offer.html" class="text-gray-400 hover:text-white transition" data-i18n-nav-pricing>Pricing</a>
             </div>
             <div class="flex items-center gap-4">
-                <button id="lang-toggle" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 hover:border-gold-400/50 hover:bg-gold-400/10 transition text-sm font-medium">
+                <button id="lang-toggle"
+                    class="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 hover:border-gold-400/50 hover:bg-gold-400/10 transition text-sm font-medium">
                     <span id="lang-text">EN</span>
                     <span>↔</span>
                     <span id="lang-text-alt">ID</span>
@@ -162,45 +129,67 @@
         <aside class="hidden lg:block w-64 bg-royal-950 border-r border-white/5 p-6 fixed h-full overflow-y-auto">
             <h2 class="text-lg font-bold mb-6 text-gold-400" data-i18n-sidebar-doc>Documentation</h2>
             <nav class="space-y-2">
-                <a href="#getting-started" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-getting-started>
+                <a href="#getting-started" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent"
+                    data-i18n-sidebar-getting-started>
                     Getting Started
                 </a>
-                <a href="#installation" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-installation>
+                <a href="#installation" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent"
+                    data-i18n-sidebar-installation>
                     Installation
                 </a>
-                <a href="#first-time-setup" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-first-time>
+                <a href="#first-time-setup"
+                    class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent"
+                    data-i18n-sidebar-first-time>
                     First-Time Setup
                 </a>
-                <a href="#user-guide" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-user-guide>
+                <a href="#user-guide" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent"
+                    data-i18n-sidebar-user-guide>
                     User Guide
                 </a>
-                <a href="#changelog" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-changelog>
+                <a href="#changelog" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent"
+                    data-i18n-sidebar-changelog>
                     Version Changelog
                 </a>
-                <a href="#troubleshooting" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent" data-i18n-sidebar-troubleshooting>
+                <a href="#troubleshooting" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent"
+                    data-i18n-sidebar-troubleshooting>
                     Troubleshooting
                 </a>
                 <div class="pt-4 mt-4 border-t border-white/10">
-                    <h3 class="text-sm font-semibold text-gray-500 uppercase mb-2 px-4" data-i18n="sidebar.commonIssues">Common Issues</h3>
-                    <a href="#error-403" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.error403">
+                    <h3 class="text-sm font-semibold text-gray-500 uppercase mb-2 px-4"
+                        data-i18n="sidebar.commonIssues">Common Issues</h3>
+                    <a href="#error-403"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.error403">
                         403 Forbidden Error
                     </a>
-                    <a href="#error-drm" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorDrm">
+                    <a href="#error-drm"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.errorDrm">
                         DRM Protected Error
                     </a>
-                    <a href="#error-nodejs" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorNodejs">
+                    <a href="#error-nodejs"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.errorNodejs">
                         Node.js Not Found
                     </a>
-                    <a href="#error-frontend" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorFrontend">
+                    <a href="#error-frontend"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.errorFrontend">
                         Frontend Not Built
                     </a>
-                    <a href="#error-gemini" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorGemini">
+                    <a href="#error-gemini"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.errorGemini">
                         Gemini Model Error
                     </a>
-                    <a href="#error-port" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorPort">
+                    <a href="#error-port"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.errorPort">
                         Port Already in Use
                     </a>
-                    <a href="#error-ffmpeg" class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm" data-i18n="sidebar.errorFFmpeg">
+                    <a href="#error-ffmpeg"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.errorFFmpeg">
                         FFmpeg Download Failed
                     </a>
                 </div>
@@ -220,15 +209,17 @@
             <!-- Getting Started -->
             <section id="getting-started" class="mb-16">
                 <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="gettingStarted.title">Getting Started</h2>
-                
+
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5 mb-6">
-                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="gettingStarted.whatIs.title">What is Qlipper AI?</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="gettingStarted.whatIs.title">What is
+                        Qlipper AI?</h3>
                     <p class="text-gray-300 mb-4" data-i18n="gettingStarted.whatIs.desc">
-                        Qlipper AI is a local, AI-powered video clipping tool that runs entirely on your computer. 
-                        No cloud uploads, no monthly subscriptions. Download YouTube videos, analyze them with AI, 
+                        Qlipper AI is a local, AI-powered video clipping tool that runs entirely on your computer.
+                        No cloud uploads, no monthly subscriptions. Download YouTube videos, analyze them with AI,
                         and create viral clips automatically.
                     </p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-300" data-i18n-html="gettingStarted.whatIs.list">
+                    <ul class="list-disc list-inside space-y-2 text-gray-300"
+                        data-i18n-html="gettingStarted.whatIs.list">
                         <li><strong>100% Local:</strong> All processing happens on your machine</li>
                         <li><strong>Unlimited:</strong> No per-video or per-minute charges</li>
                         <li><strong>Private:</strong> Your videos never leave your computer</li>
@@ -237,11 +228,14 @@
                 </div>
 
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="gettingStarted.requirements.title">System Requirements</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="gettingStarted.requirements.title">
+                        System Requirements</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <h4 class="font-semibold mb-2 text-white" data-i18n="gettingStarted.requirements.minimum">Minimum</h4>
-                            <ul class="space-y-1 text-gray-300 text-sm" data-i18n-html="gettingStarted.requirements.minimumList">
+                            <h4 class="font-semibold mb-2 text-white" data-i18n="gettingStarted.requirements.minimum">
+                                Minimum</h4>
+                            <ul class="space-y-1 text-gray-300 text-sm"
+                                data-i18n-html="gettingStarted.requirements.minimumList">
                                 <li>• macOS 10.15+ or Windows 10+</li>
                                 <li>• 8GB RAM</li>
                                 <li>• 500MB free storage</li>
@@ -249,8 +243,10 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-2 text-white" data-i18n="gettingStarted.requirements.recommended">Recommended</h4>
-                            <ul class="space-y-1 text-gray-300 text-sm" data-i18n-html="gettingStarted.requirements.recommendedList">
+                            <h4 class="font-semibold mb-2 text-white"
+                                data-i18n="gettingStarted.requirements.recommended">Recommended</h4>
+                            <ul class="space-y-1 text-gray-300 text-sm"
+                                data-i18n-html="gettingStarted.requirements.recommendedList">
                                 <li>• 16GB+ RAM</li>
                                 <li>• Apple Silicon or modern CPU</li>
                                 <li>• SSD with 50GB+ free</li>
@@ -280,48 +276,62 @@
                 <div class="space-y-6">
                     <!-- Method 1: One-Click -->
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.method1.title">Method 1: One-Click Launch (Recommended)</h3>
-                        
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.method1.title">
+                            Method 1: One-Click Launch (Recommended)</h3>
+
                         <div class="mb-4">
                             <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method1.macos">macOS</h4>
                             <!-- Image container for installation-method1-macos.png -->
-                            <div data-image-section="installation-method1-macos" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                            <div data-image-section="installation-method1-macos"
+                                class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                 <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                             </div>
-                            <p class="text-gray-300 mb-2" data-i18n-html="installation.method1.macosDesc">Double-click <code>Qlipper-AI.command</code> or run:</p>
+                            <p class="text-gray-300 mb-2" data-i18n-html="installation.method1.macosDesc">Double-click
+                                <code>Qlipper-AI.command</code> or run:</p>
                             <pre><code>cd /path/to/QLIPPER/app
 ./run-mac.sh</code></pre>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method1.windows">Windows</h4>
+                            <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method1.windows">Windows
+                            </h4>
                             <!-- Image container for installation-method1-windows.png -->
-                            <div data-image-section="installation-method1-windows" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                            <div data-image-section="installation-method1-windows"
+                                class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                 <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                             </div>
-                            <p class="text-gray-300 mb-2" data-i18n-html="installation.method1.windowsDesc">Double-click <code>run-windows.bat</code></p>
+                            <p class="text-gray-300 mb-2" data-i18n-html="installation.method1.windowsDesc">Double-click
+                                <code>run-windows.bat</code></p>
                         </div>
                     </div>
 
                     <!-- Method 2: Manual -->
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.method2.title">Method 2: Manual Installation</h3>
-                        
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.method2.title">
+                            Method 2: Manual Installation</h3>
+
                         <div class="space-y-4">
                             <div>
-                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step1">Step 1: Install Node.js</h4>
+                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step1">Step 1:
+                                    Install Node.js</h4>
                                 <!-- Image container for installation-step1-nodejs.png -->
-                                <div data-image-section="installation-step1-nodejs" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                <div data-image-section="installation-step1-nodejs"
+                                    class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                     <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                                 </div>
-                                <p class="text-gray-300 mb-2" data-i18n-html="installation.method2.step1Desc">Download and install from <a href="https://nodejs.org" class="text-gold-400 hover:underline" target="_blank">nodejs.org</a> (LTS version)</p>
-                                <p class="text-gray-400 text-sm" data-i18n-html="installation.method2.step1Mac">macOS users can also use: <code>brew install node</code></p>
+                                <p class="text-gray-300 mb-2" data-i18n-html="installation.method2.step1Desc">Download
+                                    and install from <a href="https://nodejs.org" class="text-gold-400 hover:underline"
+                                        target="_blank">nodejs.org</a> (LTS version)</p>
+                                <p class="text-gray-400 text-sm" data-i18n-html="installation.method2.step1Mac">macOS
+                                    users can also use: <code>brew install node</code></p>
                             </div>
 
                             <div>
-                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step2">Step 2: Install Dependencies</h4>
+                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step2">Step 2:
+                                    Install Dependencies</h4>
                                 <!-- Image container for installation-step2-dependencies.png -->
-                                <div data-image-section="installation-step2-dependencies" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                <div data-image-section="installation-step2-dependencies"
+                                    class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                     <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                                 </div>
                                 <pre><code>cd /path/to/QLIPPER/app
@@ -339,50 +349,64 @@ npm run build</code></pre>
                             </div>
 
                             <div>
-                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step3">Step 3: Start Server</h4>
+                                <h4 class="font-semibold mb-2 text-white" data-i18n="installation.method2.step3">Step 3:
+                                    Start Server</h4>
                                 <!-- Image container for installation-step3-server.png -->
-                                <div data-image-section="installation-step3-server" class="mb-4 rounded-lg overflow-hidden border border-white/10">
+                                <div data-image-section="installation-step3-server"
+                                    class="mb-4 rounded-lg overflow-hidden border border-white/10">
                                     <img src="" alt="" class="w-full hidden" onerror="this.style.display='none'" />
                                 </div>
                                 <pre><code>cd ../backend
 npm start</code></pre>
-                                <p class="text-gray-300 mt-2" data-i18n-html="installation.method2.step3Desc">Then open <code>http://localhost:3001</code> in your browser</p>
+                                <p class="text-gray-300 mt-2" data-i18n-html="installation.method2.step3Desc">Then open
+                                    <code>http://localhost:3001</code> in your browser</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- What Gets Installed -->
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.installed.title">What Gets Installed Automatically</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="installation.installed.title">
+                            What Gets Installed Automatically</h3>
                         <div class="overflow-x-auto">
                             <table class="w-full text-sm">
                                 <thead>
                                     <tr class="border-b border-white/10">
-                                        <th class="text-left py-2 text-gray-400" data-i18n="installation.installed.component">Component</th>
-                                        <th class="text-left py-2 text-gray-400" data-i18n="installation.installed.location">Location</th>
-                                        <th class="text-left py-2 text-gray-400" data-i18n="installation.installed.purpose">Purpose</th>
+                                        <th class="text-left py-2 text-gray-400"
+                                            data-i18n="installation.installed.component">Component</th>
+                                        <th class="text-left py-2 text-gray-400"
+                                            data-i18n="installation.installed.location">Location</th>
+                                        <th class="text-left py-2 text-gray-400"
+                                            data-i18n="installation.installed.purpose">Purpose</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-300">
                                     <tr class="border-b border-white/5">
                                         <td class="py-2"><code>yt-dlp</code></td>
                                         <td class="py-2"><code>backend/bin/</code></td>
-                                        <td class="py-2" data-i18n="installation.installed.ytdlpPurpose">YouTube downloader</td>
+                                        <td class="py-2" data-i18n="installation.installed.ytdlpPurpose">YouTube
+                                            downloader</td>
                                     </tr>
                                     <tr class="border-b border-white/5">
                                         <td class="py-2"><code>ffmpeg</code></td>
                                         <td class="py-2"><code>backend/bin/</code></td>
-                                        <td class="py-2" data-i18n="installation.installed.ffmpegPurpose">Video processing</td>
+                                        <td class="py-2" data-i18n="installation.installed.ffmpegPurpose">Video
+                                            processing</td>
                                     </tr>
                                     <tr class="border-b border-white/5">
-                                        <td class="py-2" data-i18n="installation.installed.puppeteer">Puppeteer Chrome</td>
-                                        <td class="py-2" data-i18n="installation.installed.autoDownloaded">Auto-downloaded</td>
-                                        <td class="py-2" data-i18n="installation.installed.puppeteerPurpose">Text overlay rendering</td>
+                                        <td class="py-2" data-i18n="installation.installed.puppeteer">Puppeteer Chrome
+                                        </td>
+                                        <td class="py-2" data-i18n="installation.installed.autoDownloaded">
+                                            Auto-downloaded</td>
+                                        <td class="py-2" data-i18n="installation.installed.puppeteerPurpose">Text
+                                            overlay rendering</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-2" data-i18n="installation.installed.nodeModules">Node modules</td>
+                                        <td class="py-2" data-i18n="installation.installed.nodeModules">Node modules
+                                        </td>
                                         <td class="py-2"><code>backend/node_modules/</code></td>
-                                        <td class="py-2" data-i18n="installation.installed.nodeModulesPurpose">Backend dependencies</td>
+                                        <td class="py-2" data-i18n="installation.installed.nodeModulesPurpose">Backend
+                                            dependencies</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -397,12 +421,16 @@ npm start</code></pre>
 
                 <div class="space-y-6">
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step1">1. Get an API Key</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step1">1. Get an API
+                            Key</h3>
                         <p class="text-gray-300 mb-4" data-i18n-html="firstTime.step1Desc">
-                            You need at least one AI API key. <strong>Gemini is recommended</strong> (free tier available):
+                            You need at least one AI API key. <strong>Gemini is recommended</strong> (free tier
+                            available):
                         </p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="firstTime.step1List">
-                            <li>Go to <a href="https://ai.google.dev" class="text-gold-400 hover:underline" target="_blank">ai.google.dev</a></li>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300"
+                            data-i18n-html="firstTime.step1List">
+                            <li>Go to <a href="https://ai.google.dev" class="text-gold-400 hover:underline"
+                                    target="_blank">ai.google.dev</a></li>
                             <li>Click "Get API Key"</li>
                             <li>Create a new key</li>
                             <li>Copy the key</li>
@@ -410,8 +438,10 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step2">2. Configure Settings</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="firstTime.step2List">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step2">2. Configure
+                            Settings</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300"
+                            data-i18n-html="firstTime.step2List">
                             <li>Open Qlipper AI in your browser (<code>http://localhost:3001</code>)</li>
                             <li>Click the <strong>Settings icon</strong> (⚙️) in the top right</li>
                             <li>Paste your API key in the "Gemini API Key" field</li>
@@ -420,8 +450,10 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step3">3. Test the Pipeline</h3>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="firstTime.step3List">
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="firstTime.step3">3. Test the
+                            Pipeline</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300"
+                            data-i18n-html="firstTime.step3List">
                             <li>Copy a YouTube URL</li>
                             <li>Paste it in the search bar</li>
                             <li>Click the sparkles button (✨)</li>
@@ -438,11 +470,13 @@ npm start</code></pre>
 
                 <div class="space-y-6">
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.quickStart">Quick Start: Unified Pipeline</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.quickStart">Quick
+                            Start: Unified Pipeline</h3>
                         <p class="text-gray-300 mb-4" data-i18n="userGuide.quickStartDesc">
                             The fastest way to create clips from a YouTube video:
                         </p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300" data-i18n-html="userGuide.quickStartList">
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300"
+                            data-i18n-html="userGuide.quickStartList">
                             <li>Paste a YouTube URL in the main search bar</li>
                             <li>Click the sparkles button (✨) or press Enter</li>
                             <li>Wait for download and transcription</li>
@@ -453,7 +487,8 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolA">Tool A: YouTube Download</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolA">Tool A: YouTube
+                            Download</h3>
                         <p class="text-gray-300 mb-4" data-i18n="userGuide.toolADesc">
                             Download YouTube videos to your Asset Library:
                         </p>
@@ -466,7 +501,8 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolB">Tool B: AI Analysis</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolB">Tool B: AI
+                            Analysis</h3>
                         <p class="text-gray-300 mb-4" data-i18n="userGuide.toolBDesc">
                             Analyze videos with AI to find viral moments:
                         </p>
@@ -479,7 +515,8 @@ npm start</code></pre>
                     </div>
 
                     <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolC">Tool C: Clipper</h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="userGuide.toolC">Tool C: Clipper
+                        </h3>
                         <p class="text-gray-300 mb-4" data-i18n="userGuide.toolCDesc">
                             Create clips from analysis results:
                         </p>
@@ -496,39 +533,51 @@ npm start</code></pre>
 
             <!-- Version Changelog -->
             <section id="changelog" class="mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="changelog.title">What's New? (Version Changelog)</h2>
-                
+                <h2 class="text-3xl font-bold mb-6 text-white" data-i18n="changelog.title">What's New? (Version
+                    Changelog)</h2>
+
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="changelog.mainQuestion">What Features Are Included in the Latest Version?</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="changelog.mainQuestion">What
+                        Features Are Included in the Latest Version?</h3>
                     <p class="text-gray-300 mb-6" data-i18n="changelog.intro">
                         Qlipper AI is constantly improving. Check the latest features and improvements:
                     </p>
-                    
+
                     <div class="space-y-6">
                         <!-- Latest Release -->
                         <div class="bg-royal-1000/50 rounded-lg p-4 border border-gold-500/30">
                             <div class="flex items-center justify-between mb-3">
-                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v165.version">v1.6.5 (Latest)</h4>
+                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v165.version">
+                                    v1.6.5 (Latest)</h4>
                                 <span class="text-sm text-gray-400" data-i18n="changelog.v165.date">Feb 8, 2026</span>
                             </div>
-                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v165.title"><strong>Smart Quality Picker + Accurate Subtitles</strong></p>
+                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v165.title"><strong>Smart Quality
+                                    Picker + Accurate Subtitles</strong></p>
                             <ul class="space-y-2 text-gray-300 ml-4" data-i18n-html="changelog.v165.features">
-                                <li>• <strong>Smart Quality Picker:</strong> Probes YouTube for available resolutions before download (no more blind 4K selection on 720p videos)</li>
-                                <li>• <strong>Auto-select Best Quality:</strong> Gold-accented UI shows exactly what's available</li>
-                                <li>• <strong>Whisper Word-Level Transcription:</strong> Precise subtitle timing using base model with word_timestamps=True</li>
-                                <li>• <strong>Isolated to Subtitles Only:</strong> Lazy loading with no performance hit on lower-end Windows devices</li>
-                                <li>• <strong>Caption Quality Indicator:</strong> Shows "YouTube Captions" vs "AI Enhanced" with manual "Enhance Accuracy" button</li>
-                                <li>• <strong>Smart Caching:</strong> Backend prefers Whisper word-level data over VTT when available</li>
+                                <li>• <strong>Smart Quality Picker:</strong> Probes YouTube for available resolutions
+                                    before download (no more blind 4K selection on 720p videos)</li>
+                                <li>• <strong>Auto-select Best Quality:</strong> Gold-accented UI shows exactly what's
+                                    available</li>
+                                <li>• <strong>Whisper Word-Level Transcription:</strong> Precise subtitle timing using
+                                    base model with word_timestamps=True</li>
+                                <li>• <strong>Isolated to Subtitles Only:</strong> Lazy loading with no performance hit
+                                    on lower-end Windows devices</li>
+                                <li>• <strong>Caption Quality Indicator:</strong> Shows "YouTube Captions" vs "AI
+                                    Enhanced" with manual "Enhance Accuracy" button</li>
+                                <li>• <strong>Smart Caching:</strong> Backend prefers Whisper word-level data over VTT
+                                    when available</li>
                             </ul>
                         </div>
-                        
+
                         <!-- v1.6.4 -->
                         <div class="bg-royal-1000/30 rounded-lg p-4 border border-white/10">
                             <div class="flex items-center justify-between mb-3">
-                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v164.version">v1.6.4</h4>
+                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v164.version">
+                                    v1.6.4</h4>
                                 <span class="text-sm text-gray-400" data-i18n="changelog.v164.date">Feb 8, 2026</span>
                             </div>
-                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v164.title"><strong>Critical Bug Fixes + UX Improvements</strong></p>
+                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v164.title"><strong>Critical Bug
+                                    Fixes + UX Improvements</strong></p>
                             <ul class="space-y-1 text-gray-300 text-sm ml-4" data-i18n-html="changelog.v164.features">
                                 <li>• Input/ColorPicker z-index layering fixes (100% click reliability)</li>
                                 <li>• FFmpeg filter escaping improvements (prevents crashes with special chars)</li>
@@ -536,23 +585,27 @@ npm start</code></pre>
                                 <li>• Subtitle spacing fixes (preview matches export)</li>
                             </ul>
                         </div>
-                        
+
                         <!-- v1.6.3 -->
                         <div class="bg-royal-1000/30 rounded-lg p-4 border border-white/10">
                             <div class="flex items-center justify-between mb-3">
-                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v163.version">v1.6.3</h4>
+                                <h4 class="text-lg font-semibold text-gold-400" data-i18n="changelog.v163.version">
+                                    v1.6.3</h4>
                                 <span class="text-sm text-gray-400" data-i18n="changelog.v163.date">Feb 7, 2026</span>
                             </div>
-                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v163.title"><strong>ASS Subtitle Engine (10-100x faster)</strong></p>
+                            <p class="text-gray-300 mb-3" data-i18n-html="changelog.v163.title"><strong>ASS Subtitle
+                                    Engine (10-100x faster)</strong></p>
                             <ul class="space-y-1 text-gray-300 text-sm ml-4" data-i18n-html="changelog.v163.features">
                                 <li>• Native ASS subtitle burning (no more PNG overlays)</li>
                                 <li>• Word-by-word karaoke with glow/scale/color</li>
                                 <li>• Zero stream ID collisions</li>
                             </ul>
                         </div>
-                        
+
                         <p class="text-gray-400 text-sm mt-4 text-center" data-i18n="changelog.fullList">
-                            For the full version history, visit <a href="https://github.com/yourusername/qlipper-ai" class="text-gold-400 hover:underline" target="_blank">GitHub</a> or check the CHANGELOG.md file
+                            For the full version history, visit <a href="https://github.com/yourusername/qlipper-ai"
+                                class="text-gold-400 hover:underline" target="_blank">GitHub</a> or check the
+                            CHANGELOG.md file
                         </p>
                     </div>
                 </div>
@@ -575,15 +628,18 @@ npm start</code></pre>
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.error403.causeLine">
                             <strong>Cause:</strong> YouTube is blocking the download request. This is usually temporary.
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.error403.solutions">Solutions:</p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4" data-i18n-html="troubleshooting.error403.solutionList">
-                            <li><strong>Update yt-dlp:</strong> Go to Settings → YouTube Downloader → Click "Update yt-dlp"</li>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.error403.solutions">
+                            Solutions:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4"
+                            data-i18n-html="troubleshooting.error403.solutionList">
+                            <li><strong>Update yt-dlp:</strong> Go to Settings → YouTube Downloader → Click "Update
+                                yt-dlp"</li>
                             <li><strong>Wait 5-10 minutes</strong> and try again</li>
                             <li><strong>Try a different video</strong> to test if it's video-specific</li>
                             <li><strong>Restart the application</strong></li>
                         </ol>
                         <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.error403.noteLine">
-                            <strong>Note:</strong> Qlipper AI v1.5.1+ includes automatic retry with multiple strategies. 
+                            <strong>Note:</strong> Qlipper AI v1.5.1+ includes automatic retry with multiple strategies.
                             If one method fails, it will automatically try another.
                         </p>
                     </div>
@@ -597,21 +653,26 @@ npm start</code></pre>
                     </div>
                     <div class="faq-answer mt-4">
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorDrm.symptomsLine">
-                            <strong>Symptoms:</strong> Error message says "This video is DRM protected" or mentions "nsig" or "signature extraction"
+                            <strong>Symptoms:</strong> Error message says "This video is DRM protected" or mentions
+                            "nsig" or "signature extraction"
                         </p>
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorDrm.causeLine">
-                            <strong>Cause:</strong> This is usually NOT actual DRM. It means yt-dlp needs a JavaScript runtime 
+                            <strong>Cause:</strong> This is usually NOT actual DRM. It means yt-dlp needs a JavaScript
+                            runtime
                             (Node.js or Deno) to solve YouTube's protection challenges.
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorDrm.solutions">Solutions:</p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4" data-i18n-html="troubleshooting.errorDrm.solutionList">
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorDrm.solutions">
+                            Solutions:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4"
+                            data-i18n-html="troubleshooting.errorDrm.solutionList">
                             <li><strong>Update yt-dlp:</strong> Settings → YouTube Downloader → "Update yt-dlp"</li>
-                            <li><strong>Ensure Node.js is installed:</strong> Run <code>node --version</code> in terminal</li>
+                            <li><strong>Ensure Node.js is installed:</strong> Run <code>node --version</code> in
+                                terminal</li>
                             <li><strong>Restart the application</strong> after updating</li>
                             <li><strong>Try a different video</strong> to test if yt-dlp works</li>
                         </ol>
                         <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.errorDrm.noteLine">
-                            <strong>Note:</strong> Qlipper AI v1.5.1+ automatically configures yt-dlp to use Node.js, 
+                            <strong>Note:</strong> Qlipper AI v1.5.1+ automatically configures yt-dlp to use Node.js,
                             which should resolve this issue for most users.
                         </p>
                     </div>
@@ -625,12 +686,15 @@ npm start</code></pre>
                     </div>
                     <div class="faq-answer mt-4">
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorNodejs.symptomsLine">
-                            <strong>Symptoms:</strong> Error message says "Node.js not found" or "node: command not found"
+                            <strong>Symptoms:</strong> Error message says "Node.js not found" or "node: command not
+                            found"
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorNodejs.solutions">Solutions:</p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorNodejs.solutions">
+                            Solutions:</p>
                         <div class="space-y-4">
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorNodejs.macosTitle">macOS:</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorNodejs.macosTitle">macOS:</p>
                                 <pre><code># Install via Homebrew
 brew install node
 
@@ -638,9 +702,12 @@ brew install node
 # Then restart terminal</code></pre>
                             </div>
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorNodejs.windowsTitle">Windows:</p>
-                                <ol class="list-decimal list-inside space-y-1 text-gray-300" data-i18n-html="troubleshooting.errorNodejs.windowsList">
-                                    <li>Download from <a href="https://nodejs.org" class="text-gold-400 hover:underline" target="_blank">nodejs.org</a></li>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorNodejs.windowsTitle">Windows:</p>
+                                <ol class="list-decimal list-inside space-y-1 text-gray-300"
+                                    data-i18n-html="troubleshooting.errorNodejs.windowsList">
+                                    <li>Download from <a href="https://nodejs.org" class="text-gold-400 hover:underline"
+                                            target="_blank">nodejs.org</a></li>
                                     <li>Run the installer</li>
                                     <li>Restart Command Prompt</li>
                                 </ol>
@@ -657,14 +724,16 @@ brew install node
                     </div>
                     <div class="faq-answer mt-4">
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorFrontend.symptomsLine">
-                            <strong>Symptoms:</strong> Error says "Frontend not built. Run: cd frontend && npm run build"
+                            <strong>Symptoms:</strong> Error says "Frontend not built. Run: cd frontend && npm run
+                            build"
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorFrontend.solutions">Solutions:</p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorFrontend.solutions">
+                            Solutions:</p>
                         <pre><code>cd /path/to/QLIPPER/app/frontend
 npm install
 npm run build</code></pre>
                         <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.errorFrontend.noteLine">
-                            <strong>Note:</strong> This should happen automatically on first launch. 
+                            <strong>Note:</strong> This should happen automatically on first launch.
                             If it doesn't, run the commands above manually.
                         </p>
                     </div>
@@ -673,7 +742,8 @@ npm run build</code></pre>
                 <!-- Gemini Model Error -->
                 <div id="error-gemini" class="faq-item bg-royal-950 rounded-xl p-6 border border-white/5 mb-6">
                     <div class="faq-question flex items-center justify-between">
-                        <h3 class="text-xl font-semibold text-gold-400">Gemini Model Error: "Must provide a model name"</h3>
+                        <h3 class="text-xl font-semibold text-gold-400">Gemini Model Error: "Must provide a model name"
+                        </h3>
                         <span class="text-2xl">▼</span>
                     </div>
                     <div class="faq-answer mt-4">
@@ -683,8 +753,10 @@ npm run build</code></pre>
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorGemini.causeLine">
                             <strong>Cause:</strong> The Gemini model variant setting is empty or invalid.
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorGemini.solutions">Solutions:</p>
-                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4" data-i18n-html="troubleshooting.errorGemini.solutionList">
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorGemini.solutions">
+                            Solutions:</p>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4"
+                            data-i18n-html="troubleshooting.errorGemini.solutionList">
                             <li>Go to Settings</li>
                             <li>Check "Gemini Model Variant" field</li>
                             <li>If empty, set it to: <code>gemini-1.5-flash-latest</code></li>
@@ -708,10 +780,12 @@ npm run build</code></pre>
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorPort.symptomsLine">
                             <strong>Symptoms:</strong> Server fails to start with "EADDRINUSE" or "port already in use"
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorPort.solutions">Solutions:</p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorPort.solutions">
+                            Solutions:</p>
                         <div class="space-y-4">
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorPort.macosTitle">macOS/Linux:</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorPort.macosTitle">macOS/Linux:</p>
                                 <pre><code># Find process using port 3001
 lsof -i :3001
 
@@ -719,7 +793,8 @@ lsof -i :3001
 kill -9 &lt;PID&gt;</code></pre>
                             </div>
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorPort.windowsTitle">Windows:</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorPort.windowsTitle">Windows:</p>
                                 <pre><code># Find process using port 3001
 netstat -ano | findstr :3001
 
@@ -741,33 +816,44 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
                     </div>
                     <div class="faq-answer mt-4">
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorFFmpeg.symptomsLine">
-                            <strong>Symptoms:</strong> Error message says "Downloaded ffmpeg but it failed to run" or "FFmpeg test failed"
+                            <strong>Symptoms:</strong> Error message says "Downloaded ffmpeg but it failed to run" or
+                            "FFmpeg test failed"
                         </p>
                         <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorFFmpeg.causeLine">
-                            <strong>Cause:</strong> FFmpeg was downloaded but cannot execute. This is commonly due to antivirus blocking, corrupted download, missing dependencies, or permission issues.
+                            <strong>Cause:</strong> FFmpeg was downloaded but cannot execute. This is commonly due to
+                            antivirus blocking, corrupted download, missing dependencies, or permission issues.
                         </p>
-                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorFFmpeg.solutions">Solutions:</p>
-                        
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorFFmpeg.solutions">
+                            Solutions:</p>
+
                         <div class="space-y-4">
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.quickFix">Quick Fix (Recommended):</p>
-                                <p class="text-gray-300 mb-2" data-i18n="troubleshooting.errorFFmpeg.quickFixDesc">Install FFmpeg through your system package manager. This avoids download issues and is the easiest solution.</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorFFmpeg.quickFix">Quick Fix (Recommended):</p>
+                                <p class="text-gray-300 mb-2" data-i18n="troubleshooting.errorFFmpeg.quickFixDesc">
+                                    Install FFmpeg through your system package manager. This avoids download issues and
+                                    is the easiest solution.</p>
                             </div>
-                            
+
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.macosTitle">macOS:</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorFFmpeg.macosTitle">macOS:</p>
                                 <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4 mb-4">
                                     <li>Open Terminal</li>
-                                    <li>Install Homebrew (if not installed): <code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></li>
+                                    <li>Install Homebrew (if not installed):
+                                        <code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code>
+                                    </li>
                                     <li>Install FFmpeg: <code>brew install ffmpeg</code></li>
                                     <li>Verify installation: <code>ffmpeg -version</code></li>
                                     <li>Restart Qlipper AI</li>
                                 </ol>
                             </div>
-                            
+
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.windowsTitle">Windows:</p>
-                                <p class="text-gray-300 mb-3" data-i18n="troubleshooting.errorFFmpeg.windowsMethod">Use Windows Package Manager (winget):</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorFFmpeg.windowsTitle">Windows:</p>
+                                <p class="text-gray-300 mb-3" data-i18n="troubleshooting.errorFFmpeg.windowsMethod">Use
+                                    Windows Package Manager (winget):</p>
                                 <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4 mb-4">
                                     <li>Open Command Prompt (Win + R, type "cmd", press Enter)</li>
                                     <li>Run: <code>winget install ffmpeg</code></li>
@@ -777,9 +863,11 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
                                     <li>Close Command Prompt and restart Qlipper AI</li>
                                 </ol>
                             </div>
-                            
+
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.altWindowsTitle">Alternative for Windows (Chocolatey):</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorFFmpeg.altWindowsTitle">Alternative for Windows
+                                    (Chocolatey):</p>
                                 <p class="text-gray-300 mb-2">If winget is not available, use Chocolatey:</p>
                                 <ol class="list-decimal list-inside space-y-1 text-gray-300 ml-4">
                                     <li>Open Command Prompt as Administrator (right-click → "Run as administrator")</li>
@@ -788,37 +876,47 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
                                     <li>Restart Qlipper AI</li>
                                 </ol>
                             </div>
-                            
+
                             <div>
-                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorFFmpeg.troubleshoot">Troubleshooting Steps:</p>
+                                <p class="text-white font-semibold mb-2"
+                                    data-i18n="troubleshooting.errorFFmpeg.troubleshoot">Troubleshooting Steps:</p>
                                 <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4">
-                                    <li><strong>Check if antivirus is blocking:</strong> Temporarily disable antivirus/Windows Defender and restart Qlipper AI</li>
-                                    <li><strong>Clear cache:</strong> Delete the backend/bin folder and restart Qlipper AI</li>
-                                    <li><strong>Check permissions:</strong> Make sure your user account has write permissions to the installation directory</li>
-                                    <li><strong>Restart your computer:</strong> This often resolves permission and system issues</li>
+                                    <li><strong>Check if antivirus is blocking:</strong> Temporarily disable
+                                        antivirus/Windows Defender and restart Qlipper AI</li>
+                                    <li><strong>Clear cache:</strong> Delete the backend/bin folder and restart Qlipper
+                                        AI</li>
+                                    <li><strong>Check permissions:</strong> Make sure your user account has write
+                                        permissions to the installation directory</li>
+                                    <li><strong>Restart your computer:</strong> This often resolves permission and
+                                        system issues</li>
                                 </ol>
                             </div>
                         </div>
-                        
+
                         <p class="text-gray-400 text-sm mt-4" data-i18n-html="troubleshooting.errorFFmpeg.noteLine">
-                            <strong>Note:</strong> After installing FFmpeg via package manager, you can safely delete the <code>backend/bin/</code> folder. Qlipper AI will use the system-installed FFmpeg instead.
+                            <strong>Note:</strong> After installing FFmpeg via package manager, you can safely delete
+                            the <code>backend/bin/</code> folder. Qlipper AI will use the system-installed FFmpeg
+                            instead.
                         </p>
                     </div>
                 </div>
 
                 <!-- Other Common Issues -->
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
-                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="troubleshooting.other.title">Other Common Issues</h3>
-                    
+                    <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="troubleshooting.other.title">Other
+                        Common Issues</h3>
+
                     <div class="space-y-4">
                         <div>
-                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.permissionTitle">Permission Denied (macOS)</h4>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.permissionTitle">
+                                Permission Denied (macOS)</h4>
                             <pre><code>chmod +x run-mac.sh
 chmod +x Qlipper-AI.command</code></pre>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.npmTitle">npm install Fails</h4>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.npmTitle">npm
+                                install Fails</h4>
                             <pre><code># Clear npm cache
 npm cache clean --force
 
@@ -828,16 +926,26 @@ npm install</code></pre>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.ytdlpTitle">yt-dlp Not Working</h4>
-                            <p class="text-gray-300 mb-2" data-i18n="troubleshooting.other.ytdlpDesc">The preflight check should auto-download yt-dlp. If it fails:</p>
-                            <p class="text-gray-300 mb-2" data-i18n-html="troubleshooting.other.ytdlpMac">macOS: <code>brew install yt-dlp</code></p>
-                            <p class="text-gray-300" data-i18n-html="troubleshooting.other.ytdlpWindows">Windows: Download from <a href="https://github.com/yt-dlp/yt-dlp/releases" class="text-gold-400 hover:underline" target="_blank">GitHub releases</a></p>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.ytdlpTitle">
+                                yt-dlp Not Working</h4>
+                            <p class="text-gray-300 mb-2" data-i18n="troubleshooting.other.ytdlpDesc">The preflight
+                                check should auto-download yt-dlp. If it fails:</p>
+                            <p class="text-gray-300 mb-2" data-i18n-html="troubleshooting.other.ytdlpMac">macOS:
+                                <code>brew install yt-dlp</code></p>
+                            <p class="text-gray-300" data-i18n-html="troubleshooting.other.ytdlpWindows">Windows:
+                                Download from <a href="https://github.com/yt-dlp/yt-dlp/releases"
+                                    class="text-gold-400 hover:underline" target="_blank">GitHub releases</a></p>
                         </div>
 
                         <div>
-                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.ffmpegTitle">FFmpeg Not Found</h4>
-                            <p class="text-gray-300 mb-2" data-i18n-html="troubleshooting.other.ffmpegMac">macOS: <code>brew install ffmpeg</code></p>
-                            <p class="text-gray-300" data-i18n-html="troubleshooting.other.ffmpegWindows">Windows: Download from <a href="https://ffmpeg.org/download.html" class="text-gold-400 hover:underline" target="_blank">ffmpeg.org</a> and add to PATH</p>
+                            <h4 class="font-semibold text-white mb-2" data-i18n="troubleshooting.other.ffmpegTitle">
+                                FFmpeg Not Found</h4>
+                            <p class="text-gray-300 mb-2" data-i18n-html="troubleshooting.other.ffmpegMac">macOS:
+                                <code>brew install ffmpeg</code></p>
+                            <p class="text-gray-300" data-i18n-html="troubleshooting.other.ffmpegWindows">Windows:
+                                Download from <a href="https://ffmpeg.org/download.html"
+                                    class="text-gold-400 hover:underline" target="_blank">ffmpeg.org</a> and add to PATH
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -845,9 +953,11 @@ npm install</code></pre>
 
             <!-- Footer -->
             <div class="mt-16 pt-8 border-t border-white/10 text-center text-gray-400 text-sm">
-                <p><span data-i18n="footer.help">Need more help? Check out the full documentation in the</span> <code>documentation/</code> folder</p>
+                <p><span data-i18n="footer.help">Need more help? Check out the full documentation in the</span>
+                    <code>documentation/</code> folder</p>
                 <p class="mt-2">
-                    <a href="index.html" class="text-gold-400 hover:underline" data-i18n="footer.back">← Back to Home</a>
+                    <a href="index.html" class="text-gold-400 hover:underline" data-i18n="footer.back">← Back to
+                        Home</a>
                 </p>
             </div>
         </main>
@@ -1187,7 +1297,7 @@ npm install</code></pre>
                         ffmpegWindows: "Windows: Download dari <a href=\"https://ffmpeg.org/download.html\" class=\"text-gold-400 hover:underline\" target=\"_blank\">ffmpeg.org</a> dan tambahkan ke PATH"
                     }
                 },
-changelog: {
+                changelog: {
                     title: "Apa Yang Baru? (Changelog Versi)",
                     mainQuestion: "Fitur Apa Saja yang Disertakan dalam Versi Terbaru?",
                     intro: "Qlipper AI terus berkembang. Periksa fitur dan peningkatan terbaru:",
@@ -1260,7 +1370,7 @@ changelog: {
             // Find all images in assets folder
             const assetsPath = 'assets/';
             const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
-            
+
             // Check for images that match patterns
             imagePatterns.forEach(({ pattern, section }) => {
                 imageExtensions.forEach(ext => {
@@ -1269,7 +1379,7 @@ changelog: {
                         `${assetsPath}tutorial-${section}${ext}`,
                         `${assetsPath}${section.replace(/-/g, '_')}${ext}`
                     ];
-                    
+
                     possiblePaths.forEach(imgPath => {
                         const container = document.querySelector(`[data-image-section="${section}"]`);
                         if (container) {
@@ -1296,7 +1406,7 @@ changelog: {
 
         // Manual image placement function
         // Call this to manually add an image: placeImage('installation-method1-macos', 'assets/my-image.png')
-        window.placeImage = function(sectionId, imagePath) {
+        window.placeImage = function (sectionId, imagePath) {
             const container = document.querySelector(`[data-image-section="${sectionId}"]`);
             if (container) {
                 const img = container.querySelector('img');
@@ -1318,21 +1428,21 @@ changelog: {
             currentLang = lang;
             localStorage.setItem('qlipper-lang', lang);
             const t = translations[lang];
-            
+
             // Update page title
             document.title = `Qlipper AI - ${t.header.title}`;
-            
+
             // Update HTML lang attribute
             document.documentElement.lang = lang;
-            
+
             // Update navigation
             document.querySelectorAll('[data-i18n-nav-home]').forEach(el => el.textContent = t.nav.home);
             document.querySelectorAll('[data-i18n-nav-pricing]').forEach(el => el.textContent = t.nav.pricing);
-            
+
             // Update header
             document.querySelectorAll('[data-i18n-header-title]').forEach(el => el.textContent = t.header.title);
             document.querySelectorAll('[data-i18n-header-subtitle]').forEach(el => el.textContent = t.header.subtitle);
-            
+
             // Update sidebar
             document.querySelectorAll('[data-i18n-sidebar-doc]').forEach(el => el.textContent = t.sidebar.documentation);
             document.querySelectorAll('[data-i18n-sidebar-getting-started]').forEach(el => el.textContent = t.sidebar.gettingStarted);
@@ -1340,7 +1450,7 @@ changelog: {
             document.querySelectorAll('[data-i18n-sidebar-first-time]').forEach(el => el.textContent = t.sidebar.firstTimeSetup);
             document.querySelectorAll('[data-i18n-sidebar-user-guide]').forEach(el => el.textContent = t.sidebar.userGuide);
             document.querySelectorAll('[data-i18n-sidebar-troubleshooting]').forEach(el => el.textContent = t.sidebar.troubleshooting);
-            
+
             // Update language toggle button
             const langText = document.getElementById('lang-text');
             const langTextAlt = document.getElementById('lang-text-alt');
@@ -1351,7 +1461,7 @@ changelog: {
                 langText.textContent = 'ID';
                 langTextAlt.textContent = 'EN';
             }
-            
+
             // Update all elements with data-i18n-html attributes
             document.querySelectorAll('[data-i18n-html]').forEach(el => {
                 const key = el.getAttribute('data-i18n-html');
@@ -1391,7 +1501,7 @@ changelog: {
                     }
                 }
             });
-            
+
             // Update FAQ titles
             const faqTitles = {
                 'error-403': t.troubleshooting.error403.title,
@@ -1401,7 +1511,7 @@ changelog: {
                 'error-gemini': t.troubleshooting.errorGemini.title,
                 'error-port': t.troubleshooting.errorPort.title
             };
-            
+
             Object.keys(faqTitles).forEach(id => {
                 const faq = document.getElementById(id);
                 if (faq) {
@@ -1421,7 +1531,7 @@ changelog: {
 
         // Initialize language on page load
         updateLanguage(currentLang);
-        
+
         // Initialize images on page load
         initializeImages();
 
@@ -1430,11 +1540,11 @@ changelog: {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
                 const isOpen = answer.classList.contains('open');
-                
+
                 // Close all other FAQs
                 document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
                 document.querySelectorAll('.faq-question span').forEach(s => s.textContent = '▼');
-                
+
                 // Toggle current FAQ
                 if (!isOpen) {
                     answer.classList.add('open');
