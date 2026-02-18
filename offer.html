@@ -156,7 +156,7 @@
 
     <!-- Top Badge -->
     <div class="bg-gold-500 text-black text-center py-2 px-4 text-xs md:text-sm font-bold sticky top-0 z-[60]">
-        🔥 BATCH 1 DIBUKA — Sisa <span id="slot-remaining-badge" class="font-black">27</span> Slot Tersisa —
+        <span id="top-bar-text">🔥 BATCH 1 DIBUKA — Sisa 27 Slot Tersisa</span> —
         <a href="#pricing" class="underline ml-1">Klaim Sekarang</a>
     </div>
 
@@ -520,16 +520,7 @@
     </div>
 
     <!-- Purchase Toast Notifications -->
-    <div id="purchase-toast"
-        class="purchase-toast hidden fixed top-20 right-6 z-50 max-w-xs bg-royal-950/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4 flex items-start gap-4">
-        <div
-            class="w-12 h-12 rounded-xl bg-gold-500 flex items-center justify-center text-black text-xl font-black shadow-lg shadow-gold-500/20">
-            🛒</div>
-        <div>
-            <p class="text-sm text-white font-black" id="purchase-name">Nama pembeli</p>
-            <p class="text-xs text-gold-400 font-bold" id="purchase-meta">Baru saja checkout</p>
-        </div>
-    </div>
+    <!-- Toast Removed -->
 
     <!-- Footer -->
     <footer class="py-20 border-t border-white/5 pb-64">
@@ -598,27 +589,25 @@
 
         const soldCount = buyerNames.length;
 
+        // Sticky Top Bar Rotation Logic
+        const topBarText = document.getElementById('top-bar-text');
+        const timeLabels = ["baru saja", "1 menit lalu", "2 menit lalu", "5 menit lalu"];
 
-        // Purchase Toast Rotation
-        const toastEl = document.getElementById('purchase-toast');
-        const nameEl = document.getElementById('purchase-name');
-        const metaEl = document.getElementById('purchase-meta');
-        const timeLabels = ["baru saja checkout", "1 menit yang lalu", "2 menit yang lalu", "5 menit yang lalu"];
+        function updateTopBar() {
+            if (!topBarText) return;
 
-        let toastIndex = 0;
-        function showNextToast() {
-            if (!toastEl) return;
-            const buyer = buyerNames[Math.floor(Math.random() * buyerNames.length)];
-            const label = timeLabels[Math.floor(Math.random() * timeLabels.length)];
-            nameEl.textContent = buyer;
-            metaEl.textContent = `✅ ${label}`;
-            toastEl.classList.remove('hidden');
-            setTimeout(() => toastEl.classList.add('hidden'), 5000);
+            // 50% chance to show slot count, 50% chance to show a recent buyer
+            if (Math.random() > 0.5) {
+                topBarText.textContent = "🔥 BATCH 1 DIBUKA — Sisa 27 Slot Tersisa";
+            } else {
+                const buyer = buyerNames[Math.floor(Math.random() * buyerNames.length)];
+                const time = timeLabels[Math.floor(Math.random() * timeLabels.length)];
+                topBarText.textContent = `🛒 ${buyer} membeli — ${time}`;
+            }
         }
 
         if (buyerNames.length > 0) {
-            setTimeout(showNextToast, 3000);
-            setInterval(showNextToast, 12000);
+            setInterval(updateTopBar, 4000); // Rotate every 4 seconds
         }
     </script>
 
