@@ -467,23 +467,13 @@
                     <p class="text-sm text-gray-500 font-bold mt-4 uppercase tracking-[0.2em]">One-Time Payment</p>
                 </div>
 
-                <div class="space-y-4 mb-10">
-                    <div class="flex items-center justify-between text-xs font-bold px-2">
-                        <span class="text-gray-400">STATUS: TERBATAS</span>
-                        <span class="text-gold-400"><span id="slot-remaining-counter">62</span> Slot Tersisa</span>
-                    </div>
-                    <div class="w-full h-3 bg-white/5 rounded-full overflow-hidden border border-white/5">
-                        <div id="slot-progress"
-                            class="h-full gradient-gold w-[38%] transition-all duration-1000 shadow-[0_0_20px_rgba(245,158,11,0.5)]">
-                        </div>
-                    </div>
-                </div>
+                <!-- Progress Bar Removed -->
 
                 <!-- Checkout Iframe -->
                 <div class="mt-8 rounded-2xl overflow-hidden">
                     <iframe id="myiframe" width="100%" frameborder="0" loading="lazy"
                         src="https://qlipper.myscalev.com/landing-page-baru"
-                        style="display: block; background: #ffab44;"></iframe>
+                        style="display: block; background: #ffab44; min-height: 650px;"></iframe>
                 </div>
 
                 <p class="mt-6 text-xs text-gray-500 font-medium">
@@ -607,16 +597,7 @@
         ];
 
         const soldCount = buyerNames.length;
-        // Hardcoded remaining slots as per request
-        const remainingCount = 27;
-        const totalSlots = soldCount + remainingCount;
 
-        // Update UI Elements
-        document.getElementById('slot-remaining-badge').textContent = remainingCount;
-        document.getElementById('slot-remaining-counter').textContent = remainingCount;
-        const progressEl = document.getElementById('slot-progress');
-        const soldPercent = Math.min((soldCount / totalSlots) * 100, 100);
-        if (progressEl) progressEl.style.width = `${soldPercent}%`;
 
         // Purchase Toast Rotation
         const toastEl = document.getElementById('purchase-toast');
