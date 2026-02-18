@@ -179,13 +179,7 @@
                     Qlipper AI proses video langsung di perangkat kamu — cepat, privat,
                     dan <span class="text-gold-400 font-black">selamanya milik kamu</span>.
                 </p>
-                <div class="flex flex-col items-center gap-4">
-                    <a href="#pricing"
-                        class="gradient-gold text-black font-black text-lg px-10 py-5 rounded-2xl hover:opacity-90 transition inline-flex items-center gap-2">
-                        Klaim Akses Sekarang 👇
-                    </a>
-                    <p class="text-sm text-gray-500">🔒 Sekali bayar · Akses selamanya · Tanpa langganan</p>
-                </div>
+                <!-- CTA Removed -->
             </div>
 
             <!-- The Grid Hero Section -->
@@ -487,7 +481,7 @@
 
                 <!-- Checkout Iframe -->
                 <div class="mt-8 rounded-2xl overflow-hidden">
-                    <iframe id="myiframe" width="100%" frameborder="0"
+                    <iframe id="myiframe" width="100%" frameborder="0" loading="lazy"
                         src="https://qlipper.myscalev.com/landing-page-baru"
                         style="display: block; background: #ffab44;"></iframe>
                 </div>
@@ -596,17 +590,7 @@
                 }
             }
         }, false)
-        document.addEventListener('DOMContentLoaded', function () {
-            var observer = new IntersectionObserver(function (entries) {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        iframe.src = iframe.src
-                        observer.disconnect()
-                    }
-                })
-            })
-            observer.observe(iframe)
-        })
+
     </script>
 
     <script>
