@@ -192,6 +192,11 @@
                         data-i18n="sidebar.errorFFmpeg">
                         FFmpeg Download Failed
                     </a>
+                    <a href="#error-ytdlp-preflight"
+                        class="sidebar-link block px-4 py-2 rounded-lg border-l-2 border-transparent text-sm"
+                        data-i18n="sidebar.errorYtdlpPreflight">
+                        yt-dlp Preflight Failed
+                    </a>
                 </div>
             </nav>
         </aside>
@@ -901,6 +906,54 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
                     </div>
                 </div>
 
+                <!-- yt-dlp Preflight Failure -->
+                <div id="error-ytdlp-preflight" class="faq-item bg-royal-950 rounded-xl p-6 border border-white/5 mb-6">
+                    <div class="faq-question flex items-center justify-between">
+                        <h3 class="text-xl font-semibold text-gold-400" data-i18n="troubleshooting.errorYtdlpPreflight.title">Preflight Failed: yt-dlp Blocked or Can't Download</h3>
+                        <span class="text-2xl">▼</span>
+                    </div>
+                    <div class="faq-answer mt-4">
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorYtdlpPreflight.symptomsLine">
+                            <strong>Symptoms:</strong> Terminal shows <code>✗ yt-dlp exists but failed to run</code>, followed by <code>ECONNRESET</code> then <code>ECONNABORTED</code> during re-download attempt.
+                        </p>
+                        <p class="text-gray-300 mb-4" data-i18n-html="troubleshooting.errorYtdlpPreflight.causeLine">
+                            <strong>Cause:</strong> Two compounding issues: (1) Windows Defender/antivirus silently blocks <code>yt-dlp.exe</code> from running, and (2) the auto-repair download from GitHub fails due to firewall or regional ISP block.
+                        </p>
+                        <p class="text-gray-300 mb-4 font-semibold" data-i18n="troubleshooting.errorYtdlpPreflight.solutions">Solutions (pick just one):</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorYtdlpPreflight.option1Title">Option 1 — Add Windows Defender Exclusion (Recommended)</p>
+                                <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4">
+                                    <li>Open <strong>Windows Security</strong> → <strong>Virus &amp; threat protection</strong> → <strong>Manage settings</strong></li>
+                                    <li>Scroll to <strong>Exclusions</strong> → <strong>Add or remove exclusions</strong></li>
+                                    <li>Add the entire Qlipper folder (e.g. <code>D:\YT SHORT\Qlipper-AI-v1.6.15\</code>)</li>
+                                    <li>Restart Qlipper AI — preflight will re-test the binary</li>
+                                </ol>
+                            </div>
+
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorYtdlpPreflight.option2Title">Option 2 — Manual yt-dlp Download (Works without internet via GitHub)</p>
+                                <ol class="list-decimal list-inside space-y-2 text-gray-300 ml-4">
+                                    <li>On another device or with VPN, go to: <a href="https://github.com/yt-dlp/yt-dlp/releases/latest" class="text-gold-400 hover:underline" target="_blank">github.com/yt-dlp/yt-dlp/releases/latest</a></li>
+                                    <li>Download <code>yt-dlp.exe</code></li>
+                                    <li>Place it at: <code>[your Qlipper folder]\backend\bin\yt-dlp.exe</code> (replace existing)</li>
+                                    <li>Restart Qlipper AI</li>
+                                </ol>
+                            </div>
+
+                            <div>
+                                <p class="text-white font-semibold mb-2" data-i18n="troubleshooting.errorYtdlpPreflight.option3Title">Option 3 — Use a VPN, then restart</p>
+                                <p class="text-gray-300" data-i18n="troubleshooting.errorYtdlpPreflight.option3Desc">Enable a VPN to allow the auto-repair download from GitHub to succeed. After startup completes, the VPN can be turned off for normal use.</p>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-400 text-sm mt-4" data-i18n="troubleshooting.errorYtdlpPreflight.noteLine">
+                            Note: You only need ONE option to work. Try Option 1 first.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Other Common Issues -->
                 <div class="bg-royal-950 rounded-xl p-6 border border-white/5">
                     <h3 class="text-xl font-semibold mb-4 text-gold-400" data-i18n="troubleshooting.other.title">Other
@@ -991,6 +1044,7 @@ npm install</code></pre>
                     errorGemini: "Gemini Model Error",
                     errorPort: "Port Already in Use"
                     errorFFmpeg: "FFmpeg Download Failed",
+                    errorYtdlpPreflight: "yt-dlp Preflight Failed"
                 },
                 gettingStarted: {
                     title: "Getting Started",
@@ -1116,6 +1170,17 @@ npm install</code></pre>
                         windowsTitle: "Windows:",
                         orText: "Or simply close any other Qlipper AI instances that might be running."
                     },
+                    errorYtdlpPreflight: {
+                        title: "Preflight Failed: yt-dlp Blocked or Can't Download",
+                        symptomsLine: "<strong>Symptoms:</strong> Terminal shows <code>✗ yt-dlp exists but failed to run</code>, followed by <code>ECONNRESET</code> then <code>ECONNABORTED</code> during re-download attempt.",
+                        causeLine: "<strong>Cause:</strong> Two compounding issues: (1) Windows Defender/antivirus silently blocks <code>yt-dlp.exe</code> from running, and (2) the auto-repair download from GitHub fails due to firewall or regional ISP block.",
+                        solutions: "Solutions (pick just one):",
+                        option1Title: "Option 1 — Add Windows Defender Exclusion (Recommended)",
+                        option2Title: "Option 2 — Manual yt-dlp Download (Works without internet via GitHub)",
+                        option3Title: "Option 3 — Use a VPN, then restart",
+                        option3Desc: "Enable a VPN to allow the auto-repair download from GitHub to succeed. After startup completes, the VPN can be turned off for normal use.",
+                        noteLine: "Note: You only need ONE option to work. Try Option 1 first."
+                    },
                     other: {
                         title: "Other Common Issues",
                         permissionTitle: "Permission Denied (macOS)",
@@ -1158,7 +1223,8 @@ npm install</code></pre>
                     errorFrontend: "Frontend Tidak Dibangun",
                     errorGemini: "Error Model Gemini",
                     errorPort: "Port Sudah Digunakan",
-                    errorFFmpeg: "FFmpeg Gagal Diunduh"
+                    errorFFmpeg: "FFmpeg Gagal Diunduh",
+                    errorYtdlpPreflight: "Preflight yt-dlp Gagal"
                 },
                 gettingStarted: {
                     title: "Memulai",
@@ -1283,6 +1349,17 @@ npm install</code></pre>
                         macosTitle: "macOS/Linux:",
                         windowsTitle: "Windows:",
                         orText: "Atau cukup tutup instance Qlipper AI lain yang mungkin sedang berjalan."
+                    },
+                    errorYtdlpPreflight: {
+                        title: "Preflight Gagal: yt-dlp Diblokir atau Tidak Bisa Diunduh",
+                        symptomsLine: "<strong>Gejala:</strong> Terminal menampilkan <code>✗ yt-dlp exists but failed to run</code>, diikuti <code>ECONNRESET</code> lalu <code>ECONNABORTED</code> saat percobaan re-download.",
+                        causeLine: "<strong>Penyebab:</strong> Dua masalah yang saling memperparah: (1) Windows Defender/antivirus secara diam-diam memblokir <code>yt-dlp.exe</code> agar tidak bisa berjalan, dan (2) download perbaikan otomatis dari GitHub gagal karena firewall atau blokir ISP regional.",
+                        solutions: "Solusi (pilih salah satu):",
+                        option1Title: "Opsi 1 — Tambahkan Pengecualian Windows Defender (Direkomendasikan)",
+                        option2Title: "Opsi 2 — Download yt-dlp Manual (Bisa tanpa internet via GitHub)",
+                        option3Title: "Opsi 3 — Gunakan VPN, lalu restart",
+                        option3Desc: "Aktifkan VPN agar download perbaikan otomatis dari GitHub berhasil. Setelah startup selesai, VPN bisa dimatikan untuk penggunaan normal.",
+                        noteLine: "Catatan: Anda hanya perlu SATU opsi yang berhasil. Coba Opsi 1 terlebih dahulu."
                     },
                     other: {
                         title: "Masalah Umum Lainnya",
